@@ -1,0 +1,11 @@
+strings:
+  inputs: FantasyUniverse/Resources/Localization.strings
+  outputs:
+    - templateName: structured-swift5
+      output: FantasyUniverse/Generated/Strings.swift
+xcassets:
+  inputs:
+    - FantasyUniverse/Resources/Images.xcassets
+  outputs:
+    - templateName: swift5
+      output: FantasyUniverse/Generated/Images.swift

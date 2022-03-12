@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		451776D927AFF01C005490A1 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451776D827AFF01C005490A1 /* ScoreView.swift */; };
 		451776DB27AFF468005490A1 /* ProgressHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451776DA27AFF468005490A1 /* ProgressHeaderView.swift */; };
+		452C54B627DCFAD300A7FBEF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452C54B527DCFAD300A7FBEF /* Colors.xcassets */; };
+		452C54B827DCFAE500A7FBEF /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 452C54B727DCFAE500A7FBEF /* Localization.strings */; };
+		452C54BF27DD00DE00A7FBEF /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452C54BD27DD00DE00A7FBEF /* Images.swift */; };
+		452C54C027DD00DE00A7FBEF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452C54BE27DD00DE00A7FBEF /* Strings.swift */; };
 		453CAEEA27B1DD39002649AF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 453CAEE927B1DD39002649AF /* Lottie */; };
 		453CAEEC27B32090002649AF /* QuestionSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453CAEEB27B32090002649AF /* QuestionSets.swift */; };
 		453CAEF027B44E64002649AF /* sad-face.json in Resources */ = {isa = PBXBuildFile; fileRef = 453CAEEF27B44E64002649AF /* sad-face.json */; };
@@ -49,7 +53,7 @@
 		4584F7B227A404AB0041E373 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 4584F7B127A404AB0041E373 /* FirebaseStorageSwift-Beta */; };
 		4594E9DC276A7D510054E6BE /* FantasyUniverseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9DB276A7D510054E6BE /* FantasyUniverseApp.swift */; };
 		4594E9DE276A7D510054E6BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9DD276A7D510054E6BE /* ContentView.swift */; };
-		4594E9E0276A7D530054E6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4594E9DF276A7D530054E6BE /* Assets.xcassets */; };
+		4594E9E0276A7D530054E6BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4594E9DF276A7D530054E6BE /* Images.xcassets */; };
 		4594E9E3276A7D530054E6BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4594E9E2276A7D530054E6BE /* Preview Assets.xcassets */; };
 		4594E9E5276A7D530054E6BE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9E4276A7D530054E6BE /* Persistence.swift */; };
 		4594E9E8276A7D530054E6BE /* FantasyUniverse.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9E6276A7D530054E6BE /* FantasyUniverse.xcdatamodeld */; };
@@ -90,6 +94,11 @@
 /* Begin PBXFileReference section */
 		451776D827AFF01C005490A1 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		451776DA27AFF468005490A1 /* ProgressHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHeaderView.swift; sourceTree = "<group>"; };
+		452C54B527DCFAD300A7FBEF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		452C54B727DCFAE500A7FBEF /* Localization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localization.strings; sourceTree = "<group>"; };
+		452C54BB27DCFB4700A7FBEF /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		452C54BD27DD00DE00A7FBEF /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		452C54BE27DD00DE00A7FBEF /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		453CAEEB27B32090002649AF /* QuestionSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSets.swift; sourceTree = "<group>"; };
 		453CAEEF27B44E64002649AF /* sad-face.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sad-face.json"; sourceTree = "<group>"; };
 		453CAEF127B47556002649AF /* lotr-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lotr-logo.json"; sourceTree = "<group>"; };
@@ -103,7 +112,7 @@
 		4594E9D8276A7D510054E6BE /* FantasyUniverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyUniverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4594E9DB276A7D510054E6BE /* FantasyUniverseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyUniverseApp.swift; sourceTree = "<group>"; };
 		4594E9DD276A7D510054E6BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		4594E9DF276A7D530054E6BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4594E9DF276A7D530054E6BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		4594E9E2276A7D530054E6BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4594E9E4276A7D530054E6BE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4594E9E7276A7D530054E6BE /* FantasyUniverse.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FantasyUniverse.xcdatamodel; sourceTree = "<group>"; };
@@ -179,9 +188,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		452C54B427DCFABA00A7FBEF /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				452C54BD27DD00DE00A7FBEF /* Images.swift */,
+				452C54BE27DD00DE00A7FBEF /* Strings.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		4594E9CF276A7D510054E6BE = {
 			isa = PBXGroup;
 			children = (
+				452C54BB27DCFB4700A7FBEF /* swiftgen.yml */,
 				4594E9DA276A7D510054E6BE /* FantasyUniverse */,
 				4594E9F0276A7D530054E6BE /* FantasyUniverseTests */,
 				4594E9FA276A7D530054E6BE /* FantasyUniverseUITests */,
@@ -210,9 +229,9 @@
 				4594E9DB276A7D510054E6BE /* FantasyUniverseApp.swift */,
 				453CAEEB27B32090002649AF /* QuestionSets.swift */,
 				4594E9DD276A7D510054E6BE /* ContentView.swift */,
-				4594E9DF276A7D530054E6BE /* Assets.xcassets */,
 				4594E9E4276A7D530054E6BE /* Persistence.swift */,
 				4594E9E6276A7D530054E6BE /* FantasyUniverse.xcdatamodeld */,
+				452C54B427DCFABA00A7FBEF /* Generated */,
 				4594EA16277664FA0054E6BE /* Resources */,
 				4594E9E1276A7D530054E6BE /* Preview Content */,
 			);
@@ -256,6 +275,9 @@
 		4594EA16277664FA0054E6BE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4594E9DF276A7D530054E6BE /* Images.xcassets */,
+				452C54B527DCFAD300A7FBEF /* Colors.xcassets */,
+				452C54B727DCFAE500A7FBEF /* Localization.strings */,
 				4594EA17277665140054E6BE /* Lottie Animations */,
 			);
 			path = Resources;
@@ -324,6 +346,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4594EA01276A7D530054E6BE /* Build configuration list for PBXNativeTarget "FantasyUniverse" */;
 			buildPhases = (
+				452C54BC27DCFD3500A7FBEF /* ShellScript */,
 				4594E9D4276A7D510054E6BE /* Sources */,
 				4594EA10276FCDF30054E6BE /* SwiftLint Script */,
 				4594E9D5276A7D510054E6BE /* Frameworks */,
@@ -458,15 +481,17 @@
 			files = (
 				453CAEFE27B5C6F7002649AF /* dashboard-background.json in Resources */,
 				453CAEF027B44E64002649AF /* sad-face.json in Resources */,
+				452C54B627DCFAD300A7FBEF /* Colors.xcassets in Resources */,
 				453CAF0427B5CD6D002649AF /* day-background.json in Resources */,
 				4594EA19277665470054E6BE /* magic-book-harry-potter.json in Resources */,
 				453CAEF227B47556002649AF /* lotr-logo.json in Resources */,
 				453CAF0627B6C5BD002649AF /* stephen-king-logo.json in Resources */,
 				45F0880C27A9322100503343 /* GoogleService-Info.plist in Resources */,
 				453CAEF427B475E1002649AF /* star-wars-logo.json in Resources */,
+				452C54B827DCFAE500A7FBEF /* Localization.strings in Resources */,
 				453CAEF627B5344F002649AF /* harry-potter-logo.json in Resources */,
 				4594E9E3276A7D530054E6BE /* Preview Assets.xcassets in Resources */,
-				4594E9E0276A7D530054E6BE /* Assets.xcassets in Resources */,
+				4594E9E0276A7D530054E6BE /* Images.xcassets in Resources */,
 				453CAEFC27B55619002649AF /* smile-face.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +513,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		452C54BC27DCFD3500A7FBEF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/swiftgen/bin/swiftgen\"\n";
+		};
 		4594EA10276FCDF30054E6BE /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -515,6 +557,7 @@
 			files = (
 				45F9FEB727773A5500AFE9F9 /* QuizView.swift in Sources */,
 				4594E9E5276A7D530054E6BE /* Persistence.swift in Sources */,
+				452C54C027DD00DE00A7FBEF /* Strings.swift in Sources */,
 				45F0881027ADB5B200503343 /* OptionButton.swift in Sources */,
 				4594E9DE276A7D510054E6BE /* ContentView.swift in Sources */,
 				453CAEEC27B32090002649AF /* QuestionSets.swift in Sources */,
@@ -524,6 +567,7 @@
 				4594EA0C276FCA120054E6BE /* DashboardView.swift in Sources */,
 				4594E9DC276A7D510054E6BE /* FantasyUniverseApp.swift in Sources */,
 				45F0881327ADC05D00503343 /* QuestionLabelView.swift in Sources */,
+				452C54BF27DD00DE00A7FBEF /* Images.swift in Sources */,
 				45F9FEB52776661300AFE9F9 /* LottieView.swift in Sources */,
 				4594E9E8276A7D530054E6BE /* FantasyUniverse.xcdatamodeld in Sources */,
 				451776DB27AFF468005490A1 /* ProgressHeaderView.swift in Sources */,
