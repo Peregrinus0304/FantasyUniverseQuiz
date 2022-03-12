@@ -1,11 +1,16 @@
+input_dir: FantasyUniverse/Resources/
+output_dir: FantasyUniverse/Generated/
 strings:
-  inputs: FantasyUniverse/Resources/Localization.strings
+  inputs: Base.lproj/Localisation.strings
+  filter: .+\.strings$
   outputs:
     - templateName: structured-swift5
-      output: FantasyUniverse/Generated/Strings.swift
+      output: Strings.swift
 xcassets:
   inputs:
-    - FantasyUniverse/Resources/Images.xcassets
+    - Assets.xcassets
+    - Colors.xcassets
   outputs:
     - templateName: swift5
-      output: FantasyUniverse/Generated/Images.swift
+      output: Assets.swift
+
