@@ -15,16 +15,13 @@ struct QuestionLabelView: View {
     }
     
     var body: some View {
-       
-            Text(text ?? "")
+            Text(text)
                 .font(.system(size: 30))
-                .minimumScaleFactor(0.4)
-                .lineLimit(4)
-                .layoutPriority(4)
-    //            .allowsTightening(false)
-    //            .fontWeight(.heavy)
-    //            .foregroundColor(.black)
-    //            .fixedSize(horizontal: false, vertical: false)
-                .padding(.top, 25)
+                .fontWeight(.heavy)
+                .foregroundColor(.black)
+                .minimumScaleFactor(0.6)
+                .lineLimit(nil)
+                .allowsTightening(true)
+                .padding([.top, .bottom], 25)
     }
 }

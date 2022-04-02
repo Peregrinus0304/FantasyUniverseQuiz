@@ -21,9 +21,7 @@ struct QuestionView: View {
         VStack(spacing: 20) {
             // Question
             QuestionLabelView(text: currentQuestion.question)
-                .lineLimit(4)
-            Spacer()
-            
+                       
             ForEach(currentQuestion.answers.indices, id: \.self) { index in
                 OptionButton(color: buttonColor(option: currentQuestion.answers[index].answer),
                              text: currentQuestion.answers[index].answer,
