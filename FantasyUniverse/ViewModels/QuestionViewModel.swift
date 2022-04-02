@@ -9,8 +9,8 @@ import SwiftUI
 import Firebase
 
 class QuestionViewModel: ObservableObject {
-    
-    @Published var questions: [Question] = []
+
+    @Published var questionsData: [QuestionViewData] = []
     
     func getQuestions(set: String) {
         
@@ -30,7 +30,13 @@ class QuestionViewModel: ObservableObject {
                 let objects = data.documents.compactMap({ (doc) -> Question? in
                     return try? doc.data(as: Question.self)
                 })
-                    self.questions = self.randomize(objects: objects)
+                   
+                if let questioins = QuestionDataService.formatQuestions(self.randomize(objects: objects)) {
+                    self.questionsData = questioins
+                } else {
+                    fatalError("There is an error converting [Questions] objects to [QuestionViewData] objects")
+                }
+                
             }
         }
     }

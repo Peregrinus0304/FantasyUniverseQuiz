@@ -8,9 +8,9 @@
 import Foundation
 
 struct QuestionViewData: Identifiable {
-    var id: String
-    var question: String
+    let id = UUID()
+    let question: String
     let answers: [Answer]
-    let isSubmitted = false
-    let completed = false
+    var isSubmitted = false
+    var completed = false
 }

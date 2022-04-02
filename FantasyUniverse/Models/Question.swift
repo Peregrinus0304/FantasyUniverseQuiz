@@ -8,9 +8,8 @@
 import SwiftUI
 import FirebaseFirestoreSwift
 
-struct Question: Identifiable, Codable, Equatable {
+struct Question: Codable, Equatable {
     
-    @DocumentID var id: String?
     var question: String?
     var optionA: String?
     var optionB: String?

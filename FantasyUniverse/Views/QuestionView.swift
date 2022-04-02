@@ -9,8 +9,8 @@ import SwiftUI
 
 struct QuestionView: View {
     
-    @Binding var questions: [Question]
-    @State var currentQuestion: Question
+    @Binding var questions: [QuestionViewData]
+    @State var currentQuestion: QuestionViewData
     @Binding var correct: Int
     @Binding var wrong: Int
     @Binding var answered: Int
@@ -20,41 +20,19 @@ struct QuestionView: View {
         
         VStack(spacing: 20) {
             // Question
-            QuestionLabelView(text: currentQuestion.question!)
+            QuestionLabelView(text: currentQuestion.question)
                 .lineLimit(4)
             Spacer()
             
-            OptionButton(color: buttonColor(option: currentQuestion.optionA!),
-                         text: currentQuestion.optionA!,
-                         action: {
-                selected = currentQuestion.optionA!
-            })
-                .disabled(!selected.isEmpty)
-                .opacity(selected.isEmpty ? 1 : 0.7)
-            
-            OptionButton(color: buttonColor(option: currentQuestion.optionB!),
-                         text: currentQuestion.optionB!,
-                         action: {
-                selected = currentQuestion.optionB!
-            }).lineLimit(nil)
-                .disabled(!selected.isEmpty)
-                .opacity(selected.isEmpty ? 1 : 0.7)
-            
-            OptionButton(color: buttonColor(option: currentQuestion.optionC!),
-                         text: currentQuestion.optionC!,
-                         action: {
-                selected = currentQuestion.optionC!
-            }).lineLimit(nil)
-                .disabled(!selected.isEmpty)
-                .opacity(selected.isEmpty ? 1 : 0.7)
-            
-            OptionButton(color: buttonColor(option: currentQuestion.optionD!),
-                         text: currentQuestion.optionD!,
-                         action: {
-                selected = currentQuestion.optionD!
-            }).lineLimit(nil)
-                .disabled(!selected.isEmpty)
-                .opacity(selected.isEmpty ? 1 : 0.7)
+            ForEach(currentQuestion.answers.indices, id: \.self) { index in
+                OptionButton(color: buttonColor(option: currentQuestion.answers[index].answer),
+                             text: currentQuestion.answers[index].answer,
+                             action: {
+                    selected = currentQuestion.answers[index].answer
+                }).lineLimit(nil)
+                  .disabled(!selected.isEmpty)
+                  .opacity(selected.isEmpty ? 1 : 0.7)
+            }
             
             Spacer()
             
@@ -75,12 +53,13 @@ struct QuestionView: View {
     }
     
     private func buttonColor(option: String) -> Color {
-        return selected.isEmpty ? .gray : (option == currentQuestion.correct ? .green : (option == selected ? .red : .gray))
+        let correctAnswer = currentQuestion.answers.filter { $0.correct }[0].answer
+        return selected.isEmpty ? .gray : (option == correctAnswer ? .green : (option == selected ? .red : .gray))
     }
     
     private func checkAnswer() {
-        
-        if selected == currentQuestion.correct! {
+        let correctAnswer = currentQuestion.answers.filter { $0.correct }[0].answer
+        if selected == correctAnswer {
             correct += 1
         } else {
             wrong += 1

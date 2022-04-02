@@ -8,7 +8,7 @@
 import Foundation
 
 func missingValuesMessages(of object: Any) -> [String]? {
-    var debugMessages: [String]? = []
+    var debugMessages: [String]?
     let mirror = Mirror(reflecting: object)
     mirror.children.forEach { child in
         if case Optional<Any>.none = child.value {

@@ -14,7 +14,7 @@ enum QuestionDataService {
         var questionViewData: [QuestionViewData]?
         for question in questions {
             // swiftlint:disable line_length
-            guard let questionString = question.question, let id = question.id, let optionA = question.optionA, let optionB = question.optionB, let optionC = question.optionC, let optionD = question.optionD, let correct = question.correct
+            guard let questionString = question.question, let optionA = question.optionA, let optionB = question.optionB, let optionC = question.optionC, let optionD = question.optionD, let correct = question.correct
             else {
                 if let missingValuesMessages = missingValuesMessages(of: question) {
                     debugPrint(missingValuesMessages)
@@ -28,8 +28,8 @@ enum QuestionDataService {
              Answer(answer: optionB, correct: optionB == correct),
              Answer(answer: optionC, correct: optionC == correct),
              Answer(answer: optionD, correct: optionD == correct)]
-            
-            let questionData = QuestionViewData(id: id, question: questionString, answers: answers)
+//            let id = question.id
+            let questionData = QuestionViewData(question: questionString, answers: answers)
             if questionViewData == nil {
                 questionViewData = [QuestionViewData]()
             }

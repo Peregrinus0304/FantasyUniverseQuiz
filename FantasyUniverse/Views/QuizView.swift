@@ -23,10 +23,10 @@ struct QuizView: View {
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
             
-            if data.questions.isEmpty {
+            if data.questionsData.isEmpty {
                 ProgressView()
             } else {
-                if answered == data.questions.count {
+                if answered == data.questionsData.count {
                     
                     // Finish screen
                     ScoreView(correctScore: correct, wrongScore: wrong) {
@@ -44,7 +44,7 @@ struct QuizView: View {
                         ProgressHeaderView(correctCount: correct == .zero ? "" : "\(correct)", wrongCount: wrong == .zero ? "" : "\(wrong)", progress: progress())
                         
                         // Question view
-                        QuestionView(questions: $data.questions, currentQuestion: data.questions[.zero], correct: $correct, wrong: $wrong, answered: $answered)
+                        QuestionView(questions: $data.questionsData, currentQuestion: data.questionsData[.zero], correct: $correct, wrong: $wrong, answered: $answered)
                             .padding()
                         
                     }
@@ -61,7 +61,7 @@ struct QuizView: View {
     
     private func progress() -> CGFloat {
         
-        let fraction = CGFloat(answered) / CGFloat(data.questions.count)
+        let fraction = CGFloat(answered) / CGFloat(data.questionsData.count)
         let width = UIScreen.main.bounds.width - 30
         
         return fraction * width
