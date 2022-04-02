@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct QuestionLabelView: View {
-    let text: String?
+    let text: String
     
-    init(text: String?) {
+    init(text: String) {
         self.text = text
     }
     
@@ -26,6 +26,5 @@ struct QuestionLabelView: View {
     //            .foregroundColor(.black)
     //            .fixedSize(horizontal: false, vertical: false)
                 .padding(.top, 25)
-                .border(Color.green)
     }
 }

@@ -1,37 +1,37 @@
-//
 //  LottieView.swift
 //  FantasyUniverse
 //
 //  Created by TarasPeregrinus on 24.12.2021.
-//
 
 import SwiftUI
 import Lottie
 
 struct LottieView: UIViewRepresentable {
-    var name: String
-    var loopMode: LottieLoopMode = .playOnce
-    
-    var animationView = AnimationView()
+    let animationName: String
+    let loopMode: LottieLoopMode
+    let contentMode: UIView.ContentMode 
     
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
-        let view = UIView(frame: .zero)
-        
-        animationView.animation = Animation.named(name)
-        animationView.contentMode = .scaleAspectFit
-        animationView.loopMode = loopMode
-        animationView.play()
-        
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(animationView)
-        
-        NSLayoutConstraint.activate([
-            animationView.heightAnchor.constraint(equalTo: view.heightAnchor),
-            animationView.widthAnchor.constraint(equalTo: view.widthAnchor)
-        ])
-        
+        let view = UIView()
         return view
     }
     
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) {}
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) {
+        uiView.subviews.forEach({ $0.removeFromSuperview() })
+        let animationView = AnimationView()
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        uiView.addSubview(animationView)
+        
+        NSLayoutConstraint.activate([
+            animationView.topAnchor.constraint(equalTo: uiView.topAnchor),
+            animationView.bottomAnchor.constraint(equalTo: uiView.bottomAnchor),
+            animationView.trailingAnchor.constraint(equalTo: uiView.trailingAnchor),
+            animationView.leadingAnchor.constraint(equalTo: uiView.leadingAnchor)
+        ])
+        
+        animationView.animation = Animation.named(animationName)
+        animationView.contentMode = contentMode
+        animationView.loopMode = loopMode
+        animationView.play()
+    }
 }

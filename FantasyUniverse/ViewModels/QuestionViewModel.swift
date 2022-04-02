@@ -25,13 +25,12 @@ class QuestionViewModel: ObservableObject {
                 return
             }
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { 
                 
                 let objects = data.documents.compactMap({ (doc) -> Question? in
                     return try? doc.data(as: Question.self)
                 })
-                self.questions = self.randomize(objects: objects)
-                print("Successfully parsed data: \(self.questions)")
+                    self.questions = self.randomize(objects: objects)
             }
         }
     }

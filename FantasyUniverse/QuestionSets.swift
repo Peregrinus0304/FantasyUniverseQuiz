@@ -21,13 +21,13 @@ enum QuestionSet {
         case .stephenKing: return "Stephen King"
         }
     }
-        var logoAnimationName: String {
-            switch self {
-            case .test: return "smile-face"
-            case .harryPotter: return "harry-potter-logo"
-            case .lotr: return "lotr-logo"
-            case .starWars: return "star-wars-logo"
-            case .stephenKing: return "stephen-king-logo"
-            }
+    var logoAnimationName: String {
+        switch self {
+        case .test: return "smile-face"
+        case .harryPotter: return "harry-potter-logo"
+        case .lotr: return "lotr-logo"
+        case .starWars: return "star-wars-logo"
+        case .stephenKing: return "stephen-king-logo"
         }
     }
+}

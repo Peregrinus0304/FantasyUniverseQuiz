@@ -29,7 +29,7 @@ struct QuestionView: View {
                          action: {
                 selected = currentQuestion.optionA!
             })
-                .disabled(selected.isEmpty ? false : true)
+                .disabled(!selected.isEmpty)
                 .opacity(selected.isEmpty ? 1 : 0.7)
             
             OptionButton(color: buttonColor(option: currentQuestion.optionB!),
@@ -37,7 +37,7 @@ struct QuestionView: View {
                          action: {
                 selected = currentQuestion.optionB!
             }).lineLimit(nil)
-                .disabled(selected.isEmpty ? false : true)
+                .disabled(!selected.isEmpty)
                 .opacity(selected.isEmpty ? 1 : 0.7)
             
             OptionButton(color: buttonColor(option: currentQuestion.optionC!),
@@ -45,7 +45,7 @@ struct QuestionView: View {
                          action: {
                 selected = currentQuestion.optionC!
             }).lineLimit(nil)
-                .disabled(selected.isEmpty ? false : true)
+                .disabled(!selected.isEmpty)
                 .opacity(selected.isEmpty ? 1 : 0.7)
             
             OptionButton(color: buttonColor(option: currentQuestion.optionD!),
@@ -53,7 +53,7 @@ struct QuestionView: View {
                          action: {
                 selected = currentQuestion.optionD!
             }).lineLimit(nil)
-                .disabled(selected.isEmpty ? false : true)
+                .disabled(!selected.isEmpty)
                 .opacity(selected.isEmpty ? 1 : 0.7)
             
             Spacer()
@@ -65,9 +65,9 @@ struct QuestionView: View {
                 }
                 checkAnswer()
             }.buttonStyle(AppNextButton())
-            .disabled(selected.isEmpty ? true : false)
-            .opacity(selected.isEmpty ? 0.7 : 1)
-            .padding(.bottom)
+                .disabled(selected.isEmpty)
+                .opacity(selected.isEmpty ? 0.7 : 1)
+                .padding(.bottom)
         }
         .padding()
         .background(.thinMaterial)
@@ -75,23 +75,11 @@ struct QuestionView: View {
     }
     
     private func buttonColor(option: String) -> Color {
-        
-        if currentQuestion.isSubmitted {
-            return Color.gray
-        } else {
-            if !selected.isEmpty {
-                if option == currentQuestion.correct! {
-                    return .green
-                } else {
-                    return .red
-                }
-            }
-            
-        }
-        return Color.gray
+        return selected.isEmpty ? .gray : (option == currentQuestion.correct ? .green : (option == selected ? .red : .gray))
     }
     
     private func checkAnswer() {
+        
         if selected == currentQuestion.correct! {
             correct += 1
         } else {
@@ -101,5 +89,5 @@ struct QuestionView: View {
         currentQuestion = questions[answered - 1]
         selected = ""
     }
-
+    
 }

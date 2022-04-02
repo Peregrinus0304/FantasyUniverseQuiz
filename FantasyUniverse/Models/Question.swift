@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseFirestoreSwift
 
-struct Question: Identifiable, Codable {
+struct Question: Identifiable, Codable, Equatable {
     
     @DocumentID var id: String?
     var question: String?
@@ -29,5 +29,4 @@ struct Question: Identifiable, Codable {
         case optionD = "d"
         case correct
     }
-    
 }

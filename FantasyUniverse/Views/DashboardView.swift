@@ -14,7 +14,7 @@ struct DashboardView: View {
     @State var wrong = 0
     @State var answered = 0
     @State var selectedSet = ""
-    var sets = QuestionSet.allSets
+    let sets = QuestionSet.allSets
     
     private func cleanUp() {
        correct = 0
@@ -24,13 +24,12 @@ struct DashboardView: View {
     
     var body: some View {
         ZStack {
-            LottieView(name: "dashboard-background", loopMode: .loop)
+            LottieView(animationName: "dashboard-background", loopMode: .loop, contentMode: .scaleAspectFit)
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
             
             VStack {
                 Text("The grid of quizes").font(.system(size: 28)).fontWeight(.heavy)
-                
                 Text("What is your today`s quizz ?").font(.system(size: 28))
                 Spacer()
                 ScrollView {
@@ -38,9 +37,8 @@ struct DashboardView: View {
                         
                         ForEach(sets.indices, id: \.self) { index in
                             VStack(spacing: 20) {
-                                LottieView(name: sets[index].logoAnimationName, loopMode: .loop)
+                                LottieView(animationName: sets[index].logoAnimationName, loopMode: .loop, contentMode: .scaleAspectFit)
                                     .frame(width: 150, height: 150)
-                                    .aspectRatio(contentMode: .fit)
                                    
                                 Text(sets[index].collectionIdentifier)
                                     .font(.title2)

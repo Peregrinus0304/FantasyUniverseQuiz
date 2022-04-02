@@ -19,8 +19,7 @@ struct QuizView: View {
     var body: some View {
         
         ZStack {
-            
-            LottieView(name: "day-background", loopMode: .loop)
+            LottieView(animationName: "day-background", loopMode: .loop, contentMode: .scaleAspectFit)
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
             
@@ -33,9 +32,9 @@ struct QuizView: View {
                     ScoreView(correctScore: correct, wrongScore: wrong) {
                         present.wrappedValue.dismiss()
                     }
-                    .frame(minWidth: UIScreen.main.bounds.width - 10)
+//                    .frame(width: UIScreen.main.bounds.width - 50)
                     .background(.thinMaterial)
-                        
+                   
                 } else {
                     
                     // Game screen

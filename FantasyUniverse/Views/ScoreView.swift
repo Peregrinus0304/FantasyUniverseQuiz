@@ -15,7 +15,9 @@ struct ScoreView: View {
     
     var body: some View {
         VStack(spacing: 25) {
-            LottieView(name: winScore() ? "smile-face" : "sad-face", loopMode: .playOnce)
+            LottieView(animationName: winScore() ? "smile-face" : "sad-face", loopMode: .playOnce, contentMode: .scaleAspectFit)
+
+                .frame(width: UIScreen.main.bounds.width - 5)
                 .padding()
             
             Text(winScore() ? "Well done" : "You can do better")
@@ -58,7 +60,8 @@ struct ScoreView: View {
     
     private func setTitle(correct: Int, wrong: Int) -> LottieView {
         let winScore = correct - wrong >= 0 ? true : false
-        return LottieView(name: winScore ? "smile-face" : "sad-face", loopMode: .loop)
+    
+        return  LottieView(animationName: winScore ? "smile-face" : "sad-face", loopMode: .loop, contentMode: .scaleAspectFit)
     }
     
 }

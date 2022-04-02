@@ -62,6 +62,13 @@
 		4594E9FE276A7D530054E6BE /* FantasyUniverseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9FD276A7D530054E6BE /* FantasyUniverseUITestsLaunchTests.swift */; };
 		4594EA0C276FCA120054E6BE /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594EA0B276FCA120054E6BE /* DashboardView.swift */; };
 		4594EA0F276FCB630054E6BE /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594EA0E276FCB630054E6BE /* ColorPalette.swift */; };
+		45A2687327DE964A0082257D /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2687127DE964A0082257D /* Assets.swift */; };
+		45A2687427DE964A0082257D /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2687227DE964A0082257D /* Strings.swift */; };
+		45D2284427EBC9E0008506F8 /* QuestionDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284327EBC9E0008506F8 /* QuestionDataService.swift */; };
+		45D2284727EDEB63008506F8 /* QuestionViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284627EDEB63008506F8 /* QuestionViewData.swift */; };
+		45D2284927EDEB71008506F8 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284827EDEB71008506F8 /* Answer.swift */; };
+		45D2284B27F09330008506F8 /* QuestionDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284A27F09330008506F8 /* QuestionDataServiceTests.swift */; };
+		45D2284D27F4793B008506F8 /* GlobalMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284C27F4793B008506F8 /* GlobalMethods.swift */; };
 		45F0880327A4100D00503343 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F0880227A4100D00503343 /* Question.swift */; };
 		45F0880827A6F54E00503343 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F0880727A6F54E00503343 /* QuestionViewModel.swift */; };
 		45F0880C27A9322100503343 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45F0880B27A9322100503343 /* GoogleService-Info.plist */; };
@@ -121,6 +128,13 @@
 		4594E9FD276A7D530054E6BE /* FantasyUniverseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyUniverseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4594EA0B276FCA120054E6BE /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		4594EA0E276FCB630054E6BE /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		45A2687127DE964A0082257D /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		45A2687227DE964A0082257D /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		45D2284327EBC9E0008506F8 /* QuestionDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataService.swift; sourceTree = "<group>"; };
+		45D2284627EDEB63008506F8 /* QuestionViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewData.swift; sourceTree = "<group>"; };
+		45D2284827EDEB71008506F8 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		45D2284A27F09330008506F8 /* QuestionDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataServiceTests.swift; sourceTree = "<group>"; };
+		45D2284C27F4793B008506F8 /* GlobalMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMethods.swift; sourceTree = "<group>"; };
 		45F0880227A4100D00503343 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		45F0880727A6F54E00503343 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
 		45F0880B27A9322100503343 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -189,6 +203,8 @@
 		452C54B427DCFABA00A7FBEF /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				45A2687127DE964A0082257D /* Assets.swift */,
+				45A2687227DE964A0082257D /* Strings.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -244,6 +260,7 @@
 		4594E9DA276A7D510054E6BE /* FantasyUniverse */ = {
 			isa = PBXGroup;
 			children = (
+				45D2284527EDEB49008506F8 /* Services */,
 				452C54C127DD162F00A7FBEF /* Resources */,
 				45F0880B27A9322100503343 /* GoogleService-Info.plist */,
 				45F0880927A6F55300503343 /* ViewModels */,
@@ -257,6 +274,7 @@
 				4594E9E6276A7D530054E6BE /* FantasyUniverse.xcdatamodeld */,
 				452C54B427DCFABA00A7FBEF /* Generated */,
 				4594E9E1276A7D530054E6BE /* Preview Content */,
+				45D2284C27F4793B008506F8 /* GlobalMethods.swift */,
 			);
 			path = FantasyUniverse;
 			sourceTree = "<group>";
@@ -273,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				4594E9F1276A7D530054E6BE /* FantasyUniverseTests.swift */,
+				45D2284A27F09330008506F8 /* QuestionDataServiceTests.swift */,
 			);
 			path = FantasyUniverseTests;
 			sourceTree = "<group>";
@@ -295,10 +314,20 @@
 			path = Design;
 			sourceTree = "<group>";
 		};
+		45D2284527EDEB49008506F8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				45D2284327EBC9E0008506F8 /* QuestionDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		45F0880427A4101600503343 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				45F0880227A4100D00503343 /* Question.swift */,
+				45D2284627EDEB63008506F8 /* QuestionViewData.swift */,
+				45D2284827EDEB71008506F8 /* Answer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -342,8 +371,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4594EA01276A7D530054E6BE /* Build configuration list for PBXNativeTarget "FantasyUniverse" */;
 			buildPhases = (
-				452C54BC27DCFD3500A7FBEF /* SwiftGen Script */,
 				4594EA10276FCDF30054E6BE /* SwiftLint Script */,
+				452C54BC27DCFD3500A7FBEF /* SwiftGen Script */,
 				4594E9D4276A7D510054E6BE /* Sources */,
 				4594E9D5276A7D510054E6BE /* Frameworks */,
 				4594E9D6276A7D510054E6BE /* Resources */,
@@ -561,10 +590,15 @@
 			files = (
 				45F9FEB727773A5500AFE9F9 /* QuizView.swift in Sources */,
 				4594E9E5276A7D530054E6BE /* Persistence.swift in Sources */,
+				45A2687427DE964A0082257D /* Strings.swift in Sources */,
+				45D2284D27F4793B008506F8 /* GlobalMethods.swift in Sources */,
+				45A2687327DE964A0082257D /* Assets.swift in Sources */,
 				45F0881027ADB5B200503343 /* OptionButton.swift in Sources */,
 				4594E9DE276A7D510054E6BE /* ContentView.swift in Sources */,
 				453CAEEC27B32090002649AF /* QuestionSets.swift in Sources */,
 				45F0880327A4100D00503343 /* Question.swift in Sources */,
+				45D2284727EDEB63008506F8 /* QuestionViewData.swift in Sources */,
+				45D2284927EDEB71008506F8 /* Answer.swift in Sources */,
 				45F0881527ADC59100503343 /* AppButtonStyles.swift in Sources */,
 				45F0880E27A9BE8600503343 /* QuestionView.swift in Sources */,
 				4594EA0C276FCA120054E6BE /* DashboardView.swift in Sources */,
@@ -574,6 +608,7 @@
 				4594E9E8276A7D530054E6BE /* FantasyUniverse.xcdatamodeld in Sources */,
 				451776DB27AFF468005490A1 /* ProgressHeaderView.swift in Sources */,
 				4594EA0F276FCB630054E6BE /* ColorPalette.swift in Sources */,
+				45D2284427EBC9E0008506F8 /* QuestionDataService.swift in Sources */,
 				45F0880827A6F54E00503343 /* QuestionViewModel.swift in Sources */,
 				451776D927AFF01C005490A1 /* ScoreView.swift in Sources */,
 				454D26D527BD6D110003D8F8 /* Constants.swift in Sources */,
@@ -585,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4594E9F2276A7D530054E6BE /* FantasyUniverseTests.swift in Sources */,
+				45D2284B27F09330008506F8 /* QuestionDataServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
