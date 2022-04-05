@@ -63,7 +63,10 @@ struct QuestionView: View {
             wrong += 1
         }
         currentQuestion.isSubmitted.toggle()
-        currentQuestion = questions[answered - 1]
+        if questions.count != answered {
+            currentQuestion = questions[answered]
+        }
+       
         selected = ""
     }
     

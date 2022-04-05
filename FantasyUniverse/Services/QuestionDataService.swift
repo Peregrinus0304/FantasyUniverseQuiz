@@ -28,7 +28,6 @@ enum QuestionDataService {
              Answer(answer: optionB, correct: optionB == correct),
              Answer(answer: optionC, correct: optionC == correct),
              Answer(answer: optionD, correct: optionD == correct)]
-//            let id = question.id
             let questionData = QuestionViewData(question: questionString, answers: answers)
             if questionViewData == nil {
                 questionViewData = [QuestionViewData]()

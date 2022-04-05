@@ -32,7 +32,6 @@ struct QuizView: View {
                     ScoreView(correctScore: correct, wrongScore: wrong) {
                         present.wrappedValue.dismiss()
                     }
-//                    .frame(width: UIScreen.main.bounds.width - 50)
                     .background(.thinMaterial)
                    
                 } else {
@@ -46,7 +45,6 @@ struct QuizView: View {
                         // Question view
                         QuestionView(questions: $data.questionsData, currentQuestion: data.questionsData[.zero], correct: $correct, wrong: $wrong, answered: $answered)
                             .padding()
-                        
                     }
                     .frame(maxWidth: UIScreen.main.bounds.width - 10)
                 }
