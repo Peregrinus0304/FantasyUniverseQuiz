@@ -17,11 +17,11 @@ class QuestionViewModel: ObservableObject {
         let database = Firestore.firestore()
         database.collection(set).getDocuments { (snap, err) in
             guard err == nil else {
-                print(err?.localizedDescription ?? "Error while receiving data grom firebase")
+                debugPrint(err?.localizedDescription ?? "Error while receiving data grom firebase")
                 return
             }
             guard let data = snap else {
-                print("No data received from firebase")
+                debugPrint("No data received from firebase")
                 return
             }
             
