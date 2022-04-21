@@ -45,13 +45,12 @@
 		452C550A27DD18C100A7FBEF /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = 452C550927DD18C100A7FBEF /* FirebaseMLModelDownloader */; };
 		452C550C27DD18C100A7FBEF /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 452C550B27DD18C100A7FBEF /* FirebaseMessaging */; };
 		452C550E27DD18C100A7FBEF /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 452C550D27DD18C100A7FBEF /* FirebasePerformance */; };
-		452C551027DD18C100A7FBEF /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 452C550F27DD18C100A7FBEF /* FirebaseRemoteConfig */; };
-		452C551227DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 452C551127DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta */; };
 		452C551427DD18C100A7FBEF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 452C551327DD18C100A7FBEF /* FirebaseStorage */; };
 		452C551627DD18C100A7FBEF /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 452C551527DD18C100A7FBEF /* FirebaseStorageCombine-Community */; };
 		452C551827DD18C100A7FBEF /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 452C551727DD18C100A7FBEF /* FirebaseStorageSwift-Beta */; };
 		453CAEEC27B32090002649AF /* QuestionSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453CAEEB27B32090002649AF /* QuestionSets.swift */; };
 		454D26D527BD6D110003D8F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D26D427BD6D110003D8F8 /* Constants.swift */; };
+		4584BCC528031623002C68C5 /* FirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584BCC428031623002C68C5 /* FirebaseRepository.swift */; };
 		4594E9DC276A7D510054E6BE /* FantasyUniverseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9DB276A7D510054E6BE /* FantasyUniverseApp.swift */; };
 		4594E9DE276A7D510054E6BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9DD276A7D510054E6BE /* ContentView.swift */; };
 		4594E9E3276A7D530054E6BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4594E9E2276A7D530054E6BE /* Preview Assets.xcassets */; };
@@ -64,7 +63,11 @@
 		4594EA0F276FCB630054E6BE /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594EA0E276FCB630054E6BE /* ColorPalette.swift */; };
 		45A2687327DE964A0082257D /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2687127DE964A0082257D /* Assets.swift */; };
 		45A2687427DE964A0082257D /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2687227DE964A0082257D /* Strings.swift */; };
-		45D2284427EBC9E0008506F8 /* QuestionDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284327EBC9E0008506F8 /* QuestionDataService.swift */; };
+		45AD766D280EC60600CCBB39 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD766C280EC60600CCBB39 /* Cache.swift */; };
+		45AD766F280EC69700CCBB39 /* QuestionCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD766E280EC69700CCBB39 /* QuestionCollection.swift */; };
+		45AD7671280EC73200CCBB39 /* QuestionDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD7670280EC73200CCBB39 /* QuestionDataService.swift */; };
+		45AD7673280EC77100CCBB39 /* QuestionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD7672280EC77100CCBB39 /* QuestionsRepository.swift */; };
+		45D2284427EBC9E0008506F8 /* QuestionDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284327EBC9E0008506F8 /* QuestionDataConverter.swift */; };
 		45D2284727EDEB63008506F8 /* QuestionViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284627EDEB63008506F8 /* QuestionViewData.swift */; };
 		45D2284927EDEB71008506F8 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284827EDEB71008506F8 /* Answer.swift */; };
 		45D2284B27F09330008506F8 /* QuestionDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284A27F09330008506F8 /* QuestionDataServiceTests.swift */; };
@@ -115,6 +118,7 @@
 		452C54DC27DD166000A7FBEF /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		453CAEEB27B32090002649AF /* QuestionSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSets.swift; sourceTree = "<group>"; };
 		454D26D427BD6D110003D8F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4584BCC428031623002C68C5 /* FirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRepository.swift; sourceTree = "<group>"; };
 		4594E9D8276A7D510054E6BE /* FantasyUniverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyUniverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4594E9DB276A7D510054E6BE /* FantasyUniverseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyUniverseApp.swift; sourceTree = "<group>"; };
 		4594E9DD276A7D510054E6BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -130,7 +134,11 @@
 		4594EA0E276FCB630054E6BE /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		45A2687127DE964A0082257D /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		45A2687227DE964A0082257D /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		45D2284327EBC9E0008506F8 /* QuestionDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataService.swift; sourceTree = "<group>"; };
+		45AD766C280EC60600CCBB39 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		45AD766E280EC69700CCBB39 /* QuestionCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollection.swift; sourceTree = "<group>"; };
+		45AD7670280EC73200CCBB39 /* QuestionDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataService.swift; sourceTree = "<group>"; };
+		45AD7672280EC77100CCBB39 /* QuestionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsRepository.swift; sourceTree = "<group>"; };
+		45D2284327EBC9E0008506F8 /* QuestionDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataConverter.swift; sourceTree = "<group>"; };
 		45D2284627EDEB63008506F8 /* QuestionViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewData.swift; sourceTree = "<group>"; };
 		45D2284827EDEB71008506F8 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		45D2284A27F09330008506F8 /* QuestionDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataServiceTests.swift; sourceTree = "<group>"; };
@@ -169,11 +177,9 @@
 				452C550E27DD18C100A7FBEF /* FirebasePerformance in Frameworks */,
 				452C550427DD18C100A7FBEF /* FirebaseInAppMessaging-Beta in Frameworks */,
 				452C54F427DD18C100A7FBEF /* FirebaseDatabaseSwift-Beta in Frameworks */,
-				452C551227DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta in Frameworks */,
 				452C54EA27DD18C100A7FBEF /* FirebaseAppDistribution-Beta in Frameworks */,
 				452C550827DD18C100A7FBEF /* FirebaseInstallations in Frameworks */,
 				452C551427DD18C100A7FBEF /* FirebaseStorage in Frameworks */,
-				452C551027DD18C100A7FBEF /* FirebaseRemoteConfig in Frameworks */,
 				452C551627DD18C100A7FBEF /* FirebaseStorageCombine-Community in Frameworks */,
 				452C54FE27DD18C100A7FBEF /* FirebaseFunctions in Frameworks */,
 				452C54EE27DD18C100A7FBEF /* FirebaseAuthCombine-Community in Frameworks */,
@@ -244,6 +250,7 @@
 				4594E9F0276A7D530054E6BE /* FantasyUniverseTests */,
 				4594E9FA276A7D530054E6BE /* FantasyUniverseUITests */,
 				4594E9D9276A7D510054E6BE /* Products */,
+				45AD766A280C7FB900CCBB39 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -260,6 +267,7 @@
 		4594E9DA276A7D510054E6BE /* FantasyUniverse */ = {
 			isa = PBXGroup;
 			children = (
+				45AD766B280EC5DA00CCBB39 /* Networking */,
 				45D2284527EDEB49008506F8 /* Services */,
 				452C54C127DD162F00A7FBEF /* Resources */,
 				45F0880B27A9322100503343 /* GoogleService-Info.plist */,
@@ -314,10 +322,28 @@
 			path = Design;
 			sourceTree = "<group>";
 		};
+		45AD766A280C7FB900CCBB39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45AD766B280EC5DA00CCBB39 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				45AD766C280EC60600CCBB39 /* Cache.swift */,
+				4584BCC428031623002C68C5 /* FirebaseRepository.swift */,
+				45AD7672280EC77100CCBB39 /* QuestionsRepository.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		45D2284527EDEB49008506F8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				45D2284327EBC9E0008506F8 /* QuestionDataService.swift */,
+				45D2284327EBC9E0008506F8 /* QuestionDataConverter.swift */,
+				45AD7670280EC73200CCBB39 /* QuestionDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -328,6 +354,7 @@
 				45F0880227A4100D00503343 /* Question.swift */,
 				45D2284627EDEB63008506F8 /* QuestionViewData.swift */,
 				45D2284827EDEB71008506F8 /* Answer.swift */,
+				45AD766E280EC69700CCBB39 /* QuestionCollection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -407,8 +434,6 @@
 				452C550927DD18C100A7FBEF /* FirebaseMLModelDownloader */,
 				452C550B27DD18C100A7FBEF /* FirebaseMessaging */,
 				452C550D27DD18C100A7FBEF /* FirebasePerformance */,
-				452C550F27DD18C100A7FBEF /* FirebaseRemoteConfig */,
-				452C551127DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta */,
 				452C551327DD18C100A7FBEF /* FirebaseStorage */,
 				452C551527DD18C100A7FBEF /* FirebaseStorageCombine-Community */,
 				452C551727DD18C100A7FBEF /* FirebaseStorageSwift-Beta */,
@@ -588,18 +613,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4584BCC528031623002C68C5 /* FirebaseRepository.swift in Sources */,
 				45F9FEB727773A5500AFE9F9 /* QuizView.swift in Sources */,
 				4594E9E5276A7D530054E6BE /* Persistence.swift in Sources */,
 				45A2687427DE964A0082257D /* Strings.swift in Sources */,
 				45D2284D27F4793B008506F8 /* GlobalMethods.swift in Sources */,
 				45A2687327DE964A0082257D /* Assets.swift in Sources */,
+				45AD766D280EC60600CCBB39 /* Cache.swift in Sources */,
 				45F0881027ADB5B200503343 /* OptionButton.swift in Sources */,
 				4594E9DE276A7D510054E6BE /* ContentView.swift in Sources */,
 				453CAEEC27B32090002649AF /* QuestionSets.swift in Sources */,
 				45F0880327A4100D00503343 /* Question.swift in Sources */,
 				45D2284727EDEB63008506F8 /* QuestionViewData.swift in Sources */,
+				45AD766F280EC69700CCBB39 /* QuestionCollection.swift in Sources */,
 				45D2284927EDEB71008506F8 /* Answer.swift in Sources */,
 				45F0881527ADC59100503343 /* AppButtonStyles.swift in Sources */,
+				45AD7671280EC73200CCBB39 /* QuestionDataService.swift in Sources */,
 				45F0880E27A9BE8600503343 /* QuestionView.swift in Sources */,
 				4594EA0C276FCA120054E6BE /* DashboardView.swift in Sources */,
 				4594E9DC276A7D510054E6BE /* FantasyUniverseApp.swift in Sources */,
@@ -608,9 +637,10 @@
 				4594E9E8276A7D530054E6BE /* FantasyUniverse.xcdatamodeld in Sources */,
 				451776DB27AFF468005490A1 /* ProgressHeaderView.swift in Sources */,
 				4594EA0F276FCB630054E6BE /* ColorPalette.swift in Sources */,
-				45D2284427EBC9E0008506F8 /* QuestionDataService.swift in Sources */,
+				45D2284427EBC9E0008506F8 /* QuestionDataConverter.swift in Sources */,
 				45F0880827A6F54E00503343 /* QuestionViewModel.swift in Sources */,
 				451776D927AFF01C005490A1 /* ScoreView.swift in Sources */,
+				45AD7673280EC77100CCBB39 /* QuestionsRepository.swift in Sources */,
 				454D26D527BD6D110003D8F8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1108,16 +1138,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 452C54E027DD18C100A7FBEF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
-		};
-		452C550F27DD18C100A7FBEF /* FirebaseRemoteConfig */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 452C54E027DD18C100A7FBEF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfig;
-		};
-		452C551127DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 452C54E027DD18C100A7FBEF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseRemoteConfigSwift-Beta";
 		};
 		452C551327DD18C100A7FBEF /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;

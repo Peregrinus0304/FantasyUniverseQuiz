@@ -1,41 +1,40 @@
 //
-//  QuestionViewData.swift
+//  QuestionDataService.swift
 //  FantasyUniverse
 //
-//  Created by TarasPeregrinus on 23.03.2022.
+//  Created by TarasPeregrinus on 19.04.2022.
 //
 
 import Foundation
-import FirebaseFirestoreSwift
 
-enum QuestionDataService {
-    
-    static func formatQuestions(_ questions: [Question]) -> [QuestionViewData]? {
-        var questionViewData: [QuestionViewData]?
-        for question in questions {
-            // swiftlint:disable line_length
-            guard let questionString = question.question, let optionA = question.optionA, let optionB = question.optionB, let optionC = question.optionC, let optionD = question.optionD, let correct = question.correct
-            else {
-                if let missingValuesMessages = missingValuesMessages(of: question) {
-                    debugPrint(missingValuesMessages)
-                }
-                questionViewData = nil
-                break
-            }
-            
-            let answers: [Answer] =
-            [Answer(answer: optionA, correct: optionA == correct),
-             Answer(answer: optionB, correct: optionB == correct),
-             Answer(answer: optionC, correct: optionC == correct),
-             Answer(answer: optionD, correct: optionD == correct)]
-            let questionData = QuestionViewData(question: questionString, answers: answers)
-            if questionViewData == nil {
-                questionViewData = [QuestionViewData]()
-            }
-          
-            questionViewData?.append(questionData)
-        }
-        return questionViewData
+class QuestionDataService {
+    var cachedQuestions: CachedQuestions
+    let firebaseRepository: FirebaseRepository
+    init() {
+        self.cachedQuestions = CachedQuestions()
+        self.firebaseRepository = FirebaseRepository()
     }
     
+    func refreshQuestions() -> [QuestionCollection] {
+        cachedQuestions.cleanCahce()
+        cachedQuestions.cacheObjects(firebaseRepository.getAllQuestions())
+        return cachedQuestions.getObjects()
+    }
+    
+    func getAllQuestions() -> [QuestionCollection] {
+        
+        if cachedQuestions.cacheIsEmpty() {
+            cachedQuestions.cacheObjects(firebaseRepository.getAllQuestions())
+        }
+        return cachedQuestions.getObjects()
+    }
+    
+    func getQuestionsCollection(_ collection: QuestionSet) -> QuestionCollection {
+       
+        if !cachedQuestions.cacheContainObject(object: collection) {
+            cachedQuestions.addToCache([firebaseRepository.getQuestionsCollection(collection)])
+        }
+        return cachedQuestions.getCollectionFromCache(collection)
+    }
+
 }
