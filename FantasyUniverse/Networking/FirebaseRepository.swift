@@ -9,11 +9,28 @@ import Foundation
 import Firebase
 
 class FirebaseRepository: QuestionsRepository {
+    
+    func getAllQuestions(_ completion: @escaping (_ data: [QuestionCollection]) -> Void) {
+        var allCollections: [QuestionCollection] = []
         
-    func getQuestionsCollection(_ collection: QuestionSet) -> QuestionCollection {
+        let group = DispatchGroup()
         
+        for collection in QuestionSet.allSets {
+            group.enter()
+            self.getQuestionsCollection(collection) { data in
+                allCollections.append(data)
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            
+            completion(allCollections)
+        }
+    }
+    
+    func getQuestionsCollection(_ collection: QuestionSet, _ completion: @escaping (_ data: QuestionCollection) -> Void) {
         let collectionIdentifier = collection.collectionIdentifier
-        var collection = QuestionCollection(identifier: collectionIdentifier, questions: [])
         let database = Firestore.firestore()
         
         database.collection(collectionIdentifier).getDocuments { (snap, err) in
@@ -25,9 +42,7 @@ class FirebaseRepository: QuestionsRepository {
                 debugPrint("No data received from firebase")
                 return
             }
-            DispatchQueue.main.async {
-                
-            }
+            
             let objects = data.documents.compactMap({ (doc) -> Question? in
                 return try? doc.data(as: Question.self)
             })
@@ -36,50 +51,7 @@ class FirebaseRepository: QuestionsRepository {
                 fatalError("There is an error converting [Questions] objects to [QuestionViewData] objects")
             }
             
-            collection.questions = questions
-            
-        }
-        
-        return collection
-    }
-        
-    func getAllQuestions() -> [QuestionCollection] {
-        
-        var collections: [QuestionCollection] = []
-        
-        for collection in QuestionSet.allSets {
-            
-            let newCollection = getQuestionsCollection(collection)
-            collections.append(newCollection)
-        }
-        
-        return collections
-    }
-    
-    func getData(ofId id: String, _ completion: @escaping (_ data: QuestionCollection) -> Void) {
-       
-        
-        let database = Firestore.firestore()
-        
-        database.collection(id).getDocuments { (snap, err) in
-            guard err == nil else {
-                debugPrint(err?.localizedDescription ?? "Error while receiving data grom firebase")
-                return
-            }
-            guard let data = snap else {
-                debugPrint("No data received from firebase")
-                return
-            }
-
-            let objects = data.documents.compactMap({ (doc) -> Question? in
-                return try? doc.data(as: Question.self)
-            })
-            
-            guard let questions = QuestionDataConverter.formatQuestions(self.randomize(objects: objects)) else {
-                fatalError("There is an error converting [Questions] objects to [QuestionViewData] objects")
-            }
-            
-            var collection = QuestionCollection(identifier: id, questions: questions)
+            let collection = QuestionCollection(identifier: collectionIdentifier, questions: questions)
             completion(collection)
         }
     }

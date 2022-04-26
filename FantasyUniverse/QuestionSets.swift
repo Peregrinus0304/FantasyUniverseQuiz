@@ -8,7 +8,7 @@
 import Foundation
 
 enum QuestionSet {
-    case test, harryPotter, lotr, starWars, stephenKing
+    case none, test, harryPotter, lotr, starWars, stephenKing
     
     static let allSets: [QuestionSet] = [test, harryPotter, lotr, starWars, stephenKing]
     
@@ -19,6 +19,7 @@ enum QuestionSet {
         case .lotr: return "LOTR"
         case .starWars: return "Star Wars"
         case .stephenKing: return "Stephen King"
+        case .none: return ""
         }
     }
     var logoAnimationName: String {
@@ -28,6 +29,7 @@ enum QuestionSet {
         case .lotr: return "lotr-logo"
         case .starWars: return "star-wars-logo"
         case .stephenKing: return "stephen-king-logo"
+        case .none: return ""
         }
     }
 }

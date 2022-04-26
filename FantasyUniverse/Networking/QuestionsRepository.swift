@@ -8,6 +8,6 @@
 import Foundation
 
 protocol QuestionsRepository {
-    func getAllQuestions() -> [QuestionCollection]
-    func getQuestionsCollection(_ collection: QuestionSet) -> QuestionCollection
+    func getAllQuestions(_ completion: @escaping (_ data: [QuestionCollection]) -> Void)
+    func getQuestionsCollection(_ collection: QuestionSet, _ completion: @escaping (_ data: QuestionCollection) -> Void)
 }

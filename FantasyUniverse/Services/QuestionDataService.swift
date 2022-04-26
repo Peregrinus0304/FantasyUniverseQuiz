@@ -8,33 +8,45 @@
 import Foundation
 
 class QuestionDataService {
-    var cachedQuestions: CachedQuestions
-    let firebaseRepository: FirebaseRepository
-    init() {
+    
+    static let shared = QuestionDataService()
+    private var cachedQuestions: CachedQuestions
+    private let firebaseRepository: FirebaseRepository
+    
+    private init() {
         self.cachedQuestions = CachedQuestions()
         self.firebaseRepository = FirebaseRepository()
     }
     
-    func refreshQuestions() -> [QuestionCollection] {
-        cachedQuestions.cleanCahce()
-        cachedQuestions.cacheObjects(firebaseRepository.getAllQuestions())
-        return cachedQuestions.getObjects()
+    func refreshQuestions() {
+        self.firebaseRepository.getAllQuestions { data in
+            self.cachedQuestions.cacheObjects(data)
+        }
     }
     
-    func getAllQuestions() -> [QuestionCollection] {
+    func getAllQuestions(_ completion: @escaping (_ data: [QuestionCollection]) -> Void) {
         
-        if cachedQuestions.cacheIsEmpty() {
-            cachedQuestions.cacheObjects(firebaseRepository.getAllQuestions())
+        if !cachedQuestions.cacheIsEmpty() {
+            completion(cachedQuestions.getObjects())
+        } else {
+            firebaseRepository.getAllQuestions { data in
+                self.cachedQuestions.cacheObjects(data)
+                completion(self.cachedQuestions.getObjects())
+                
+            }
+            
         }
-        return cachedQuestions.getObjects()
     }
     
-    func getQuestionsCollection(_ collection: QuestionSet) -> QuestionCollection {
-       
-        if !cachedQuestions.cacheContainObject(object: collection) {
-            cachedQuestions.addToCache([firebaseRepository.getQuestionsCollection(collection)])
+    func getQuestionsCollection(_ collection: QuestionSet, _ completion: @escaping (_ data: QuestionCollection) -> Void) {
+        if cachedQuestions.cacheContainObject(object: collection) {
+            completion(cachedQuestions.getCollectionFromCache(collection))
+        } else {
+            firebaseRepository.getQuestionsCollection(collection) { data in
+                self.cachedQuestions.addToCache([data])
+                completion(self.cachedQuestions.getCollectionFromCache(collection))
+            }
         }
-        return cachedQuestions.getCollectionFromCache(collection)
     }
-
+    
 }

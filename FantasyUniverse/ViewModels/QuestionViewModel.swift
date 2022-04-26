@@ -12,18 +12,17 @@ class QuestionViewModel: ObservableObject {
 
     @Published var questionsData: [QuestionViewData] = []
     
-    let firebaseRepo = FirebaseRepository()
-    
-    func getQuestions(set: String) {
+    func getQuestions(set: QuestionSet) {
+        guard set != .none else {
+            debugPrint("No question set selected")
+            return
+        }
         
         DispatchQueue.main.async {
-            self.firebaseRepo.getData(ofId: "Harry Potter") { data in
+            QuestionDataService.shared.getQuestionsCollection(set) { data in
                 self.questionsData = data.questions
             }
-           
         }
-
-
     }
     
 }
