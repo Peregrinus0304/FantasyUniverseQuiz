@@ -29,7 +29,6 @@ class FirebaseAuthService {
                 completion(false)
             } else {
                 print(authResult?.user ?? "Firebase Sign up failed")
-                
                 completion(true)
             }
         }
@@ -39,11 +38,9 @@ class FirebaseAuthService {
         
         if userLoggedIn() {
             let ref = Database.database().reference()
-            
             let userData = ["firstName": name,
                             "lastName": surname]
             ref.child("users").child(Auth.auth().currentUser!.uid).setValue(userData)
-            
         } else {
             debugPrint("Error: Trying to store user info for signed out user")
         }
@@ -66,7 +63,6 @@ class FirebaseAuthService {
                         debugPrint("Error: \(error.localizedDescription)")
                 }
                 completionBlock(false)
-                
             } else {
                 print(result?.user.email)
                 completionBlock(true)
@@ -93,15 +89,12 @@ class FirebaseAuthService {
                 switch AuthErrorCode(rawValue: error.code) {
                     case .userNotFound:
                         debugPrint("Error: The given sign-in provider is disabled for this Firebase project. Enable it in the Firebase console, under the sign-in method tab of the Auth section.")
-                        
                     case .invalidEmail:
                         debugPrint("Error: The email address is badly formatted.")
                     case .invalidRecipientEmail:
                         debugPrint("Error: Indicates an invalid recipient email was sent in the request.")
-                        
                     case .invalidSender:
                         debugPrint("Error: Indicates an invalid sender email is set in the console for this action.")
-                        
                     case .invalidMessagePayload:
                         debugPrint("Error: Indicates an invalid email template for sending update email.")
                     default:

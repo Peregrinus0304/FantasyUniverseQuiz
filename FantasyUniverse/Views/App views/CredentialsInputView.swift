@@ -36,9 +36,3 @@ struct CredentialsInputView: View {
         .padding()
     }
 }
-
-struct CredentialsInputView_Previews: PreviewProvider {
-    static var previews: some View {
-        CredentialsInputView(labelText: "cdcdc", textFieldPlaceholder: "dcdcdd", isSecure: true, textFieldContent: .constant(""))
-    }
-}

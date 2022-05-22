@@ -20,17 +20,11 @@ struct SignUpView: View {
         NavigationView {
             VStack {
                 Spacer()
-                
                 CredentialsInputView(labelText: "Name", textFieldPlaceholder: "Type your name", isSecure: false, textFieldContent: $firstNameFieldValue)
-               
                 CredentialsInputView(labelText: "Surname", textFieldPlaceholder: "Type your surname", isSecure: false, textFieldContent: $lastNameFieldValue)
-                
                 CredentialsInputView(labelText: "Email", textFieldPlaceholder: "Type your email", isSecure: false, textFieldContent: $loginFieldValue)
-                
                 CredentialsInputView(labelText: "Password", textFieldPlaceholder: "Type your password", isSecure: true, textFieldContent: $passwordFieldValue)
-                
                 Spacer()
-                
                 NavigationLink(destination: DashboardView(), label: {
                     Text("Sign up")
                         .bold()
@@ -39,7 +33,6 @@ struct SignUpView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }).disabled(!checkCredentials())
-                
             }
             .navigationBarTitle("Sign up")
             .padding(.all, 50)

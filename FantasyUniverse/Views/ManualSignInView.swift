@@ -21,11 +21,8 @@ struct ManualSignInView: View {
         NavigationView {
             VStack {
                 Spacer()
-                
                 CredentialsInputView(labelText: "Login", textFieldPlaceholder: "Type your login", isSecure: false, textFieldContent: $loginFieldValue)
-              
                 CredentialsInputView(labelText: "Password", textFieldPlaceholder: "Type your password", isSecure: true, textFieldContent: $passwordFieldValue)
-                
                 Spacer()
                 Button {
                     if checkCredentials().0 {
@@ -33,7 +30,6 @@ struct ManualSignInView: View {
                     } else {
                         errorMessage = checkCredentials().1!
                     }
-  
                 } label: {
                     Text("Sign in")
                         .bold()
@@ -53,15 +49,12 @@ struct ManualSignInView: View {
             }
             .navigationBarTitle("Sign in")
             .padding(.all, 50)
-            
         }
-        
     }
     
     private func checkCredentials() -> (Bool, String?) {
         let credentials = ManualSignInCredentials(email: loginFieldValue, password: passwordFieldValue)
         let validationResult = viewModel.credentialsAreValid(credentials)
-       
         return validationResult
     }
     
@@ -77,6 +70,5 @@ struct ManualSignInView: View {
                 errorMessage = "Error while authenticating"
             }
         }
-        
     }
 }

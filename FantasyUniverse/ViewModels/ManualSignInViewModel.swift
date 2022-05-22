@@ -18,7 +18,6 @@ class ManualSignInViewModel: ObservableObject {
         var validationError: String? {
             if !passwordFieldValid && !emailFieldValid {
                 return "Email and password do not fulfil requirements"
-                
             } else if !passwordFieldValid {
                 return "Password does not fulfil requirements"
             } else if !emailFieldValid {
@@ -31,7 +30,6 @@ class ManualSignInViewModel: ObservableObject {
     }
     
     func signIn(with credentials: ManualSignInCredentials, completionBlock: @escaping (_ success: Bool) -> Void) {
-        
         DispatchQueue.main.async {
             self.firebaseAuthService.signIn(email: credentials.email, pass: credentials.password) { success in
                 completionBlock(success)

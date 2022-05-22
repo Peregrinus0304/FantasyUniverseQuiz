@@ -14,6 +14,5 @@ class SignUpViewModel: ObservableObject {
     func credentialsAreValid(_ credentials: ManualSignInCredentials) -> Bool {
         return validator.isEmailValid(credentials.email) && validator.isPasswordValid(credentials.password)
     }
-    
 }
 
