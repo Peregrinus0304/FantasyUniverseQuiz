@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DashboardView: View {
     
+    @AppStorage("email") var username: String = "Anonymous"
     @State var show = false
     @State var correct = 0
     @State var wrong = 0
@@ -17,9 +18,9 @@ struct DashboardView: View {
     let sets = QuestionSet.allSets
     
     private func cleanUp() {
-       correct = 0
-       wrong = 0
-       answered = 0
+        correct = 0
+        wrong = 0
+        answered = 0
     }
     
     var body: some View {
@@ -29,8 +30,11 @@ struct DashboardView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Text("The grid of quizes").font(.system(size: 28)).fontWeight(.heavy)
-                Text("What is your today`s quizz ?").font(.system(size: 28))
+                Text("Welcome, \(username)!")
+                    .font(.system(size: 28))
+                    .fontWeight(.heavy)
+                Text("What is your today`s quizz ?")
+                    .font(.system(size: 28))
                 Spacer()
                 ScrollView {
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 2), spacing: 20, content: {
@@ -39,7 +43,7 @@ struct DashboardView: View {
                             VStack(spacing: 20) {
                                 LottieView(animationName: sets[index].logoAnimationName, loopMode: .loop, contentMode: .scaleAspectFit)
                                     .frame(width: 150, height: 150)
-                                   
+                                
                                 Text(sets[index].collectionIdentifier)
                                     .font(.title2)
                                     .fontWeight(.heavy)
@@ -56,21 +60,16 @@ struct DashboardView: View {
                     })
                         .frame(maxWidth: UIScreen.main.bounds.width - 30)
                         .padding()
-                   
-                  }
+                    
+                }
                 Spacer()
-           }
+            }
         }
+        .navigationBarHidden(true)
         .fullScreenCover(isPresented: $show) {
             cleanUp()
         } content: {
             QuizView(correct: $correct, wrong: $wrong, answered: $answered, set: $selectedSet)
         }
-   }
+    }
 }
-                              
-// struct DashboardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DashboardView()
-//      }
-//   }

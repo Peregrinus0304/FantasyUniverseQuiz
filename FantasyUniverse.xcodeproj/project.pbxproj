@@ -46,12 +46,18 @@
 		452C550C27DD18C100A7FBEF /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 452C550B27DD18C100A7FBEF /* FirebaseMessaging */; };
 		452C550E27DD18C100A7FBEF /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 452C550D27DD18C100A7FBEF /* FirebasePerformance */; };
 		452C551027DD18C100A7FBEF /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 452C550F27DD18C100A7FBEF /* FirebaseRemoteConfig */; };
-		452C551227DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 452C551127DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta */; };
 		452C551427DD18C100A7FBEF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 452C551327DD18C100A7FBEF /* FirebaseStorage */; };
 		452C551627DD18C100A7FBEF /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 452C551527DD18C100A7FBEF /* FirebaseStorageCombine-Community */; };
 		452C551827DD18C100A7FBEF /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 452C551727DD18C100A7FBEF /* FirebaseStorageSwift-Beta */; };
 		453CAEEC27B32090002649AF /* QuestionSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453CAEEB27B32090002649AF /* QuestionSets.swift */; };
 		454D26D527BD6D110003D8F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D26D427BD6D110003D8F8 /* Constants.swift */; };
+		455A16792818891600543364 /* AppTextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A16782818891600543364 /* AppTextFieldStyles.swift */; };
+		455A167B281DCC6B00543364 /* AuthenticationValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A167A281DCC6B00543364 /* AuthenticationValidator.swift */; };
+		455A167D2821B5F100543364 /* ManualSignInCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A167C2821B5F100543364 /* ManualSignInCredentials.swift */; };
+		455A167F283022AE00543364 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A167E283022AE00543364 /* SignUpView.swift */; };
+		455A1681283022F500543364 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A1680283022F500543364 /* SignUpViewModel.swift */; };
+		455A1683283023D300543364 /* CredentialsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A1682283023D300543364 /* CredentialsInputView.swift */; };
+		455A168828340D9B00543364 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A168728340D9B00543364 /* FirebaseAuthService.swift */; };
 		4594E9DC276A7D510054E6BE /* FantasyUniverseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9DB276A7D510054E6BE /* FantasyUniverseApp.swift */; };
 		4594E9DE276A7D510054E6BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9DD276A7D510054E6BE /* ContentView.swift */; };
 		4594E9E3276A7D530054E6BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4594E9E2276A7D530054E6BE /* Preview Assets.xcassets */; };
@@ -64,6 +70,8 @@
 		4594EA0F276FCB630054E6BE /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594EA0E276FCB630054E6BE /* ColorPalette.swift */; };
 		45A2687327DE964A0082257D /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2687127DE964A0082257D /* Assets.swift */; };
 		45A2687427DE964A0082257D /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2687227DE964A0082257D /* Strings.swift */; };
+		45AD76752818826F00CCBB39 /* ManualSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD76742818826E00CCBB39 /* ManualSignInView.swift */; };
+		45AD76772818829900CCBB39 /* ManualSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD76762818829900CCBB39 /* ManualSignInViewModel.swift */; };
 		45D2284427EBC9E0008506F8 /* QuestionDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284327EBC9E0008506F8 /* QuestionDataService.swift */; };
 		45D2284727EDEB63008506F8 /* QuestionViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284627EDEB63008506F8 /* QuestionViewData.swift */; };
 		45D2284927EDEB71008506F8 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284827EDEB71008506F8 /* Answer.swift */; };
@@ -115,6 +123,13 @@
 		452C54DC27DD166000A7FBEF /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		453CAEEB27B32090002649AF /* QuestionSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSets.swift; sourceTree = "<group>"; };
 		454D26D427BD6D110003D8F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		455A16782818891600543364 /* AppTextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldStyles.swift; sourceTree = "<group>"; };
+		455A167A281DCC6B00543364 /* AuthenticationValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationValidator.swift; sourceTree = "<group>"; };
+		455A167C2821B5F100543364 /* ManualSignInCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualSignInCredentials.swift; sourceTree = "<group>"; };
+		455A167E283022AE00543364 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		455A1680283022F500543364 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		455A1682283023D300543364 /* CredentialsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsInputView.swift; sourceTree = "<group>"; };
+		455A168728340D9B00543364 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		4594E9D8276A7D510054E6BE /* FantasyUniverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyUniverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4594E9DB276A7D510054E6BE /* FantasyUniverseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyUniverseApp.swift; sourceTree = "<group>"; };
 		4594E9DD276A7D510054E6BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -130,6 +145,8 @@
 		4594EA0E276FCB630054E6BE /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		45A2687127DE964A0082257D /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		45A2687227DE964A0082257D /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		45AD76742818826E00CCBB39 /* ManualSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualSignInView.swift; sourceTree = "<group>"; };
+		45AD76762818829900CCBB39 /* ManualSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualSignInViewModel.swift; sourceTree = "<group>"; };
 		45D2284327EBC9E0008506F8 /* QuestionDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataService.swift; sourceTree = "<group>"; };
 		45D2284627EDEB63008506F8 /* QuestionViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewData.swift; sourceTree = "<group>"; };
 		45D2284827EDEB71008506F8 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
@@ -169,7 +186,6 @@
 				452C550E27DD18C100A7FBEF /* FirebasePerformance in Frameworks */,
 				452C550427DD18C100A7FBEF /* FirebaseInAppMessaging-Beta in Frameworks */,
 				452C54F427DD18C100A7FBEF /* FirebaseDatabaseSwift-Beta in Frameworks */,
-				452C551227DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta in Frameworks */,
 				452C54EA27DD18C100A7FBEF /* FirebaseAppDistribution-Beta in Frameworks */,
 				452C550827DD18C100A7FBEF /* FirebaseInstallations in Frameworks */,
 				452C551427DD18C100A7FBEF /* FirebaseStorage in Frameworks */,
@@ -234,6 +250,14 @@
 				452C54CF27DD162F00A7FBEF /* sad-face.json */,
 			);
 			path = "Lottie Animations";
+			sourceTree = "<group>";
+		};
+		455A168628340D6B00543364 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				455A168728340D9B00543364 /* FirebaseAuthService.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		4594E9CF276A7D510054E6BE = {
@@ -317,7 +341,9 @@
 		45D2284527EDEB49008506F8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				455A168628340D6B00543364 /* Authentication */,
 				45D2284327EBC9E0008506F8 /* QuestionDataService.swift */,
+				455A167A281DCC6B00543364 /* AuthenticationValidator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -328,6 +354,7 @@
 				45F0880227A4100D00503343 /* Question.swift */,
 				45D2284627EDEB63008506F8 /* QuestionViewData.swift */,
 				45D2284827EDEB71008506F8 /* Answer.swift */,
+				455A167C2821B5F100543364 /* ManualSignInCredentials.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,6 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				45F0880727A6F54E00503343 /* QuestionViewModel.swift */,
+				455A1680283022F500543364 /* SignUpViewModel.swift */,
+				45AD76762818829900CCBB39 /* ManualSignInViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -346,7 +375,9 @@
 				45F9FEB42776661300AFE9F9 /* LottieView.swift */,
 				45F0880F27ADB5B200503343 /* OptionButton.swift */,
 				45F0881227ADC05D00503343 /* QuestionLabelView.swift */,
+				455A1682283023D300543364 /* CredentialsInputView.swift */,
 				45F0881427ADC59100503343 /* AppButtonStyles.swift */,
+				455A16782818891600543364 /* AppTextFieldStyles.swift */,
 				451776DA27AFF468005490A1 /* ProgressHeaderView.swift */,
 			);
 			path = "App views";
@@ -356,6 +387,8 @@
 			isa = PBXGroup;
 			children = (
 				4594EA0B276FCA120054E6BE /* DashboardView.swift */,
+				45AD76742818826E00CCBB39 /* ManualSignInView.swift */,
+				455A167E283022AE00543364 /* SignUpView.swift */,
 				45F9FEB627773A5500AFE9F9 /* QuizView.swift */,
 				45F0880D27A9BE8600503343 /* QuestionView.swift */,
 				451776D827AFF01C005490A1 /* ScoreView.swift */,
@@ -371,8 +404,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4594EA01276A7D530054E6BE /* Build configuration list for PBXNativeTarget "FantasyUniverse" */;
 			buildPhases = (
-				4594EA10276FCDF30054E6BE /* SwiftLint Script */,
 				452C54BC27DCFD3500A7FBEF /* SwiftGen Script */,
+				4594EA10276FCDF30054E6BE /* SwiftLint Script */,
 				4594E9D4276A7D510054E6BE /* Sources */,
 				4594E9D5276A7D510054E6BE /* Frameworks */,
 				4594E9D6276A7D510054E6BE /* Resources */,
@@ -408,7 +441,6 @@
 				452C550B27DD18C100A7FBEF /* FirebaseMessaging */,
 				452C550D27DD18C100A7FBEF /* FirebasePerformance */,
 				452C550F27DD18C100A7FBEF /* FirebaseRemoteConfig */,
-				452C551127DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta */,
 				452C551327DD18C100A7FBEF /* FirebaseStorage */,
 				452C551527DD18C100A7FBEF /* FirebaseStorageCombine-Community */,
 				452C551727DD18C100A7FBEF /* FirebaseStorageSwift-Beta */,
@@ -561,7 +593,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ -f \"${PROJECT_DIR}/SwiftGen/bin/swiftgen\" ]]; then\n\necho $SRCROOT\n\n  rm \"$SRCROOT/FantasyUniverse/Generated/Strings.swift\"\n\n  rm \"$SRCROOT/FantasyUniverse/Generated/Assets.swift\"\n\n  \"${PROJECT_DIR}/SwiftGen/bin/swiftgen\" config run\n\nelse\n\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\n\nfi\n";
+			shellScript = "if [ $ACTION != \"indexbuild\" ]; then\nif [[ -f \"${PROJECT_DIR}/SwiftGen/bin/swiftgen\" ]]; then\n\necho $SRCROOT\n\n  rm \"$SRCROOT/FantasyUniverse/Generated/Strings.swift\"\n\n  rm \"$SRCROOT/FantasyUniverse/Generated/Assets.swift\"\n\n  \"${PROJECT_DIR}/SwiftGen/bin/swiftgen\" config run\n\nelse\n\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\n\nfi\nfi\n\n";
 		};
 		4594EA10276FCDF30054E6BE /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -594,22 +626,31 @@
 				45D2284D27F4793B008506F8 /* GlobalMethods.swift in Sources */,
 				45A2687327DE964A0082257D /* Assets.swift in Sources */,
 				45F0881027ADB5B200503343 /* OptionButton.swift in Sources */,
+				455A16792818891600543364 /* AppTextFieldStyles.swift in Sources */,
 				4594E9DE276A7D510054E6BE /* ContentView.swift in Sources */,
+				455A1681283022F500543364 /* SignUpViewModel.swift in Sources */,
 				453CAEEC27B32090002649AF /* QuestionSets.swift in Sources */,
 				45F0880327A4100D00503343 /* Question.swift in Sources */,
 				45D2284727EDEB63008506F8 /* QuestionViewData.swift in Sources */,
 				45D2284927EDEB71008506F8 /* Answer.swift in Sources */,
 				45F0881527ADC59100503343 /* AppButtonStyles.swift in Sources */,
+				455A1683283023D300543364 /* CredentialsInputView.swift in Sources */,
 				45F0880E27A9BE8600503343 /* QuestionView.swift in Sources */,
 				4594EA0C276FCA120054E6BE /* DashboardView.swift in Sources */,
+				45AD76772818829900CCBB39 /* ManualSignInViewModel.swift in Sources */,
+				455A167F283022AE00543364 /* SignUpView.swift in Sources */,
 				4594E9DC276A7D510054E6BE /* FantasyUniverseApp.swift in Sources */,
 				45F0881327ADC05D00503343 /* QuestionLabelView.swift in Sources */,
+				455A167D2821B5F100543364 /* ManualSignInCredentials.swift in Sources */,
 				45F9FEB52776661300AFE9F9 /* LottieView.swift in Sources */,
 				4594E9E8276A7D530054E6BE /* FantasyUniverse.xcdatamodeld in Sources */,
 				451776DB27AFF468005490A1 /* ProgressHeaderView.swift in Sources */,
 				4594EA0F276FCB630054E6BE /* ColorPalette.swift in Sources */,
+				455A167B281DCC6B00543364 /* AuthenticationValidator.swift in Sources */,
+				455A168828340D9B00543364 /* FirebaseAuthService.swift in Sources */,
 				45D2284427EBC9E0008506F8 /* QuestionDataService.swift in Sources */,
 				45F0880827A6F54E00503343 /* QuestionViewModel.swift in Sources */,
+				45AD76752818826F00CCBB39 /* ManualSignInView.swift in Sources */,
 				451776D927AFF01C005490A1 /* ScoreView.swift in Sources */,
 				454D26D527BD6D110003D8F8 /* Constants.swift in Sources */,
 			);
@@ -1113,11 +1154,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 452C54E027DD18C100A7FBEF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
-		};
-		452C551127DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 452C54E027DD18C100A7FBEF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseRemoteConfigSwift-Beta";
 		};
 		452C551327DD18C100A7FBEF /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
