@@ -24,7 +24,6 @@ class FirebaseRepository: QuestionsRepository {
         }
         
         group.notify(queue: .main) {
-            
             completion(allCollections)
         }
     }

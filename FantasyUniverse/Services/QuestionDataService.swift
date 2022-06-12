@@ -20,18 +20,18 @@ class QuestionDataService {
     
     func refreshQuestions() {
         self.firebaseRepository.getAllQuestions { data in
-            self.cachedQuestions.cacheObjects(data)
+            self.cachedQuestions.cacheElements(data)
         }
     }
     
     func getAllQuestions(_ completion: @escaping (_ data: [QuestionCollection]) -> Void) {
         
         if !cachedQuestions.cacheIsEmpty() {
-            completion(cachedQuestions.getObjects())
+            completion(cachedQuestions.getElements())
         } else {
             firebaseRepository.getAllQuestions { data in
-                self.cachedQuestions.cacheObjects(data)
-                completion(self.cachedQuestions.getObjects())
+                self.cachedQuestions.cacheElements(data)
+                completion(self.cachedQuestions.getElements())
                 
             }
             
@@ -39,7 +39,7 @@ class QuestionDataService {
     }
     
     func getQuestionsCollection(_ collection: QuestionSet, _ completion: @escaping (_ data: QuestionCollection) -> Void) {
-        if cachedQuestions.cacheContainObject(object: collection) {
+        if cachedQuestions.cacheContainElement(searched: collection) {
             completion(cachedQuestions.getCollectionFromCache(collection))
         } else {
             firebaseRepository.getQuestionsCollection(collection) { data in
