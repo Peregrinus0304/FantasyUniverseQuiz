@@ -10,16 +10,28 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    @StateObject var authService = FirebaseAuthService()
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
     var body: some View {
-        ManualSignInView()
+        
+        switch authService.state {
+        case .failed(with: let error):
+            Text(error.localizedDescription)
+        case .success(with: let user):
+            AppTabView(user: user)
+        case .proccessing:
+            Text("Loading...")
+                    .background(.red)
+        case .unauthenticated:
+            InitialView()
+        }
     }
-
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
@@ -35,11 +47,11 @@ struct ContentView: View {
             }
         }
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {

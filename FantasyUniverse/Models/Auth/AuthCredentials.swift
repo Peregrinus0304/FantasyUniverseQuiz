@@ -11,3 +11,10 @@ struct ManualSignInCredentials: Codable {
     var email: String
     var password: String
 }
+
+struct SignUpCredentials: Codable {
+    var email: String
+    var password: String
+    var firstname: String
+    var lastname: String
+}

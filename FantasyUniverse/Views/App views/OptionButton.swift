@@ -11,7 +11,7 @@ struct OptionButton: View {
 
     let action: () -> Void
     let text: String
-    var color: Color
+    let color: Color
     
     init(color: Color, text: String, action: @escaping () -> Void) {
         self.color = color

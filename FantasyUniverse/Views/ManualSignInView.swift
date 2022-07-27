@@ -9,66 +9,72 @@ import SwiftUI
 
 struct ManualSignInView: View {
     
-    @ObservedObject var viewModel = ManualSignInViewModel()
-    @AppStorage("email") var username: String = ""
-    @State private var loginFieldValue = ""
-    @State private var passwordFieldValue = ""
-    @State private var errorMessage = ""
-    @State private var isAuthenticated = false
+    @StateObject var viewModel = ManualSignInViewModel()
     
     var body: some View {
-        
-        NavigationView {
+        ZStack {
+            Color.gray
             VStack {
                 Spacer()
-                CredentialsInputView(labelText: "Login", textFieldPlaceholder: "Type your login", isSecure: false, textFieldContent: $loginFieldValue)
-                CredentialsInputView(labelText: "Password", textFieldPlaceholder: "Type your password", isSecure: true, textFieldContent: $passwordFieldValue)
+                loginField
+                passwordField
                 Spacer()
-                Button {
-                    if checkCredentials().0 {
-                        signIn()
-                    } else {
-                        errorMessage = checkCredentials().1!
-                    }
-                } label: {
-                    Text("Sign in")
-                        .bold()
-                        .frame(width: 200, height: 50)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-
-                NavigationLink(destination: DashboardView(), isActive: $isAuthenticated) {
-                    EmptyView()
-                }
-                
-                Text(errorMessage)
-                    .foregroundColor(.red)
-                    .fontWeight(.bold)
+                submitButton
+                navigation
+                errorMessage
             }
             .navigationBarTitle("Sign in")
             .padding(.all, 50)
-        }
-    }
-    
-    private func checkCredentials() -> (Bool, String?) {
-        let credentials = ManualSignInCredentials(email: loginFieldValue, password: passwordFieldValue)
-        let validationResult = viewModel.credentialsAreValid(credentials)
-        return validationResult
-    }
-    
-    private func signIn() {
-        let credentials = ManualSignInCredentials(email: loginFieldValue, password: passwordFieldValue)
-
-        viewModel.signIn(with: credentials) { success in
-            if success {
-                print("Signed in successful")
-                username = credentials.email
-                isAuthenticated = true
-            } else {
-                errorMessage = "Error while authenticating"
+            .alert(item: $viewModel.alert) { value in
+                return value.alert
             }
         }
+    }
+    
+    private var loginField: some View {
+        CredentialsInputView(
+            labelText: "Login",
+            textFieldPlaceholder: "Type your login",
+            isSecure: false,
+            textFieldContent: $viewModel.loginFieldValue)
+    }
+    
+    private var passwordField: some View {
+        CredentialsInputView(
+            labelText: "Password",
+            textFieldPlaceholder: "Type your password",
+            isSecure: true,
+            textFieldContent: $viewModel.passwordFieldValue)
+    }
+    
+    private var submitButton: some View {
+        Button {
+            if viewModel.validateCredentials().areValid {
+                viewModel.signIn()
+            } else {
+                viewModel.validationErrorMessage = viewModel.validateCredentials().erorrMassage!
+            }
+        } label: {
+            Text("Sign in")
+                .bold()
+                .frame(width: 200, height: 50)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+        }
+    }
+    
+    private var errorMessage: some View {
+        Text(viewModel.validationErrorMessage)
+            .foregroundColor(.red)
+            .fontWeight(.bold)
+    }
+    
+    private var navigation: some View {
+        NavigationLink(
+            destination: DashboardView(),
+            isActive: $viewModel.isAuthenticated) {
+                EmptyView()
+            }
     }
 }

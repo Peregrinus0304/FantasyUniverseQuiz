@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct ScoreView: View {
- 
+    
     let correctScore: Int
     let wrongScore: Int
     let action: () -> Void
     
     var body: some View {
         VStack(spacing: 25) {
-            LottieView(animationName: winScore() ? "smile-face" : "sad-face", loopMode: .playOnce, contentMode: .scaleAspectFit)
-
+            LottieView(animationName: winScore() ? "smile-face" : "sad-face",
+                       loopMode: .playOnce,
+                       contentMode: .scaleAspectFit)
+            
                 .frame(width: UIScreen.main.bounds.width - 5)
                 .padding()
             
@@ -26,7 +28,6 @@ struct ScoreView: View {
                 .foregroundColor(.blue)
             
             HStack(spacing: 15) {
-                
                 Image(systemName: "checkmark")
                     .font(.largeTitle)
                     .foregroundColor(.green)
@@ -49,7 +50,6 @@ struct ScoreView: View {
                 action()
             }
             .buttonStyle(AppSystemButton())
-            
         }
     }
     
@@ -60,8 +60,9 @@ struct ScoreView: View {
     
     private func setTitle(correct: Int, wrong: Int) -> LottieView {
         let winScore = correct - wrong >= 0 ? true : false
-    
-        return  LottieView(animationName: winScore ? "smile-face" : "sad-face", loopMode: .loop, contentMode: .scaleAspectFit)
+        return LottieView(animationName: winScore ? "smile-face" : "sad-face",
+                          loopMode: .loop,
+                          contentMode: .scaleAspectFit)
     }
     
 }

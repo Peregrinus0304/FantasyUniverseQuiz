@@ -6,15 +6,24 @@
 //
 
 import Foundation
+import Combine
 
 class ManualSignInViewModel: ObservableObject {
     
     private let validator = AuthenticationValidator()
     private let firebaseAuthService = FirebaseAuthService()
+    @Published var loginFieldValue = ""
+    @Published var passwordFieldValue = ""
+    @Published var validationErrorMessage = ""
+    @Published var isAuthenticated = false
+    @Published var authError: String?
+    @Published var alert: AppAlert?
     
-    func credentialsAreValid(_ credentials: ManualSignInCredentials) -> (Bool, String?) {
-        let emailFieldValid = validator.isEmailValid(credentials.email)
-        let passwordFieldValid = validator.isPasswordValid(credentials.password)
+    private var subscriptions = Set<AnyCancellable>()
+    
+    func validateCredentials() -> (areValid: Bool, erorrMassage: String?) {
+        let emailFieldValid = validator.isEmailValid(loginFieldValue)
+        let passwordFieldValid = validator.isPasswordValid(passwordFieldValue)
         var validationError: String? {
             if !passwordFieldValid && !emailFieldValid {
                 return "Email and password do not fulfil requirements"
@@ -29,12 +38,21 @@ class ManualSignInViewModel: ObservableObject {
         return (emailFieldValid && passwordFieldValid, validationError)
     }
     
-    func signIn(with credentials: ManualSignInCredentials, completionBlock: @escaping (_ success: Bool) -> Void) {
-        DispatchQueue.main.async {
-            self.firebaseAuthService.signIn(email: credentials.email, pass: credentials.password) { success in
-                completionBlock(success)
+    func signIn() {
+        let credentials = ManualSignInCredentials(
+            email: loginFieldValue,
+            password: passwordFieldValue)
+        firebaseAuthService
+            .loginPublisher(with: credentials)
+            .sink { res in
+                switch res {
+                case .failure(let err):
+                    self.alert = .authError(message: err.localizedDescription)
+                default: break
+                }
+            } receiveValue: { [weak self] in
+                self?.isAuthenticated = true
             }
-        }
+            .store(in: &subscriptions)
     }
-    
 }

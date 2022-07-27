@@ -15,36 +15,23 @@ struct QuizView: View {
     @Binding var set: String
     @StateObject var data = QuestionViewModel()
     @Environment(\.presentationMode) var present
+    private let firebaseAuthService = FirebaseAuthService()
     
     var body: some View {
         
         ZStack {
-            LottieView(animationName: "day-background", loopMode: .loop, contentMode: .scaleAspectFit)
-                .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea()
-            
+            animatedBackground
             if data.questionsData.isEmpty {
                 ProgressView()
             } else {
                 if answered == data.questionsData.count {
-                    
-                    // Finish screen
-                    ScoreView(correctScore: correct, wrongScore: wrong) {
-                        present.wrappedValue.dismiss()
-                    }
-                    .background(.thinMaterial)
-                   
+                 // Finish screen
+                    scoreView
                 } else {
-                    
-                    // Game screen
+                 // Game screen
                     VStack {
-                        
-                        // Top Progress
-                        ProgressHeaderView(correctCount: correct == .zero ? "" : "\(correct)", wrongCount: wrong == .zero ? "" : "\(wrong)", progress: progress())
-                        
-                        // Question view
-                        QuestionView(questions: $data.questionsData, currentQuestion: data.questionsData[.zero], correct: $correct, wrong: $wrong, answered: $answered)
-                            .padding()
+                        topProgress
+                        questionView
                     }
                     .frame(maxWidth: UIScreen.main.bounds.width - 10)
                 }
@@ -52,16 +39,40 @@ struct QuizView: View {
         }
         .onAppear {
             data.getQuestions(set: set)
-            
         }
-        
+    }
+    
+    var animatedBackground: some View {
+        LottieView(animationName: "day-background", loopMode: .loop, contentMode: .scaleAspectFit)
+            .aspectRatio(contentMode: .fill)
+            .ignoresSafeArea()
+    }
+    
+    var scoreView: some View {
+        ScoreView(correctScore: correct, wrongScore: wrong) {
+            present.wrappedValue.dismiss()
+        }
+        .background(.thinMaterial)
+    }
+    
+    var topProgress: some View {
+        ProgressHeaderView(correctCount: correct == .zero ? "" : "\(correct)",
+                           wrongCount: wrong == .zero ? "" : "\(wrong)",
+                           progress: progress())
+    }
+    
+    var questionView: some View {
+        QuestionView(questions: $data.questionsData,
+                     currentQuestion: data.questionsData[.zero],
+                     correct: $correct,
+                     wrong: $wrong,
+                     answered: $answered)
+            .padding()
     }
     
     private func progress() -> CGFloat {
-        
         let fraction = CGFloat(answered) / CGFloat(data.questionsData.count)
         let width = UIScreen.main.bounds.width - 30
-        
         return fraction * width
     }
 }

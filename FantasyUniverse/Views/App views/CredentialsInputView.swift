@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CredentialsInputView: View {
     
-    var labelText: String
-    var textFieldPlaceholder: String
-    var isSecure: Bool
+    let labelText: String
+    let textFieldPlaceholder: String
+    let isSecure: Bool
     @Binding var textFieldContent: String
     
     var body: some View {
