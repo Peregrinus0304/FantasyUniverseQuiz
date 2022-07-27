@@ -25,8 +25,10 @@ struct ContentView: View {
         case .success(with: let user):
             AppTabView(user: user)
         case .proccessing:
-            Text("Loading...")
-                    .background(.red)
+                LottieView(
+                    animationName: "sandclock",
+                    loopMode: .loop,
+                    contentMode: .scaleToFill)
         case .unauthenticated:
             InitialView()
         }

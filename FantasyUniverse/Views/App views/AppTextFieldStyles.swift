@@ -19,7 +19,7 @@ struct AppStandardTextFieldStyle: TextFieldStyle {
             .padding(.vertical, 12)
             .padding(.horizontal, 16)
             .background(
-                LinearGradient(gradient: Gradient(colors: [Color(Asset.Colors.appPurple.color), .blue]),
+                LinearGradient(gradient: Gradient(colors: [Color(Asset.Colors.aquamarine.color), .blue]),
                                startPoint: .top,
                                endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all))

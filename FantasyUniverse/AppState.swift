@@ -12,14 +12,5 @@ import SwiftUI
 // TODO: Will work on it
 // swiftlint:disable:previous todo
 class AppState: ObservableObject {
-    @ObservedObject var authService: FirebaseAuthService
-    @Published var user: User?
-    init() {
-       authService = FirebaseAuthService()
-       user = authService.currentUser
-    }
-
-    func userLoggedIn() -> Bool {
-        return authService.currentUser != nil
-    }
+    
 }

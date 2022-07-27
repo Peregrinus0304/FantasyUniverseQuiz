@@ -17,9 +17,8 @@ enum AuthState {
 }
 
 final class FirebaseAuthService: ObservableObject {
-    @Published var currentUser: User?
+
     @Published var state: AuthState = .unauthenticated
-    
     private var handle: AuthStateDidChangeListenerHandle?
     
     init() {
@@ -35,14 +34,13 @@ final class FirebaseAuthService: ObservableObject {
                 if let user = user {
                     print("Got user: \(user)")
                     
-                    self.currentUser = User(
+                   let user = User(
                         uid: user.uid,
                         displayName: user.displayName,
                         email: user.email,
                         refreshToken: user.refreshToken)
-                    self.state = .success(with: self.currentUser!)
+                    self.state = .success(with: user)
                 } else {
-                    self.currentUser = nil
                     self.state = .unauthenticated
                 }
             }
@@ -129,7 +127,7 @@ final class FirebaseAuthService: ObservableObject {
     func signOut() {
         do {
             try Auth.auth().signOut()
-            self.currentUser = nil
+            self.state = .unauthenticated
         } catch {
             self.state = .failed(with: error)
         }

@@ -14,7 +14,6 @@
 		452C54D227DD162F00A7FBEF /* Localisation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 452C54C427DD162F00A7FBEF /* Localisation.strings */; };
 		452C54D327DD162F00A7FBEF /* stephen-king-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54C727DD162F00A7FBEF /* stephen-king-logo.json */; };
 		452C54D427DD162F00A7FBEF /* lotr-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54C827DD162F00A7FBEF /* lotr-logo.json */; };
-		452C54D527DD162F00A7FBEF /* magic-book-harry-potter.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54C927DD162F00A7FBEF /* magic-book-harry-potter.json */; };
 		452C54D627DD162F00A7FBEF /* harry-potter-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54CA27DD162F00A7FBEF /* harry-potter-logo.json */; };
 		452C54D727DD162F00A7FBEF /* star-wars-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54CB27DD162F00A7FBEF /* star-wars-logo.json */; };
 		452C54D827DD162F00A7FBEF /* dashboard-background.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54CC27DD162F00A7FBEF /* dashboard-background.json */; };
@@ -51,6 +50,10 @@
 		452C551827DD18C100A7FBEF /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 452C551727DD18C100A7FBEF /* FirebaseStorageSwift-Beta */; };
 		453CAEEC27B32090002649AF /* QuestionSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453CAEEB27B32090002649AF /* QuestionSets.swift */; };
 		4540B4EE289131360014C857 /* AuthCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B4ED289131360014C857 /* AuthCredentials.swift */; };
+		4540B4F32891E1C60014C857 /* sandclock.json in Resources */ = {isa = PBXBuildFile; fileRef = 4540B4F22891E1C60014C857 /* sandclock.json */; };
+		4540B4F42891E1C60014C857 /* sandclock.json in Resources */ = {isa = PBXBuildFile; fileRef = 4540B4F22891E1C60014C857 /* sandclock.json */; };
+		4540B4F92891E4120014C857 /* intro-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 4540B4F82891E4110014C857 /* intro-logo.json */; };
+		4540B4FA2891E4120014C857 /* intro-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 4540B4F82891E4110014C857 /* intro-logo.json */; };
 		454C262828847D5100DC80F6 /* AuthenticationValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C262728847D5100DC80F6 /* AuthenticationValidatorTests.swift */; };
 		455A16792818891600543364 /* AppTextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A16782818891600543364 /* AppTextFieldStyles.swift */; };
 		455A167B281DCC6B00543364 /* AuthenticationValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A167A281DCC6B00543364 /* AuthenticationValidator.swift */; };
@@ -69,8 +72,6 @@
 		45797ECF288ED946005100BD /* AppAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797ECE288ED946005100BD /* AppAlert.swift */; };
 		45797ED3288F2266005100BD /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797ED2288F2266005100BD /* InitialView.swift */; };
 		45797ED4288F2266005100BD /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797ED2288F2266005100BD /* InitialView.swift */; };
-		45797ED7288F2841005100BD /* intro-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 45797ED6288F2841005100BD /* intro-logo.json */; };
-		45797ED8288F2841005100BD /* intro-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 45797ED6288F2841005100BD /* intro-logo.json */; };
 		45797EDB288F3155005100BD /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EDA288F3155005100BD /* ResetPasswordViewModel.swift */; };
 		45797EDC288F3155005100BD /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EDA288F3155005100BD /* ResetPasswordViewModel.swift */; };
 		45797EDF288F3278005100BD /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EDE288F3278005100BD /* ResetPasswordView.swift */; };
@@ -128,7 +129,6 @@
 		452C54C527DD162F00A7FBEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localisation.strings; sourceTree = "<group>"; };
 		452C54C727DD162F00A7FBEF /* stephen-king-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "stephen-king-logo.json"; sourceTree = "<group>"; };
 		452C54C827DD162F00A7FBEF /* lotr-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lotr-logo.json"; sourceTree = "<group>"; };
-		452C54C927DD162F00A7FBEF /* magic-book-harry-potter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "magic-book-harry-potter.json"; sourceTree = "<group>"; };
 		452C54CA27DD162F00A7FBEF /* harry-potter-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "harry-potter-logo.json"; sourceTree = "<group>"; };
 		452C54CB27DD162F00A7FBEF /* star-wars-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "star-wars-logo.json"; sourceTree = "<group>"; };
 		452C54CC27DD162F00A7FBEF /* dashboard-background.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "dashboard-background.json"; sourceTree = "<group>"; };
@@ -138,6 +138,8 @@
 		452C54DC27DD166000A7FBEF /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		453CAEEB27B32090002649AF /* QuestionSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSets.swift; sourceTree = "<group>"; };
 		4540B4ED289131360014C857 /* AuthCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCredentials.swift; sourceTree = "<group>"; };
+		4540B4F22891E1C60014C857 /* sandclock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sandclock.json; sourceTree = "<group>"; };
+		4540B4F82891E4110014C857 /* intro-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "intro-logo.json"; sourceTree = "<group>"; };
 		454C262728847D5100DC80F6 /* AuthenticationValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationValidatorTests.swift; sourceTree = "<group>"; };
 		455A16782818891600543364 /* AppTextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldStyles.swift; sourceTree = "<group>"; };
 		455A167A281DCC6B00543364 /* AuthenticationValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationValidator.swift; sourceTree = "<group>"; };
@@ -151,7 +153,6 @@
 		45797EC9288E9F1B005100BD /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		45797ECE288ED946005100BD /* AppAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlert.swift; sourceTree = "<group>"; };
 		45797ED2288F2266005100BD /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
-		45797ED6288F2841005100BD /* intro-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "intro-logo.json"; sourceTree = "<group>"; };
 		45797EDA288F3155005100BD /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		45797EDE288F3278005100BD /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		45797EE2288F33DC005100BD /* ok.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ok.json; sourceTree = "<group>"; };
@@ -258,11 +259,11 @@
 		452C54C627DD162F00A7FBEF /* Lottie Animations */ = {
 			isa = PBXGroup;
 			children = (
+				4540B4F82891E4110014C857 /* intro-logo.json */,
+				4540B4F22891E1C60014C857 /* sandclock.json */,
 				45797EE2288F33DC005100BD /* ok.json */,
-				45797ED6288F2841005100BD /* intro-logo.json */,
 				452C54C727DD162F00A7FBEF /* stephen-king-logo.json */,
 				452C54C827DD162F00A7FBEF /* lotr-logo.json */,
-				452C54C927DD162F00A7FBEF /* magic-book-harry-potter.json */,
 				452C54CA27DD162F00A7FBEF /* harry-potter-logo.json */,
 				452C54CB27DD162F00A7FBEF /* star-wars-logo.json */,
 				452C54CC27DD162F00A7FBEF /* dashboard-background.json */,
@@ -546,19 +547,19 @@
 			files = (
 				452C54D827DD162F00A7FBEF /* dashboard-background.json in Resources */,
 				452C54DB27DD162F00A7FBEF /* sad-face.json in Resources */,
+				4540B4F32891E1C60014C857 /* sandclock.json in Resources */,
 				452C54D027DD162F00A7FBEF /* Colors.xcassets in Resources */,
 				452C54DA27DD162F00A7FBEF /* day-background.json in Resources */,
 				452C54D227DD162F00A7FBEF /* Localisation.strings in Resources */,
 				45F0880C27A9322100503343 /* GoogleService-Info.plist in Resources */,
-				452C54D527DD162F00A7FBEF /* magic-book-harry-potter.json in Resources */,
 				452C54D927DD162F00A7FBEF /* smile-face.json in Resources */,
 				452C54D427DD162F00A7FBEF /* lotr-logo.json in Resources */,
+				4540B4F92891E4120014C857 /* intro-logo.json in Resources */,
 				45797EE3288F33DC005100BD /* ok.json in Resources */,
 				452C54D127DD162F00A7FBEF /* Assets.xcassets in Resources */,
 				452C54D627DD162F00A7FBEF /* harry-potter-logo.json in Resources */,
 				4594E9E3276A7D530054E6BE /* Preview Assets.xcassets in Resources */,
 				452C54D327DD162F00A7FBEF /* stephen-king-logo.json in Resources */,
-				45797ED7288F2841005100BD /* intro-logo.json in Resources */,
 				452C54D727DD162F00A7FBEF /* star-wars-logo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,8 +568,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45797ED8288F2841005100BD /* intro-logo.json in Resources */,
 				45797EE4288F33DC005100BD /* ok.json in Resources */,
+				4540B4FA2891E4120014C857 /* intro-logo.json in Resources */,
+				4540B4F42891E1C60014C857 /* sandclock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
