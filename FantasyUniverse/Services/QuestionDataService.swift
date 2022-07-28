@@ -1,41 +1,52 @@
 //
-//  QuestionViewData.swift
+//  QuestionDataService.swift
 //  FantasyUniverse
 //
-//  Created by TarasPeregrinus on 23.03.2022.
+//  Created by TarasPeregrinus on 19.04.2022.
 //
 
 import Foundation
-import FirebaseFirestoreSwift
 
-enum QuestionDataService {
+class QuestionDataService {
     
-    static func formatQuestions(_ questions: [Question]) -> [QuestionViewData]? {
-        var questionViewData: [QuestionViewData]?
-        for question in questions {
-            // swiftlint:disable line_length
-            guard let questionString = question.question, let optionA = question.optionA, let optionB = question.optionB, let optionC = question.optionC, let optionD = question.optionD, let correct = question.correct
-            else {
-                if let missingValuesMessages = missingValuesMessages(of: question) {
-                    debugPrint(missingValuesMessages)
-                }
-                questionViewData = nil
-                break
+    static let shared = QuestionDataService()
+    private var cachedQuestions: CachedQuestions
+    private let firebaseRepository: FirebaseRepository
+    
+    private init() {
+        self.cachedQuestions = CachedQuestions()
+        self.firebaseRepository = FirebaseRepository()
+    }
+    
+    func refreshQuestions() {
+        self.firebaseRepository.getAllQuestions { data in
+            self.cachedQuestions.cacheElements(data)
+        }
+    }
+    
+    func getAllQuestions(_ completion: @escaping (_ data: [QuestionCollection]) -> Void) {
+        
+        if !cachedQuestions.cacheIsEmpty() {
+            completion(cachedQuestions.getElements())
+        } else {
+            firebaseRepository.getAllQuestions { data in
+                self.cachedQuestions.cacheElements(data)
+                completion(self.cachedQuestions.getElements())
+                
             }
             
-            let answers: [Answer] =
-            [Answer(answer: optionA, correct: optionA == correct),
-             Answer(answer: optionB, correct: optionB == correct),
-             Answer(answer: optionC, correct: optionC == correct),
-             Answer(answer: optionD, correct: optionD == correct)]
-            let questionData = QuestionViewData(question: questionString, answers: answers)
-            if questionViewData == nil {
-                questionViewData = [QuestionViewData]()
-            }
-          
-            questionViewData?.append(questionData)
         }
-        return questionViewData
+    }
+    
+    func getQuestionsCollection(_ collection: QuestionSet, _ completion: @escaping (_ data: QuestionCollection) -> Void) {
+        if cachedQuestions.cacheContainsCollectionID(searchedId: collection.collectionIdentifier) {
+            completion(cachedQuestions.getCollectionFromCache(collection))
+        } else {
+            firebaseRepository.getQuestionsCollection(collection) { data in
+                self.cachedQuestions.addToCache([data])
+                completion(self.cachedQuestions.getCollectionFromCache(collection))
+            }
+        }
     }
     
 }

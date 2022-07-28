@@ -24,6 +24,7 @@ struct FantasyUniverseApp: App {
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         FirebaseApp.configure()
+        QuestionDataService.shared.refreshQuestions()
         return true
     }
     
