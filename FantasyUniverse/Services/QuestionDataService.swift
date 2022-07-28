@@ -39,7 +39,7 @@ class QuestionDataService {
     }
     
     func getQuestionsCollection(_ collection: QuestionSet, _ completion: @escaping (_ data: QuestionCollection) -> Void) {
-        if cachedQuestions.cacheContainElement(searched: collection) {
+        if cachedQuestions.cacheContainsCollectionID(searchedId: collection.collectionIdentifier) {
             completion(cachedQuestions.getCollectionFromCache(collection))
         } else {
             firebaseRepository.getQuestionsCollection(collection) { data in

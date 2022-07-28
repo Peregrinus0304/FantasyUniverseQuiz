@@ -33,17 +33,25 @@ struct QuizView: View {
                         present.wrappedValue.dismiss()
                     }
                     .background(.thinMaterial)
-                   
+                    
                 } else {
                     
                     // Game screen
                     VStack {
                         
                         // Top Progress
-                        ProgressHeaderView(correctCount: correct == .zero ? "" : "\(correct)", wrongCount: wrong == .zero ? "" : "\(wrong)", progress: progress())
+                        ProgressHeaderView(
+                            correctCount: correct == .zero ? "" : "\(correct)",
+                            wrongCount: wrong == .zero ? "" : "\(wrong)",
+                            progress: progress())
                         
                         // Question view
-                        QuestionView(questions: $data.questionsData, currentQuestion: data.questionsData[.zero], correct: $correct, wrong: $wrong, answered: $answered)
+                        QuestionView(
+                            questions: $data.questionsData,
+                            currentQuestion: data.questionsData[.zero],
+                            correct: $correct,
+                            wrong: $wrong,
+                            answered: $answered)
                             .padding()
                     }
                     .frame(maxWidth: UIScreen.main.bounds.width - 10)
@@ -52,7 +60,6 @@ struct QuizView: View {
         }
         .onAppear {
             data.getQuestions(set: set)
-            
         }
         
     }

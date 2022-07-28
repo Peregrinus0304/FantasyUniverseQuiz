@@ -8,7 +8,7 @@
 import Foundation
 @testable import FantasyUniverse
 
-struct QuestionViewDataMock {
+struct TestQuestionViewData {
         
     static let questionOne = QuestionViewData(
         question: "question",

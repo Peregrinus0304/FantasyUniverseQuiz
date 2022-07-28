@@ -8,7 +8,7 @@
 import Foundation
 @testable import FantasyUniverse
 
-struct QuestionMock {
+struct TestQuestion {
     
    static let completeQuestion1 = Question(
         question: "question",

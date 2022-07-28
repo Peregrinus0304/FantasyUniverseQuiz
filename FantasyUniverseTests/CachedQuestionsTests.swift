@@ -17,9 +17,9 @@ class CachedQuestionsTests: XCTestCase {
         cachedQuestions = CachedQuestions()
         firebaseRepositoryMock = FirebaseRepositoryMock(
             questionsMock: [
-                QuestionViewDataMock.questionOne,
-                QuestionViewDataMock.questionTwo,
-                QuestionViewDataMock.questionThree
+                TestQuestionViewData.questionOne,
+                TestQuestionViewData.questionTwo,
+                TestQuestionViewData.questionThree
             ]
         )
     }
@@ -45,7 +45,7 @@ class CachedQuestionsTests: XCTestCase {
         
         XCTAssertTrue(cachedQuestions.cacheIsEmpty(), "The cachedQuestions should has been empty")
         
-        let someCollection = QuestionCollection(identifier: QuestionSet.test.collectionIdentifier, questions: [QuestionViewDataMock.questionOne])
+        let someCollection = QuestionCollection(identifier: QuestionSet.test.collectionIdentifier, questions: [TestQuestionViewData.questionOne])
         
         cachedQuestions.cacheElements([someCollection])
         XCTAssertFalse(cachedQuestions.cacheIsEmpty(), "The cachedQuestions should contain elements")
@@ -59,17 +59,19 @@ class CachedQuestionsTests: XCTestCase {
         
         XCTAssertTrue(cachedQuestions.cacheIsEmpty(), "The cachedQuestions should has been empty")
         let someSet = QuestionSet.test
-        let someCollection = QuestionCollection(identifier: someSet.collectionIdentifier, questions: [QuestionViewDataMock.questionOne])
+        let someCollection = QuestionCollection(identifier: someSet.collectionIdentifier, questions: [TestQuestionViewData.questionOne])
         cachedQuestions.cacheElements([someCollection])
         
-        XCTAssertTrue(cachedQuestions.cacheContainElement(searched: someSet), "Cache does not contain element: \(someCollection)")
+        XCTAssertTrue(
+            cachedQuestions.cacheContainsCollectionID(searchedId: someSet.collectionIdentifier),
+            "Cache does not contain element: \(someCollection)")
     }
     
     func testCachedQuestions_GetCollectionFromCache_ShouldGetElement() {
         
         XCTAssertTrue(cachedQuestions.cacheIsEmpty(), "The cachedQuestions should has been empty")
         let someSet = QuestionSet.test
-        let someCollection = QuestionCollection(identifier: someSet.collectionIdentifier, questions: [QuestionViewDataMock.questionOne])
+        let someCollection = QuestionCollection(identifier: someSet.collectionIdentifier, questions: [TestQuestionViewData.questionOne])
         
         cachedQuestions.cacheElements([someCollection])
         XCTAssertFalse(cachedQuestions.cacheIsEmpty(), "The cachedQuestions should contain cached elements.")

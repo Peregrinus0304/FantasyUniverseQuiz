@@ -9,15 +9,18 @@ import Foundation
 
 protocol Cachable {
     associatedtype Element
-    associatedtype Searched
         
     func getElements() -> [Element]
-    func cacheElements(_ objects: [Element])
-    func addToCache(_ objects: [Element])
+    func addToCache(_ elements: [Element])
     func cleanCache()
     func cacheIsEmpty() -> Bool
-    func cacheContainElement(searched: Searched) -> Bool
-    
+}
+
+extension Cachable {
+    func cacheElements(_ elements: [Element]) {
+        cleanCache()
+        addToCache(elements)
+    }
 }
 
 class CachedQuestions: Cachable {
@@ -26,10 +29,6 @@ class CachedQuestions: Cachable {
     
     func getElements() -> [QuestionCollection] {
         return cachedElements
-    }
-    
-    func cacheElements(_ elements: [QuestionCollection]) {
-        cachedElements = elements
     }
     
     func addToCache(_ elements: [QuestionCollection]) {
@@ -43,10 +42,6 @@ class CachedQuestions: Cachable {
     func cacheIsEmpty() -> Bool {
         return cachedElements.isEmpty
     }
-    
-    func cacheContainElement(searched: QuestionSet) -> Bool {
-        return cachedElements.contains { $0.identifier == searched.collectionIdentifier }
-    }
 
     func getCollectionFromCache(_ collection: QuestionSet) -> QuestionCollection {
         let filteredCollections = cachedElements.filter { $0.identifier == collection.collectionIdentifier }
@@ -54,4 +49,11 @@ class CachedQuestions: Cachable {
         return filteredCollections[0]
     }
     
+}
+
+extension CachedQuestions {
+    func cacheContainsCollectionID(searchedId: String) -> Bool {
+          cachedElements.contains { $0.identifier == searchedId }
+    }
+
 }
