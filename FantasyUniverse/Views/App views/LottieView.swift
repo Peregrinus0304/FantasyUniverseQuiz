@@ -32,6 +32,7 @@ struct LottieView: UIViewRepresentable {
         animationView.animation = Animation.named(animationName)
         animationView.contentMode = contentMode
         animationView.loopMode = loopMode
+        animationView.backgroundBehavior = .pauseAndRestore
         animationView.play()
     }
 }

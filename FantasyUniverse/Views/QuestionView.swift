@@ -21,33 +21,39 @@ struct QuestionView: View {
         VStack(spacing: 20) {
             // Question
             QuestionLabelView(text: currentQuestion.question)
-                       
-            ForEach(currentQuestion.answers.indices, id: \.self) { index in
-                OptionButton(color: buttonColor(option: currentQuestion.answers[index].answer),
-                             text: currentQuestion.answers[index].answer,
-                             action: {
-                    selected = currentQuestion.answers[index].answer
-                }).lineLimit(nil)
-                  .disabled(!selected.isEmpty)
-                  .opacity(selected.isEmpty ? 1 : 0.7)
-            }
-            
+            // Options
+            optionButtons
             Spacer()
-            
-            Button("Next") {
-                withAnimation {
-                    currentQuestion.completed.toggle()
-                    answered += 1
-                }
-                checkAnswer()
-            }.buttonStyle(AppNextButton())
-                .disabled(selected.isEmpty)
-                .opacity(selected.isEmpty ? 0.7 : 1)
-                .padding(.bottom)
+            nextButton
         }
         .padding()
         .background(.thinMaterial)
         .cornerRadius(25)
+    }
+    
+    var optionButtons: some View {
+        ForEach(currentQuestion.answers.indices, id: \.self) { index in
+            OptionButton(color: buttonColor(option: currentQuestion.answers[index].answer),
+                         text: currentQuestion.answers[index].answer,
+                         action: {
+                selected = currentQuestion.answers[index].answer
+            }).lineLimit(nil)
+                .disabled(!selected.isEmpty)
+                .opacity(selected.isEmpty ? 1 : 0.7)
+        }
+    }
+    
+    var nextButton: some View {
+        Button("Next") {
+            withAnimation {
+                currentQuestion.completed.toggle()
+                answered += 1
+            }
+            checkAnswer()
+        }.buttonStyle(AppNextButton())
+            .disabled(selected.isEmpty)
+            .opacity(selected.isEmpty ? 0.7 : 1)
+            .padding(.bottom)
     }
     
     private func buttonColor(option: String) -> Color {
@@ -66,7 +72,6 @@ struct QuestionView: View {
         if questions.count != answered {
             currentQuestion = questions[answered]
         }
-       
         selected = ""
     }
     

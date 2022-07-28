@@ -14,7 +14,6 @@
 		452C54D227DD162F00A7FBEF /* Localisation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 452C54C427DD162F00A7FBEF /* Localisation.strings */; };
 		452C54D327DD162F00A7FBEF /* stephen-king-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54C727DD162F00A7FBEF /* stephen-king-logo.json */; };
 		452C54D427DD162F00A7FBEF /* lotr-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54C827DD162F00A7FBEF /* lotr-logo.json */; };
-		452C54D527DD162F00A7FBEF /* magic-book-harry-potter.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54C927DD162F00A7FBEF /* magic-book-harry-potter.json */; };
 		452C54D627DD162F00A7FBEF /* harry-potter-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54CA27DD162F00A7FBEF /* harry-potter-logo.json */; };
 		452C54D727DD162F00A7FBEF /* star-wars-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54CB27DD162F00A7FBEF /* star-wars-logo.json */; };
 		452C54D827DD162F00A7FBEF /* dashboard-background.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54CC27DD162F00A7FBEF /* dashboard-background.json */; };
@@ -46,24 +45,56 @@
 		452C550C27DD18C100A7FBEF /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 452C550B27DD18C100A7FBEF /* FirebaseMessaging */; };
 		452C550E27DD18C100A7FBEF /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 452C550D27DD18C100A7FBEF /* FirebasePerformance */; };
 		452C551027DD18C100A7FBEF /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 452C550F27DD18C100A7FBEF /* FirebaseRemoteConfig */; };
-		452C551227DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 452C551127DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta */; };
 		452C551427DD18C100A7FBEF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 452C551327DD18C100A7FBEF /* FirebaseStorage */; };
 		452C551627DD18C100A7FBEF /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 452C551527DD18C100A7FBEF /* FirebaseStorageCombine-Community */; };
 		452C551827DD18C100A7FBEF /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 452C551727DD18C100A7FBEF /* FirebaseStorageSwift-Beta */; };
 		453CAEEC27B32090002649AF /* QuestionSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453CAEEB27B32090002649AF /* QuestionSets.swift */; };
-		454D26D527BD6D110003D8F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D26D427BD6D110003D8F8 /* Constants.swift */; };
+		4540B4EE289131360014C857 /* AuthCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B4ED289131360014C857 /* AuthCredentials.swift */; };
+		4540B4F32891E1C60014C857 /* sandclock.json in Resources */ = {isa = PBXBuildFile; fileRef = 4540B4F22891E1C60014C857 /* sandclock.json */; };
+		4540B4F42891E1C60014C857 /* sandclock.json in Resources */ = {isa = PBXBuildFile; fileRef = 4540B4F22891E1C60014C857 /* sandclock.json */; };
+		4540B4F92891E4120014C857 /* intro-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 4540B4F82891E4110014C857 /* intro-logo.json */; };
+		4540B4FA2891E4120014C857 /* intro-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 4540B4F82891E4110014C857 /* intro-logo.json */; };
+		454C262828847D5100DC80F6 /* AuthenticationValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C262728847D5100DC80F6 /* AuthenticationValidatorTests.swift */; };
+		455A16792818891600543364 /* AppTextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A16782818891600543364 /* AppTextFieldStyles.swift */; };
+		455A167B281DCC6B00543364 /* AuthenticationValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A167A281DCC6B00543364 /* AuthenticationValidator.swift */; };
+		455A167F283022AE00543364 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A167E283022AE00543364 /* SignUpView.swift */; };
+		455A1681283022F500543364 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A1680283022F500543364 /* SignUpViewModel.swift */; };
+		455A1683283023D300543364 /* CredentialsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A1682283023D300543364 /* CredentialsInputView.swift */; };
+		455A168828340D9B00543364 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A168728340D9B00543364 /* FirebaseAuthService.swift */; };
+		45797EB9288D7B58005100BD /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EB8288D7B58005100BD /* AppState.swift */; };
+		45797EBA288D7B58005100BD /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EB8288D7B58005100BD /* AppState.swift */; };
+		45797EBD288D8D77005100BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EBC288D8D77005100BD /* User.swift */; };
+		45797EBE288D8D77005100BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EBC288D8D77005100BD /* User.swift */; };
+		45797EC6288DF2A2005100BD /* AuthFirebaseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EC5288DF2A2005100BD /* AuthFirebaseKeys.swift */; };
+		45797EC7288DF2A2005100BD /* AuthFirebaseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EC5288DF2A2005100BD /* AuthFirebaseKeys.swift */; };
+		45797ECA288E9F1B005100BD /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EC9288E9F1B005100BD /* AppConfiguration.swift */; };
+		45797ECB288E9F1B005100BD /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EC9288E9F1B005100BD /* AppConfiguration.swift */; };
+		45797ECF288ED946005100BD /* AppAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797ECE288ED946005100BD /* AppAlert.swift */; };
+		45797ED3288F2266005100BD /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797ED2288F2266005100BD /* InitialView.swift */; };
+		45797ED4288F2266005100BD /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797ED2288F2266005100BD /* InitialView.swift */; };
+		45797EDB288F3155005100BD /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EDA288F3155005100BD /* ResetPasswordViewModel.swift */; };
+		45797EDC288F3155005100BD /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EDA288F3155005100BD /* ResetPasswordViewModel.swift */; };
+		45797EDF288F3278005100BD /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EDE288F3278005100BD /* ResetPasswordView.swift */; };
+		45797EE0288F3278005100BD /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EDE288F3278005100BD /* ResetPasswordView.swift */; };
+		45797EE3288F33DC005100BD /* ok.json in Resources */ = {isa = PBXBuildFile; fileRef = 45797EE2288F33DC005100BD /* ok.json */; };
+		45797EE4288F33DC005100BD /* ok.json in Resources */ = {isa = PBXBuildFile; fileRef = 45797EE2288F33DC005100BD /* ok.json */; };
+		45797EE7289069B3005100BD /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EE6289069B3005100BD /* AccountView.swift */; };
+		45797EE8289069B3005100BD /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EE6289069B3005100BD /* AccountView.swift */; };
+		45797EEC28909383005100BD /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EEB28909383005100BD /* AppTabView.swift */; };
+		45797EED28909383005100BD /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EEB28909383005100BD /* AppTabView.swift */; };
+		45797EEF289122CA005100BD /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EEE289122CA005100BD /* AccountViewModel.swift */; };
+		45797EF0289122CA005100BD /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EEE289122CA005100BD /* AccountViewModel.swift */; };
 		4594E9DC276A7D510054E6BE /* FantasyUniverseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9DB276A7D510054E6BE /* FantasyUniverseApp.swift */; };
 		4594E9DE276A7D510054E6BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9DD276A7D510054E6BE /* ContentView.swift */; };
 		4594E9E3276A7D530054E6BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4594E9E2276A7D530054E6BE /* Preview Assets.xcassets */; };
 		4594E9E5276A7D530054E6BE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9E4276A7D530054E6BE /* Persistence.swift */; };
 		4594E9E8276A7D530054E6BE /* FantasyUniverse.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9E6276A7D530054E6BE /* FantasyUniverse.xcdatamodeld */; };
 		4594E9F2276A7D530054E6BE /* FantasyUniverseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9F1276A7D530054E6BE /* FantasyUniverseTests.swift */; };
-		4594E9FC276A7D530054E6BE /* FantasyUniverseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9FB276A7D530054E6BE /* FantasyUniverseUITests.swift */; };
-		4594E9FE276A7D530054E6BE /* FantasyUniverseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9FD276A7D530054E6BE /* FantasyUniverseUITestsLaunchTests.swift */; };
 		4594EA0C276FCA120054E6BE /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594EA0B276FCA120054E6BE /* DashboardView.swift */; };
-		4594EA0F276FCB630054E6BE /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594EA0E276FCB630054E6BE /* ColorPalette.swift */; };
 		45A2687327DE964A0082257D /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2687127DE964A0082257D /* Assets.swift */; };
 		45A2687427DE964A0082257D /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2687227DE964A0082257D /* Strings.swift */; };
+		45AD76752818826F00CCBB39 /* ManualSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD76742818826E00CCBB39 /* ManualSignInView.swift */; };
+		45AD76772818829900CCBB39 /* ManualSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD76762818829900CCBB39 /* ManualSignInViewModel.swift */; };
 		45D2284427EBC9E0008506F8 /* QuestionDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284327EBC9E0008506F8 /* QuestionDataService.swift */; };
 		45D2284727EDEB63008506F8 /* QuestionViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284627EDEB63008506F8 /* QuestionViewData.swift */; };
 		45D2284927EDEB71008506F8 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284827EDEB71008506F8 /* Answer.swift */; };
@@ -88,13 +119,6 @@
 			remoteGlobalIDString = 4594E9D7276A7D510054E6BE;
 			remoteInfo = FantasyUniverse;
 		};
-		4594E9F8276A7D530054E6BE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4594E9D0276A7D510054E6BE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4594E9D7276A7D510054E6BE;
-			remoteInfo = FantasyUniverse;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -105,7 +129,6 @@
 		452C54C527DD162F00A7FBEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localisation.strings; sourceTree = "<group>"; };
 		452C54C727DD162F00A7FBEF /* stephen-king-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "stephen-king-logo.json"; sourceTree = "<group>"; };
 		452C54C827DD162F00A7FBEF /* lotr-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lotr-logo.json"; sourceTree = "<group>"; };
-		452C54C927DD162F00A7FBEF /* magic-book-harry-potter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "magic-book-harry-potter.json"; sourceTree = "<group>"; };
 		452C54CA27DD162F00A7FBEF /* harry-potter-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "harry-potter-logo.json"; sourceTree = "<group>"; };
 		452C54CB27DD162F00A7FBEF /* star-wars-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "star-wars-logo.json"; sourceTree = "<group>"; };
 		452C54CC27DD162F00A7FBEF /* dashboard-background.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "dashboard-background.json"; sourceTree = "<group>"; };
@@ -114,7 +137,28 @@
 		452C54CF27DD162F00A7FBEF /* sad-face.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sad-face.json"; sourceTree = "<group>"; };
 		452C54DC27DD166000A7FBEF /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		453CAEEB27B32090002649AF /* QuestionSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSets.swift; sourceTree = "<group>"; };
-		454D26D427BD6D110003D8F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4540B4ED289131360014C857 /* AuthCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCredentials.swift; sourceTree = "<group>"; };
+		4540B4F22891E1C60014C857 /* sandclock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sandclock.json; sourceTree = "<group>"; };
+		4540B4F82891E4110014C857 /* intro-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "intro-logo.json"; sourceTree = "<group>"; };
+		454C262728847D5100DC80F6 /* AuthenticationValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationValidatorTests.swift; sourceTree = "<group>"; };
+		455A16782818891600543364 /* AppTextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldStyles.swift; sourceTree = "<group>"; };
+		455A167A281DCC6B00543364 /* AuthenticationValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationValidator.swift; sourceTree = "<group>"; };
+		455A167E283022AE00543364 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		455A1680283022F500543364 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		455A1682283023D300543364 /* CredentialsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsInputView.swift; sourceTree = "<group>"; };
+		455A168728340D9B00543364 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		45797EB8288D7B58005100BD /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		45797EBC288D8D77005100BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		45797EC5288DF2A2005100BD /* AuthFirebaseKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFirebaseKeys.swift; sourceTree = "<group>"; };
+		45797EC9288E9F1B005100BD /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		45797ECE288ED946005100BD /* AppAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlert.swift; sourceTree = "<group>"; };
+		45797ED2288F2266005100BD /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		45797EDA288F3155005100BD /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
+		45797EDE288F3278005100BD /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		45797EE2288F33DC005100BD /* ok.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ok.json; sourceTree = "<group>"; };
+		45797EE6289069B3005100BD /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		45797EEB28909383005100BD /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		45797EEE289122CA005100BD /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		4594E9D8276A7D510054E6BE /* FantasyUniverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyUniverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4594E9DB276A7D510054E6BE /* FantasyUniverseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyUniverseApp.swift; sourceTree = "<group>"; };
 		4594E9DD276A7D510054E6BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,13 +167,13 @@
 		4594E9E7276A7D530054E6BE /* FantasyUniverse.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FantasyUniverse.xcdatamodel; sourceTree = "<group>"; };
 		4594E9ED276A7D530054E6BE /* FantasyUniverseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FantasyUniverseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4594E9F1276A7D530054E6BE /* FantasyUniverseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyUniverseTests.swift; sourceTree = "<group>"; };
-		4594E9F7276A7D530054E6BE /* FantasyUniverseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FantasyUniverseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4594E9FB276A7D530054E6BE /* FantasyUniverseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyUniverseUITests.swift; sourceTree = "<group>"; };
 		4594E9FD276A7D530054E6BE /* FantasyUniverseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyUniverseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4594EA0B276FCA120054E6BE /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		4594EA0E276FCB630054E6BE /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		45A2687127DE964A0082257D /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		45A2687227DE964A0082257D /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		45AD76742818826E00CCBB39 /* ManualSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualSignInView.swift; sourceTree = "<group>"; };
+		45AD76762818829900CCBB39 /* ManualSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualSignInViewModel.swift; sourceTree = "<group>"; };
 		45D2284327EBC9E0008506F8 /* QuestionDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataService.swift; sourceTree = "<group>"; };
 		45D2284627EDEB63008506F8 /* QuestionViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewData.swift; sourceTree = "<group>"; };
 		45D2284827EDEB71008506F8 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
@@ -169,7 +213,6 @@
 				452C550E27DD18C100A7FBEF /* FirebasePerformance in Frameworks */,
 				452C550427DD18C100A7FBEF /* FirebaseInAppMessaging-Beta in Frameworks */,
 				452C54F427DD18C100A7FBEF /* FirebaseDatabaseSwift-Beta in Frameworks */,
-				452C551227DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta in Frameworks */,
 				452C54EA27DD18C100A7FBEF /* FirebaseAppDistribution-Beta in Frameworks */,
 				452C550827DD18C100A7FBEF /* FirebaseInstallations in Frameworks */,
 				452C551427DD18C100A7FBEF /* FirebaseStorage in Frameworks */,
@@ -184,13 +227,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4594E9EA276A7D530054E6BE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4594E9F4276A7D530054E6BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -223,9 +259,11 @@
 		452C54C627DD162F00A7FBEF /* Lottie Animations */ = {
 			isa = PBXGroup;
 			children = (
+				4540B4F82891E4110014C857 /* intro-logo.json */,
+				4540B4F22891E1C60014C857 /* sandclock.json */,
+				45797EE2288F33DC005100BD /* ok.json */,
 				452C54C727DD162F00A7FBEF /* stephen-king-logo.json */,
 				452C54C827DD162F00A7FBEF /* lotr-logo.json */,
-				452C54C927DD162F00A7FBEF /* magic-book-harry-potter.json */,
 				452C54CA27DD162F00A7FBEF /* harry-potter-logo.json */,
 				452C54CB27DD162F00A7FBEF /* star-wars-logo.json */,
 				452C54CC27DD162F00A7FBEF /* dashboard-background.json */,
@@ -234,6 +272,25 @@
 				452C54CF27DD162F00A7FBEF /* sad-face.json */,
 			);
 			path = "Lottie Animations";
+			sourceTree = "<group>";
+		};
+		455A168628340D6B00543364 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				455A167A281DCC6B00543364 /* AuthenticationValidator.swift */,
+				455A168728340D9B00543364 /* FirebaseAuthService.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		45797EC4288DF277005100BD /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				4540B4ED289131360014C857 /* AuthCredentials.swift */,
+				45797EBC288D8D77005100BD /* User.swift */,
+				45797EC5288DF2A2005100BD /* AuthFirebaseKeys.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		4594E9CF276A7D510054E6BE = {
@@ -252,7 +309,6 @@
 			children = (
 				4594E9D8276A7D510054E6BE /* FantasyUniverse.app */,
 				4594E9ED276A7D530054E6BE /* FantasyUniverseTests.xctest */,
-				4594E9F7276A7D530054E6BE /* FantasyUniverseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,8 +322,9 @@
 				45F0880927A6F55300503343 /* ViewModels */,
 				45F0880427A4101600503343 /* Models */,
 				45F9FEB3277665D100AFE9F9 /* Views */,
-				4594EA0D276FCB380054E6BE /* Design */,
 				4594E9DB276A7D510054E6BE /* FantasyUniverseApp.swift */,
+				45797EB8288D7B58005100BD /* AppState.swift */,
+				45797EC9288E9F1B005100BD /* AppConfiguration.swift */,
 				453CAEEB27B32090002649AF /* QuestionSets.swift */,
 				4594E9DD276A7D510054E6BE /* ContentView.swift */,
 				4594E9E4276A7D530054E6BE /* Persistence.swift */,
@@ -292,6 +349,7 @@
 			children = (
 				4594E9F1276A7D530054E6BE /* FantasyUniverseTests.swift */,
 				45D2284A27F09330008506F8 /* QuestionDataServiceTests.swift */,
+				454C262728847D5100DC80F6 /* AuthenticationValidatorTests.swift */,
 			);
 			path = FantasyUniverseTests;
 			sourceTree = "<group>";
@@ -305,18 +363,10 @@
 			path = FantasyUniverseUITests;
 			sourceTree = "<group>";
 		};
-		4594EA0D276FCB380054E6BE /* Design */ = {
-			isa = PBXGroup;
-			children = (
-				4594EA0E276FCB630054E6BE /* ColorPalette.swift */,
-				454D26D427BD6D110003D8F8 /* Constants.swift */,
-			);
-			path = Design;
-			sourceTree = "<group>";
-		};
 		45D2284527EDEB49008506F8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				455A168628340D6B00543364 /* Auth */,
 				45D2284327EBC9E0008506F8 /* QuestionDataService.swift */,
 			);
 			path = Services;
@@ -328,6 +378,7 @@
 				45F0880227A4100D00503343 /* Question.swift */,
 				45D2284627EDEB63008506F8 /* QuestionViewData.swift */,
 				45D2284827EDEB71008506F8 /* Answer.swift */,
+				45797EC4288DF277005100BD /* Auth */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,6 +387,10 @@
 			isa = PBXGroup;
 			children = (
 				45F0880727A6F54E00503343 /* QuestionViewModel.swift */,
+				455A1680283022F500543364 /* SignUpViewModel.swift */,
+				45AD76762818829900CCBB39 /* ManualSignInViewModel.swift */,
+				45797EDA288F3155005100BD /* ResetPasswordViewModel.swift */,
+				45797EEE289122CA005100BD /* AccountViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -346,8 +401,11 @@
 				45F9FEB42776661300AFE9F9 /* LottieView.swift */,
 				45F0880F27ADB5B200503343 /* OptionButton.swift */,
 				45F0881227ADC05D00503343 /* QuestionLabelView.swift */,
+				455A1682283023D300543364 /* CredentialsInputView.swift */,
 				45F0881427ADC59100503343 /* AppButtonStyles.swift */,
+				455A16782818891600543364 /* AppTextFieldStyles.swift */,
 				451776DA27AFF468005490A1 /* ProgressHeaderView.swift */,
+				45797ECE288ED946005100BD /* AppAlert.swift */,
 			);
 			path = "App views";
 			sourceTree = "<group>";
@@ -356,8 +414,14 @@
 			isa = PBXGroup;
 			children = (
 				4594EA0B276FCA120054E6BE /* DashboardView.swift */,
+				45797EEB28909383005100BD /* AppTabView.swift */,
+				45AD76742818826E00CCBB39 /* ManualSignInView.swift */,
+				455A167E283022AE00543364 /* SignUpView.swift */,
+				45797EDE288F3278005100BD /* ResetPasswordView.swift */,
 				45F9FEB627773A5500AFE9F9 /* QuizView.swift */,
 				45F0880D27A9BE8600503343 /* QuestionView.swift */,
+				45797ED2288F2266005100BD /* InitialView.swift */,
+				45797EE6289069B3005100BD /* AccountView.swift */,
 				451776D827AFF01C005490A1 /* ScoreView.swift */,
 				45F0881127ADC03B00503343 /* App views */,
 			);
@@ -371,8 +435,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4594EA01276A7D530054E6BE /* Build configuration list for PBXNativeTarget "FantasyUniverse" */;
 			buildPhases = (
-				4594EA10276FCDF30054E6BE /* SwiftLint Script */,
 				452C54BC27DCFD3500A7FBEF /* SwiftGen Script */,
+				4594EA10276FCDF30054E6BE /* SwiftLint Script */,
 				4594E9D4276A7D510054E6BE /* Sources */,
 				4594E9D5276A7D510054E6BE /* Frameworks */,
 				4594E9D6276A7D510054E6BE /* Resources */,
@@ -408,7 +472,6 @@
 				452C550B27DD18C100A7FBEF /* FirebaseMessaging */,
 				452C550D27DD18C100A7FBEF /* FirebasePerformance */,
 				452C550F27DD18C100A7FBEF /* FirebaseRemoteConfig */,
-				452C551127DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta */,
 				452C551327DD18C100A7FBEF /* FirebaseStorage */,
 				452C551527DD18C100A7FBEF /* FirebaseStorageCombine-Community */,
 				452C551727DD18C100A7FBEF /* FirebaseStorageSwift-Beta */,
@@ -435,24 +498,6 @@
 			productReference = 4594E9ED276A7D530054E6BE /* FantasyUniverseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4594E9F6276A7D530054E6BE /* FantasyUniverseUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4594EA07276A7D530054E6BE /* Build configuration list for PBXNativeTarget "FantasyUniverseUITests" */;
-			buildPhases = (
-				4594E9F3276A7D530054E6BE /* Sources */,
-				4594E9F4276A7D530054E6BE /* Frameworks */,
-				4594E9F5276A7D530054E6BE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4594E9F9276A7D530054E6BE /* PBXTargetDependency */,
-			);
-			name = FantasyUniverseUITests;
-			productName = FantasyUniverseUITests;
-			productReference = 4594E9F7276A7D530054E6BE /* FantasyUniverseUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -467,10 +512,6 @@
 						CreatedOnToolsVersion = 13.1;
 					};
 					4594E9EC276A7D530054E6BE = {
-						CreatedOnToolsVersion = 13.1;
-						TestTargetID = 4594E9D7276A7D510054E6BE;
-					};
-					4594E9F6276A7D530054E6BE = {
 						CreatedOnToolsVersion = 13.1;
 						TestTargetID = 4594E9D7276A7D510054E6BE;
 					};
@@ -495,7 +536,6 @@
 			targets = (
 				4594E9D7276A7D510054E6BE /* FantasyUniverse */,
 				4594E9EC276A7D530054E6BE /* FantasyUniverseTests */,
-				4594E9F6276A7D530054E6BE /* FantasyUniverseUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -507,13 +547,15 @@
 			files = (
 				452C54D827DD162F00A7FBEF /* dashboard-background.json in Resources */,
 				452C54DB27DD162F00A7FBEF /* sad-face.json in Resources */,
+				4540B4F32891E1C60014C857 /* sandclock.json in Resources */,
 				452C54D027DD162F00A7FBEF /* Colors.xcassets in Resources */,
 				452C54DA27DD162F00A7FBEF /* day-background.json in Resources */,
 				452C54D227DD162F00A7FBEF /* Localisation.strings in Resources */,
 				45F0880C27A9322100503343 /* GoogleService-Info.plist in Resources */,
-				452C54D527DD162F00A7FBEF /* magic-book-harry-potter.json in Resources */,
 				452C54D927DD162F00A7FBEF /* smile-face.json in Resources */,
 				452C54D427DD162F00A7FBEF /* lotr-logo.json in Resources */,
+				4540B4F92891E4120014C857 /* intro-logo.json in Resources */,
+				45797EE3288F33DC005100BD /* ok.json in Resources */,
 				452C54D127DD162F00A7FBEF /* Assets.xcassets in Resources */,
 				452C54D627DD162F00A7FBEF /* harry-potter-logo.json in Resources */,
 				4594E9E3276A7D530054E6BE /* Preview Assets.xcassets in Resources */,
@@ -526,13 +568,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4594E9F5276A7D530054E6BE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				45797EE4288F33DC005100BD /* ok.json in Resources */,
+				4540B4FA2891E4120014C857 /* intro-logo.json in Resources */,
+				4540B4F42891E1C60014C857 /* sandclock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +599,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ -f \"${PROJECT_DIR}/SwiftGen/bin/swiftgen\" ]]; then\n\necho $SRCROOT\n\n  rm \"$SRCROOT/FantasyUniverse/Generated/Strings.swift\"\n\n  rm \"$SRCROOT/FantasyUniverse/Generated/Assets.swift\"\n\n  \"${PROJECT_DIR}/SwiftGen/bin/swiftgen\" config run\n\nelse\n\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\n\nfi\n";
+			shellScript = "if [ $ACTION != \"indexbuild\" ]; then\nif [[ -f \"${PROJECT_DIR}/SwiftGen/bin/swiftgen\" ]]; then\n\necho $SRCROOT\n\n  rm \"$SRCROOT/FantasyUniverse/Generated/Strings.swift\"\n\n  rm \"$SRCROOT/FantasyUniverse/Generated/Assets.swift\"\n\n  \"${PROJECT_DIR}/SwiftGen/bin/swiftgen\" config run\n\nelse\n\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\n\nfi\nfi\n\n";
 		};
 		4594EA10276FCDF30054E6BE /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -588,30 +626,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45797EC6288DF2A2005100BD /* AuthFirebaseKeys.swift in Sources */,
 				45F9FEB727773A5500AFE9F9 /* QuizView.swift in Sources */,
+				45797EDF288F3278005100BD /* ResetPasswordView.swift in Sources */,
 				4594E9E5276A7D530054E6BE /* Persistence.swift in Sources */,
 				45A2687427DE964A0082257D /* Strings.swift in Sources */,
+				45797EEF289122CA005100BD /* AccountViewModel.swift in Sources */,
 				45D2284D27F4793B008506F8 /* GlobalMethods.swift in Sources */,
 				45A2687327DE964A0082257D /* Assets.swift in Sources */,
 				45F0881027ADB5B200503343 /* OptionButton.swift in Sources */,
+				455A16792818891600543364 /* AppTextFieldStyles.swift in Sources */,
 				4594E9DE276A7D510054E6BE /* ContentView.swift in Sources */,
+				455A1681283022F500543364 /* SignUpViewModel.swift in Sources */,
 				453CAEEC27B32090002649AF /* QuestionSets.swift in Sources */,
 				45F0880327A4100D00503343 /* Question.swift in Sources */,
 				45D2284727EDEB63008506F8 /* QuestionViewData.swift in Sources */,
 				45D2284927EDEB71008506F8 /* Answer.swift in Sources */,
+				4540B4EE289131360014C857 /* AuthCredentials.swift in Sources */,
+				45797EE7289069B3005100BD /* AccountView.swift in Sources */,
 				45F0881527ADC59100503343 /* AppButtonStyles.swift in Sources */,
+				455A1683283023D300543364 /* CredentialsInputView.swift in Sources */,
+				45797ECF288ED946005100BD /* AppAlert.swift in Sources */,
+				45797EDB288F3155005100BD /* ResetPasswordViewModel.swift in Sources */,
+				45797EB9288D7B58005100BD /* AppState.swift in Sources */,
 				45F0880E27A9BE8600503343 /* QuestionView.swift in Sources */,
 				4594EA0C276FCA120054E6BE /* DashboardView.swift in Sources */,
+				45AD76772818829900CCBB39 /* ManualSignInViewModel.swift in Sources */,
+				455A167F283022AE00543364 /* SignUpView.swift in Sources */,
 				4594E9DC276A7D510054E6BE /* FantasyUniverseApp.swift in Sources */,
 				45F0881327ADC05D00503343 /* QuestionLabelView.swift in Sources */,
 				45F9FEB52776661300AFE9F9 /* LottieView.swift in Sources */,
 				4594E9E8276A7D530054E6BE /* FantasyUniverse.xcdatamodeld in Sources */,
 				451776DB27AFF468005490A1 /* ProgressHeaderView.swift in Sources */,
-				4594EA0F276FCB630054E6BE /* ColorPalette.swift in Sources */,
+				455A167B281DCC6B00543364 /* AuthenticationValidator.swift in Sources */,
+				455A168828340D9B00543364 /* FirebaseAuthService.swift in Sources */,
 				45D2284427EBC9E0008506F8 /* QuestionDataService.swift in Sources */,
+				45797ED3288F2266005100BD /* InitialView.swift in Sources */,
 				45F0880827A6F54E00503343 /* QuestionViewModel.swift in Sources */,
+				45797EBD288D8D77005100BD /* User.swift in Sources */,
+				45797ECA288E9F1B005100BD /* AppConfiguration.swift in Sources */,
+				45797EEC28909383005100BD /* AppTabView.swift in Sources */,
+				45AD76752818826F00CCBB39 /* ManualSignInView.swift in Sources */,
 				451776D927AFF01C005490A1 /* ScoreView.swift in Sources */,
-				454D26D527BD6D110003D8F8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,17 +675,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45797EE8289069B3005100BD /* AccountView.swift in Sources */,
+				45797EC7288DF2A2005100BD /* AuthFirebaseKeys.swift in Sources */,
 				4594E9F2276A7D530054E6BE /* FantasyUniverseTests.swift in Sources */,
+				45797EF0289122CA005100BD /* AccountViewModel.swift in Sources */,
+				45797ECB288E9F1B005100BD /* AppConfiguration.swift in Sources */,
+				45797EBA288D7B58005100BD /* AppState.swift in Sources */,
+				45797EBE288D8D77005100BD /* User.swift in Sources */,
+				45797EED28909383005100BD /* AppTabView.swift in Sources */,
+				45797EDC288F3155005100BD /* ResetPasswordViewModel.swift in Sources */,
+				454C262828847D5100DC80F6 /* AuthenticationValidatorTests.swift in Sources */,
+				45797EE0288F3278005100BD /* ResetPasswordView.swift in Sources */,
+				45797ED4288F2266005100BD /* InitialView.swift in Sources */,
 				45D2284B27F09330008506F8 /* QuestionDataServiceTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4594E9F3276A7D530054E6BE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4594E9FE276A7D530054E6BE /* FantasyUniverseUITestsLaunchTests.swift in Sources */,
-				4594E9FC276A7D530054E6BE /* FantasyUniverseUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,11 +698,6 @@
 			isa = PBXTargetDependency;
 			target = 4594E9D7276A7D510054E6BE /* FantasyUniverse */;
 			targetProxy = 4594E9EE276A7D530054E6BE /* PBXContainerItemProxy */;
-		};
-		4594E9F9276A7D530054E6BE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4594E9D7276A7D510054E6BE /* FantasyUniverse */;
-			targetProxy = 4594E9F8276A7D530054E6BE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -882,52 +935,6 @@
 			};
 			name = Release;
 		};
-		4594EA08276A7D530054E6BE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7YV6V8HGN2;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarasmotruk.FantasyUniverseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FantasyUniverse;
-			};
-			name = Debug;
-		};
-		4594EA09276A7D530054E6BE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7YV6V8HGN2;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarasmotruk.FantasyUniverseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FantasyUniverse;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -954,15 +961,6 @@
 			buildConfigurations = (
 				4594EA05276A7D530054E6BE /* Debug */,
 				4594EA06276A7D530054E6BE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4594EA07276A7D530054E6BE /* Build configuration list for PBXNativeTarget "FantasyUniverseUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4594EA08276A7D530054E6BE /* Debug */,
-				4594EA09276A7D530054E6BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1113,11 +1111,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 452C54E027DD18C100A7FBEF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
-		};
-		452C551127DD18C100A7FBEF /* FirebaseRemoteConfigSwift-Beta */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 452C54E027DD18C100A7FBEF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseRemoteConfigSwift-Beta";
 		};
 		452C551327DD18C100A7FBEF /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;

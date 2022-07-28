@@ -10,10 +10,10 @@ import XCTest
 
 class QuestionDataServiceTests: XCTestCase {
     // swiftlint:disable line_length
-    let completeQuestion1 = Question(id: "completeQuestion1", question: "question", optionA: "optionA", optionB: "optionB", optionC: "optionC", optionD: "optionD", correct: "optionA", isSubmitted: false, completed: false)
-    let completeQuestion2 = Question(id: "completeQuestion2", question: "question", optionA: "optionA", optionB: "optionB", optionC: "optionC", optionD: "optionD", correct: "optionA", isSubmitted: false, completed: false)
-    let completeQuestion3 = Question(id: "completeQuestion3", question: "question", optionA: "optionA", optionB: "optionB", optionC: "optionC", optionD: "optionD", correct: "optionA", isSubmitted: false, completed: false)
-    let incompleteQuestion = Question(id: nil, question: "question", optionA: "optionA", optionB: "optionB", optionC: nil, optionD: "optionD", correct: "optionA", isSubmitted: false, completed: false)
+    let completeQuestion1 = Question(question: "question", optionA: "optionA", optionB: "optionB", optionC: "optionC", optionD: "optionD", correct: "optionA", isSubmitted: false, completed: false)
+    let completeQuestion2 = Question(question: "question", optionA: "optionA", optionB: "optionB", optionC: "optionC", optionD: "optionD", correct: "optionA", isSubmitted: false, completed: false)
+    let completeQuestion3 = Question(question: "question", optionA: "optionA", optionB: "optionB", optionC: "optionC", optionD: "optionD", correct: "optionA", isSubmitted: false, completed: false)
+    let incompleteQuestion = Question(question: "question", optionA: "optionA", optionB: "optionB", optionC: nil, optionD: "optionD", correct: "optionA", isSubmitted: false, completed: false)
     
     override func setUpWithError() throws {}
 
