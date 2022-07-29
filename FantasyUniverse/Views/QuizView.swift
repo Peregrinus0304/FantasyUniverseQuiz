@@ -12,7 +12,7 @@ struct QuizView: View {
     @Binding var correct: Int
     @Binding var wrong: Int
     @Binding var answered: Int
-    @Binding var set: String
+    @Binding var set: QuestionSet
     @StateObject var data = QuestionViewModel()
     @Environment(\.presentationMode) var present
     private let firebaseAuthService = FirebaseAuthService()

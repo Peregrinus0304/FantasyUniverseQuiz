@@ -32,15 +32,12 @@ struct InitialView: View {
     }
     
     var signInButton: some View {
+        
         NavigationLink {
             ManualSignInView()
         } label: {
             Text("Sign in")
-                .bold()
-                .frame(width: 200, height: 50)
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
+                .defaultLabelStyle(width: 300, height: 50)
         }
     }
    
@@ -49,11 +46,7 @@ struct InitialView: View {
             SignUpView()
         } label: {
             Text("Sign up")
-                .bold()
-                .frame(width: 200, height: 50)
-                .background(Color.red)
-                .foregroundColor(.white)
-                .cornerRadius(10)
+                .defaultLightLabelStyle(width: 300, height: 50)
         }
     }
     
@@ -62,11 +55,7 @@ struct InitialView: View {
             ResetPasswordView()
         } label: {
             Text("Restore my password")
-                .bold()
-                .frame(width: 200, height: 50)
-                .background(Color.purple)
-                .foregroundColor(.white)
-                .cornerRadius(10)
+                .defaultDarkLabelStyle(width: 300, height: 50)
         }
     }
     

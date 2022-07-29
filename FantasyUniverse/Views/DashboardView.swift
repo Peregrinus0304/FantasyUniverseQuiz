@@ -14,7 +14,7 @@ struct DashboardView: View {
     @State var correct = 0
     @State var wrong = 0
     @State var answered = 0
-    @State var selectedSet = ""
+    @State var selectedSet: QuestionSet = .none
     let sets = QuestionSet.allSets
     
     var body: some View {
@@ -67,7 +67,7 @@ struct DashboardView: View {
                     .background(.thinMaterial)
                     .cornerRadius(15)
                     .onTapGesture(perform: {
-                        selectedSet = sets[index].collectionIdentifier
+                        selectedSet = sets[index]
                         show.toggle()
                     })
                 }
