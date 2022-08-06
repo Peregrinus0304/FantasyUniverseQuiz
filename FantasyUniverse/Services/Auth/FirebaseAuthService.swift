@@ -33,7 +33,6 @@ final class FirebaseAuthService: ObservableObject {
             .addStateDidChangeListener { (_, user) in
                 if let user = user {
                     print("Got user: \(user)")
-                    
                    let user = User(
                         uid: user.uid,
                         displayName: user.displayName,

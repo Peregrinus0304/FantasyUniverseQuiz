@@ -8,5 +8,11 @@
 import UIKit
 
 enum UIValues {
-    static let buttonCornerRadius: CGFloat = 10
+    static let defaultCornerRadius: CGFloat = 10
+    static let defaultMinorElementHeight: CGFloat = 50
+    static let defaultInfoLabelHeight: CGFloat = 30
+    static let defaultPadding: CGFloat = 10
+    static let defaultBorderWidth: CGFloat = 4
+    static let defaultMinimalPadding: CGFloat = 3
+    static let minimalBorderWidth: CGFloat = 1
 }

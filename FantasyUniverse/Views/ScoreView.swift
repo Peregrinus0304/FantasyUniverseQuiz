@@ -49,7 +49,7 @@ struct ScoreView: View {
             Button("Go to home") {
                 action()
             }
-            .buttonStyle(AppSystemButton())
+            .buttonStyle(AppSystemButtonStyle(type: .normal))
         }
     }
     

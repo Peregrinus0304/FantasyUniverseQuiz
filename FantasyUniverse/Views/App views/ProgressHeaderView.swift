@@ -9,14 +9,12 @@ import SwiftUI
 
 struct ProgressHeaderView: View {
     
-    let correctCount: String
-    let wrongCount: String
+    @Binding var correctCount: Int
+    @Binding var wrongCount: Int
     let progress: CGFloat
     
     var body: some View {
-       
         VStack {
-            
             ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
                 Capsule()
                     .fill(Color.pink)
@@ -29,7 +27,7 @@ struct ProgressHeaderView: View {
             
             HStack {
                 Label {
-                    Text(correctCount)
+                    Text(correctCount == .zero ? "" : "\(correctCount)")
                         .font(.largeTitle)
                         .foregroundColor(.black)
                 } icon: {
@@ -41,7 +39,7 @@ struct ProgressHeaderView: View {
                 Spacer()
                 
                 Label {
-                    Text(wrongCount)
+                    Text(wrongCount == .zero ? "" : "\(wrongCount)")
                         .font(.largeTitle)
                         .foregroundColor(.black)
                 } icon: {

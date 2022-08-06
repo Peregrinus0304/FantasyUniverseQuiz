@@ -15,27 +15,27 @@ class ManualSignInViewModel: ObservableObject {
     @Published var loginFieldValue = ""
     @Published var passwordFieldValue = ""
     @Published var validationErrorMessage = ""
+    @Published var fieldsValid = false
     @Published var isAuthenticated = false
     @Published var authError: String?
     @Published var alert: AppAlert?
     
     private var subscriptions = Set<AnyCancellable>()
     
-    func validateCredentials() -> (areValid: Bool, erorrMassage: String?) {
+    func validateCredentials() {
+        
         let emailFieldValid = validator.isEmailValid(loginFieldValue)
         let passwordFieldValid = validator.isPasswordValid(passwordFieldValue)
-        var validationError: String? {
             if !passwordFieldValid && !emailFieldValid {
-                return "Email and password do not fulfil requirements"
+                validationErrorMessage = ValidationResult.wrongEmailAndPassword.message
             } else if !passwordFieldValid {
-                return "Password does not fulfil requirements"
+                validationErrorMessage = ValidationResult.wrongPassword.message
             } else if !emailFieldValid {
-                return "Email does not fulfil requirements"
+                validationErrorMessage = ValidationResult.wrongEmail.message
             } else {
-                return nil
+                validationErrorMessage = ValidationResult.none.message
+                fieldsValid = true
             }
-        }
-        return (emailFieldValid && passwordFieldValid, validationError)
     }
     
     func signIn() {

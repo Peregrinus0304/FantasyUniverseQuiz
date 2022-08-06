@@ -1,5 +1,5 @@
 //
-//  QuestionViewModel.swift
+//  QuizViewModel.swift
 //  FantasyUniverse
 //
 //  Created by TarasPeregrinus on 30.01.2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Firebase
 
-class QuestionViewModel: ObservableObject {
+class QuizViewModel: ObservableObject {
 
     @Published var questionsData: [QuestionViewData] = []
     

@@ -9,8 +9,7 @@ import SwiftUI
 
 struct DashboardView: View {
     
-    @AppStorage("email") var username: String = "Anonymous"
-    @State var show = false
+    @State var showSelectedQuiz = false
     @State var correct = 0
     @State var wrong = 0
     @State var answered = 0
@@ -18,28 +17,20 @@ struct DashboardView: View {
     let sets = QuestionSet.allSets
     
     var body: some View {
-        ZStack {
-            animatedBackground
-            VStack {
-                usernameLabel
-                instructionLabel
-                Spacer()
-                collectionView
-                Spacer()
-            }
+        AnimatedBackground(animationName: "dashboard-background") {
+                VStack {
+                    instructionLabel
+                    Spacer()
+                    collectionView
+                    Spacer()
+                }
         }
         .navigationBarHidden(true)
-        .fullScreenCover(isPresented: $show) {
+        .fullScreenCover(isPresented: $showSelectedQuiz) {
             cleanUp()
         } content: {
             QuizView(correct: $correct, wrong: $wrong, answered: $answered, set: $selectedSet)
         }
-    }
-    
-    var animatedBackground: some View {
-        LottieView(animationName: "dashboard-background", loopMode: .loop, contentMode: .scaleAspectFit)
-            .aspectRatio(contentMode: .fill)
-            .ignoresSafeArea()
     }
     
     var collectionView: some View {
@@ -59,8 +50,9 @@ struct DashboardView: View {
                             .frame(width: 150, height: 150)
                         
                         Text(sets[index].collectionIdentifier)
-                            .font(.title2)
-                            .fontWeight(.heavy)
+                            .font(.appMediumFont)
+                            .foregroundColor(Color(Asset.Colors.navyBlue.color))
+                            
                     }
                     .padding()
                     .frame(maxWidth: .infinity)
@@ -68,7 +60,7 @@ struct DashboardView: View {
                     .cornerRadius(15)
                     .onTapGesture(perform: {
                         selectedSet = sets[index]
-                        show.toggle()
+                        showSelectedQuiz.toggle()
                     })
                 }
             })
@@ -77,15 +69,10 @@ struct DashboardView: View {
         }
     }
     
-    var usernameLabel: some View {
-        Text("Welcome, \(username)!")
-            .font(.system(size: 28))
-            .fontWeight(.heavy)
-    }
-    
     var instructionLabel: some View {
-        Text("What is your today`s quizz ?")
-            .font(.system(size: 28))
+        Text("Available quizzes")
+            .font(.appLargeFont)
+            .foregroundColor(Color(Asset.Colors.navyBlue.color))
     }
     
     private func cleanUp() {

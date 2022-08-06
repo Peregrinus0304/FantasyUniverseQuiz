@@ -16,33 +16,32 @@ class SignUpViewModel: ObservableObject {
     @Published var firstnameFieldValue = ""
     @Published var lastnameFieldValue = ""
     @Published var validationErrorMessage = ""
+    @Published var fieldsValid = false
     @Published var isAuthenticated = false
     @Published var authError: String?
     @Published var alert: AppAlert?
     
     private var subscriptions = Set<AnyCancellable>()
     
-    func validateCredentials() -> (areValid: Bool, erorrMassage: String?) {
+    func validateCredentials() {
         
         let emailFieldValid = validator.isEmailValid(emailFieldValue)
         let passwordFieldValid = validator.isPasswordValid(passwordFieldValue)
         let firstnameFieldValid = validator.isNameValid(firstnameFieldValue)
         let lastnameFieldValid = validator.isNameValid(lastnameFieldValue)
         
-        var validationError: String? {
-            if !passwordFieldValid && !emailFieldValid {
-                return "Email and password do not fulfil requirements"
-            } else if !passwordFieldValid {
-                return "Password does not fulfil requirements"
-            } else if !emailFieldValid {
-                return "Email does not fulfil requirements"
-            } else if !firstnameFieldValid || !lastnameFieldValid {
-                return "Either your firstname or lastname do not fulfil requirements"
-            } else {
-                return nil
-            }
+        if !passwordFieldValid && !emailFieldValid {
+            validationErrorMessage = ValidationResult.wrongEmailAndPassword.message
+        } else if !passwordFieldValid {
+            validationErrorMessage = ValidationResult.wrongPassword.message
+        } else if !emailFieldValid {
+            validationErrorMessage = ValidationResult.wrongEmail.message
+        } else if !firstnameFieldValid || !lastnameFieldValid {
+            validationErrorMessage = ValidationResult.wrongNames.message
+        } else {
+            validationErrorMessage = ValidationResult.none.message
+            fieldsValid = true
         }
-        return (emailFieldValid && passwordFieldValid, validationError)
     }
     
     func signUp() {
@@ -57,7 +56,7 @@ class SignUpViewModel: ObservableObject {
             .sink { res in
                 switch res {
                 case .failure(let err):
-                    self.alert = .authError(message: err.localizedDescription)
+                        self.alert = .authError(message: err.localizedDescription)
                 default: break
                 }
             } receiveValue: { [weak self] in

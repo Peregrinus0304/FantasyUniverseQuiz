@@ -13,23 +13,22 @@ class ResetPasswordViewModel: ObservableObject {
     private let validator = AuthenticationValidator()
     private let firebaseAuthService = FirebaseAuthService()
     @Published var emailFieldValue = ""
-    @Published var errorMessage = ""
+    @Published var validationErrorMessage = ""
+    @Published var fieldsValid = false
     @Published var isResetSuccessfull = false
     @Published var authError: String?
     @Published var alert: AppAlert?
     
     private var subscriptions = Set<AnyCancellable>()
     
-    func validateCredentials() -> (areValid: Bool, erorrMassage: String?) {
+    func validateCredentials() {
         let emailFieldValid = validator.isEmailValid(emailFieldValue)
-        var validationError: String? {
             if !emailFieldValid {
-                return "Email does not fulfil requirements"
+                validationErrorMessage = ValidationResult.wrongEmail.message
             } else {
-                return nil
+                validationErrorMessage = ValidationResult.none.message
+                fieldsValid = true
             }
-        }
-        return (emailFieldValid, validationError)
     }
     
     func resetPassword() {

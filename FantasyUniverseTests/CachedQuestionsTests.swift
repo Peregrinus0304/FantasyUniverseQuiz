@@ -45,7 +45,9 @@ class CachedQuestionsTests: XCTestCase {
         
         XCTAssertTrue(cachedQuestions.cacheIsEmpty(), "The cachedQuestions should has been empty")
         
-        let someCollection = QuestionCollection(identifier: QuestionSet.test.collectionIdentifier, questions: [TestQuestionViewData.questionOne])
+        let someCollection = QuestionCollection(
+                                identifier: QuestionSet.test.collectionIdentifier,
+                                questions: [TestQuestionViewData.questionOne])
         
         cachedQuestions.cacheElements([someCollection])
         XCTAssertFalse(cachedQuestions.cacheIsEmpty(), "The cachedQuestions should contain elements")
@@ -59,7 +61,9 @@ class CachedQuestionsTests: XCTestCase {
         
         XCTAssertTrue(cachedQuestions.cacheIsEmpty(), "The cachedQuestions should has been empty")
         let someSet = QuestionSet.test
-        let someCollection = QuestionCollection(identifier: someSet.collectionIdentifier, questions: [TestQuestionViewData.questionOne])
+        let someCollection = QuestionCollection(
+                                identifier: someSet.collectionIdentifier,
+                                questions: [TestQuestionViewData.questionOne])
         cachedQuestions.cacheElements([someCollection])
         
         XCTAssertTrue(
@@ -71,7 +75,9 @@ class CachedQuestionsTests: XCTestCase {
         
         XCTAssertTrue(cachedQuestions.cacheIsEmpty(), "The cachedQuestions should has been empty")
         let someSet = QuestionSet.test
-        let someCollection = QuestionCollection(identifier: someSet.collectionIdentifier, questions: [TestQuestionViewData.questionOne])
+        let someCollection = QuestionCollection(
+                                identifier: someSet.collectionIdentifier,
+                                questions: [TestQuestionViewData.questionOne])
         
         cachedQuestions.cacheElements([someCollection])
         XCTAssertFalse(cachedQuestions.cacheIsEmpty(), "The cachedQuestions should contain cached elements.")

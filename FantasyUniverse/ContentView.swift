@@ -18,17 +18,13 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
     
     var body: some View {
-        
         switch authService.state {
         case .failed(with: let error):
             Text(error.localizedDescription)
         case .success(with: let user):
             AppTabView(user: user)
         case .proccessing:
-                LottieView(
-                    animationName: "sandclock",
-                    loopMode: .loop,
-                    contentMode: .scaleToFill)
+                LoadingView()
         case .unauthenticated:
             InitialView()
         }

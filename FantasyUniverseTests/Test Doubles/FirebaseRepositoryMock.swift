@@ -18,7 +18,9 @@ class FirebaseRepositoryMock: QuestionsRepository {
     
     func getQuestionsCollection(_ collection: QuestionSet, _ completion: @escaping (QuestionCollection) -> Void) {
         
-        let questionCollection: QuestionCollection = QuestionCollection(identifier: collection.collectionIdentifier, questions: questionsMock)
+        let questionCollection: QuestionCollection = QuestionCollection(
+                                    identifier: collection.collectionIdentifier,
+                                    questions: questionsMock)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             print("Mock getQuestionsCollection() returned data: \(questionCollection)")
@@ -31,7 +33,9 @@ class FirebaseRepositoryMock: QuestionsRepository {
         var questionCollections: [QuestionCollection] = []
         
         QuestionSet.allSets.forEach { collection in
-            let newCollection: QuestionCollection = QuestionCollection(identifier: collection.collectionIdentifier, questions: questionsMock)
+            let newCollection: QuestionCollection = QuestionCollection(
+                                    identifier: collection.collectionIdentifier,
+                                    questions: questionsMock)
             questionCollections.append(newCollection)
         }
         

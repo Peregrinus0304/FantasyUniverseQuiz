@@ -13,22 +13,21 @@ struct QuizView: View {
     @Binding var wrong: Int
     @Binding var answered: Int
     @Binding var set: QuestionSet
-    @StateObject var data = QuestionViewModel()
+    @StateObject var viewModel = QuizViewModel()
     @Environment(\.presentationMode) var present
-    private let firebaseAuthService = FirebaseAuthService()
     
     var body: some View {
         
         ZStack {
             animatedBackground
-            if data.questionsData.isEmpty {
+            if viewModel.questionsData.isEmpty {
                 ProgressView()
             } else {
-                if answered == data.questionsData.count {
-                 // Finish screen
+                if answered == viewModel.questionsData.count {
+                    // Finish screen
                     scoreView
                 } else {
-                 // Game screen
+                    // Game screen
                     VStack {
                         topProgress
                         questionView
@@ -38,7 +37,7 @@ struct QuizView: View {
             }
         }
         .onAppear {
-            data.getQuestions(set: set)
+            viewModel.getQuestions(set: set)
         }
     }
     
@@ -56,14 +55,14 @@ struct QuizView: View {
     }
     
     var topProgress: some View {
-        ProgressHeaderView(correctCount: correct == .zero ? "" : "\(correct)",
-                           wrongCount: wrong == .zero ? "" : "\(wrong)",
+        ProgressHeaderView(correctCount: $correct,
+                           wrongCount: $wrong ,
                            progress: progress())
     }
     
     var questionView: some View {
-        QuestionView(questions: $data.questionsData,
-                     currentQuestion: data.questionsData[.zero],
+        QuestionView(questions: $viewModel.questionsData,
+                     currentQuestion: viewModel.questionsData[.zero],
                      correct: $correct,
                      wrong: $wrong,
                      answered: $answered)
@@ -71,7 +70,7 @@ struct QuizView: View {
     }
     
     private func progress() -> CGFloat {
-        let fraction = CGFloat(answered) / CGFloat(data.questionsData.count)
+        let fraction = CGFloat(answered) / CGFloat(viewModel.questionsData.count)
         let width = UIScreen.main.bounds.width - 30
         return fraction * width
     }

@@ -18,13 +18,13 @@ struct AppTabView: View {
                     Image(systemName: "line.3.horizontal.circle")
                     Text("Quiz")
                 }
-            AccountView()
+            UserView()
                 .tabItem {
                     Image(systemName: "person")
-                    Text("Account")
+                    Text("User")
                 }
         }
-        .accentColor(.blue)
+        .accentColor(Color(Asset.Colors.aquamarine.color))
         .environmentObject(user)
     }
 }

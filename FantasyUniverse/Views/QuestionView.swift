@@ -20,7 +20,9 @@ struct QuestionView: View {
         
         VStack(spacing: 20) {
             // Question
-            QuestionLabelView(text: currentQuestion.question)
+            Text(currentQuestion.question)
+                .questionLabelStyle()
+//            QuestionLabelView(text: currentQuestion.question)
             // Options
             optionButtons
             Spacer()

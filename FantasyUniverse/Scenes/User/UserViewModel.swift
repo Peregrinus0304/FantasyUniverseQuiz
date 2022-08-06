@@ -1,5 +1,5 @@
 //
-//  AccountViewModel.swift
+//  UserViewModel.swift
 //  FantasyUniverse
 //
 //  Created by TarasPeregrinus on 27.07.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class AccountViewModel: ObservableObject {
+class UserViewModel: ObservableObject {
     
     private let firebaseAuthService = FirebaseAuthService()
     @Published var emailFieldValue = ""
@@ -16,7 +16,7 @@ class AccountViewModel: ObservableObject {
     @Published var isResetSuccessfull = false
     @Published var authError: String?
     @Published var alert: AppAlert?
-    
+
     private var subscriptions = Set<AnyCancellable>()
     
     func signOut() {

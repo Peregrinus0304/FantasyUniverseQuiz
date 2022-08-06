@@ -11,8 +11,7 @@ struct InitialView: View {
     var body: some View {
         NavigationView {
 
-        ZStack {
-            Color.gray
+            AnimatedBackground(animationName: "day-background") {
             VStack {
                 logoAnimation
                 signInButton
@@ -23,6 +22,7 @@ struct InitialView: View {
         }
         .ignoresSafeArea()
         }
+        .appNavigationViewStyle()
     }
     
     var logoAnimation: some View {
