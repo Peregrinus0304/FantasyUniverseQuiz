@@ -9,35 +9,36 @@ import SwiftUI
 
 struct QuizView: View {
     
-    @Binding var correct: Int
-    @Binding var wrong: Int
-    @Binding var answered: Int
     @Binding var set: QuestionSet
     @StateObject var viewModel = QuizViewModel()
     @Environment(\.presentationMode) var present
     
     var body: some View {
         
-        ZStack {
-            animatedBackground
+        AnimatedBackground(animationName: "day-background") {
             if viewModel.questionsData.isEmpty {
-                ProgressView()
+                LoadingView()
             } else {
-                if answered == viewModel.questionsData.count {
+                if viewModel.answered == viewModel.questionsData.count {
                     // Finish screen
                     scoreView
                 } else {
                     // Game screen
-                    VStack {
+                    VStack(alignment: .center) {
                         topProgress
                         questionView
                     }
-                    .frame(maxWidth: UIScreen.main.bounds.width - 10)
+                    .padding(.horizontal, 5)
                 }
             }
+            
         }
+        .navigationBarHidden(true)
         .onAppear {
             viewModel.getQuestions(set: set)
+        }
+        .onDisappear {
+            cleanUp()
         }
     }
     
@@ -48,30 +49,36 @@ struct QuizView: View {
     }
     
     var scoreView: some View {
-        ScoreView(correctScore: correct, wrongScore: wrong) {
+        ScoreView(correctScore: viewModel.correct, wrongScore: viewModel.wrong) {
             present.wrappedValue.dismiss()
         }
         .background(.thinMaterial)
     }
     
     var topProgress: some View {
-        ProgressHeaderView(correctCount: $correct,
-                           wrongCount: $wrong ,
+        ProgressHeaderView(correctCount: $viewModel.correct,
+                           wrongCount: $viewModel.wrong ,
                            progress: progress())
     }
     
     var questionView: some View {
         QuestionView(questions: $viewModel.questionsData,
                      currentQuestion: viewModel.questionsData[.zero],
-                     correct: $correct,
-                     wrong: $wrong,
-                     answered: $answered)
+                     correct: $viewModel.correct,
+                     wrong: $viewModel.wrong,
+                     answered: $viewModel.answered)
             .padding()
     }
     
     private func progress() -> CGFloat {
-        let fraction = CGFloat(answered) / CGFloat(viewModel.questionsData.count)
+        let fraction = CGFloat(viewModel.answered) / CGFloat(viewModel.questionsData.count)
         let width = UIScreen.main.bounds.width - 30
         return fraction * width
+    }
+    
+    private func cleanUp() {
+        viewModel.correct = 0
+        viewModel.wrong = 0
+        viewModel.answered = 0
     }
 }

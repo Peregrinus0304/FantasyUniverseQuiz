@@ -14,43 +14,45 @@ struct ScoreView: View {
     let action: () -> Void
     
     var body: some View {
-        VStack(spacing: 25) {
-            LottieView(animationName: winScore() ? "smile-face" : "sad-face",
-                       loopMode: .playOnce,
-                       contentMode: .scaleAspectFit)
-            
-                .frame(width: UIScreen.main.bounds.width - 5)
-                .padding()
-            
-            Text(winScore() ? "Well done" : "You can do better")
-                .font(.title)
-                .fontWeight(.heavy)
-                .foregroundColor(.blue)
-            
-            HStack(spacing: 15) {
-                Image(systemName: "checkmark")
-                    .font(.largeTitle)
-                    .foregroundColor(.green)
+        GeometryReader { reader in
+            VStack(alignment: .center, spacing: 25) {
+                LottieView(animationName: winScore() ? "smile-face" : "sad-face",
+                           loopMode: .playOnce,
+                           contentMode: .scaleAspectFit)
+                    .padding(.horizontal, 1)
                 
-                Text("\(correctScore)")
-                    .font(.title2)
-                    .foregroundColor(.green)
+                Text(winScore() ? "Well done" : "You can do better")
+                    .font(.appVeryLargeFont)
+                    .foregroundColor(Color(Asset.Colors.navyBlue.color))
                 
-                Image(systemName: "xmark")
-                    .font(.largeTitle)
-                    .foregroundColor(.red)
-                    .padding(.leading)
+                HStack(spacing: 15) {
+                    Image(systemName: "checkmark")
+                        .font(.appLargeFont)
+                        .foregroundColor(Color(Asset.Colors.appGreen.color))
+                    
+                    Text("\(correctScore)")
+                        .font(.appMediumFont)
+                        .foregroundColor(Color(Asset.Colors.appGreen.color))
+                    
+                    Image(systemName: "xmark")
+                        .font(.appLargeFont)
+                        .foregroundColor(Color(Asset.Colors.appRed.color))
+                        .padding(.leading)
+                    
+                    Text("\(wrongScore)")
+                        .font(.appMediumFont)
+                        .foregroundColor(Color(Asset.Colors.appRed.color))
+                }
                 
-                Text("\(wrongScore)")
-                    .font(.title2)
-                    .foregroundColor(.red)
+                Button("Go to home") {
+                    action()
+                }
+                .appSystemButtonStyle(type: .normal, width: reader.size.width / 2,
+                                      height: UIValues.defaultMinorElementHeight)
             }
             
-            Button("Go to home") {
-                action()
-            }
-            .buttonStyle(AppSystemButtonStyle(type: .normal))
         }
+        
     }
     
     func winScore() -> Bool {

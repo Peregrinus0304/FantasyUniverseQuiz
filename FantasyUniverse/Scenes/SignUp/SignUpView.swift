@@ -16,14 +16,13 @@ struct SignUpView: View {
             GeometryReader { reader in
                 ScrollView {
                     VStack {
-                            emailField
-                            passwordField
-                            firstnameField
-                            lastnameField
-                            errorMessage
-
-                            submitButton
-                            navigation
+                        emailField
+                        passwordField
+                        firstnameField
+                        lastnameField
+                        errorMessage
+                        submitButton
+                        navigation
                     }
                     .frame(minHeight: reader.size.height)
                     .keyboardAwarePadding()
@@ -34,7 +33,7 @@ struct SignUpView: View {
         .navigationBarTitle("Sign up")
         .navigationBarTitleDisplayMode(.inline)
         .onTapGesture {
-              self.endTextEditing()
+            self.endTextEditing()
         }
         .alert(item: $viewModel.alert) { value in
             return value.alert
@@ -84,7 +83,7 @@ struct SignUpView: View {
                 viewModel.signUp()
             }
         }
-        .appNextButtonStyle()
+        .appSystemButtonStyle(type: .normal)
     }
     
     private var errorMessage: some View {

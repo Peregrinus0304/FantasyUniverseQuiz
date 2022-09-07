@@ -31,6 +31,13 @@ struct AppTabView: View {
 
 struct AppTabView_Previews: PreviewProvider {
     static var previews: some View {
-        AppTabView(user: User(uid: "", displayName: "", email: "", refreshToken: ""))
+        AppTabView(user: User(
+            uid: "",
+            email: "",
+            displayName: "",
+            refreshToken: "",
+            profileImageURL: nil,
+            firstName: nil,
+            lastName: nil))
     }
 }

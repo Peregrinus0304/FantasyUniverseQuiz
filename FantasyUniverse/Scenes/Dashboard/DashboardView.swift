@@ -9,27 +9,25 @@ import SwiftUI
 
 struct DashboardView: View {
     
-    @State var showSelectedQuiz = false
-    @State var correct = 0
-    @State var wrong = 0
-    @State var answered = 0
-    @State var selectedSet: QuestionSet = .none
     let sets = QuestionSet.allSets
-    
+    @State var showSelectedQuiz = false
+    @State var showListItems = false
+    @State var animationDelay = 0.2
+    @State var selectedSet: QuestionSet = .none
     var body: some View {
-        AnimatedBackground(animationName: "dashboard-background") {
+        NavigationView {
+            AnimatedBackground(animationName: "dashboard-background") {
                 VStack {
                     instructionLabel
                     Spacer()
                     collectionView
                     Spacer()
                 }
-        }
-        .navigationBarHidden(true)
-        .fullScreenCover(isPresented: $showSelectedQuiz) {
-            cleanUp()
-        } content: {
-            QuizView(correct: $correct, wrong: $wrong, answered: $answered, set: $selectedSet)
+            }
+            .navigationBarHidden(true)
+            .fullScreenCover(isPresented: $showSelectedQuiz) {
+                QuizView(set: $selectedSet)
+            }
         }
     }
     
@@ -52,12 +50,16 @@ struct DashboardView: View {
                         Text(sets[index].collectionIdentifier)
                             .font(.appMediumFont)
                             .foregroundColor(Color(Asset.Colors.navyBlue.color))
-                            
                     }
                     .padding()
                     .frame(maxWidth: .infinity)
                     .background(.thinMaterial)
                     .cornerRadius(15)
+                    .opacity(showListItems ? 1 : 0)
+                    .animation(
+                        Animation.easeOut(duration: 0.3)
+                            .delay(animationDelay * Double(index)),
+                        value: showListItems)
                     .onTapGesture(perform: {
                         selectedSet = sets[index]
                         showSelectedQuiz.toggle()
@@ -67,17 +69,16 @@ struct DashboardView: View {
                 .frame(maxWidth: UIScreen.main.bounds.width - 30)
                 .padding()
         }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                showListItems = true
+            })
+        }
     }
     
-    var instructionLabel: some View {
+    private var instructionLabel: some View {
         Text("Available quizzes")
             .font(.appLargeFont)
             .foregroundColor(Color(Asset.Colors.navyBlue.color))
-    }
-    
-    private func cleanUp() {
-        correct = 0
-        wrong = 0
-        answered = 0
     }
 }

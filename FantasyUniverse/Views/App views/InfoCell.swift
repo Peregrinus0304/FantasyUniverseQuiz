@@ -13,34 +13,35 @@ struct InfoCell: View {
     var value: String?
 
     var body: some View {
-        HStack {
+        VStack {
             Text(name)
                 .font(.appSmallFont)
                 .foregroundColor(Color(Asset.Colors.appBlue.color))
-                .minimumScaleFactor(0.4)
+                .minimumScaleFactor(0.1)
                 .lineLimit(1)
-                .allowsTightening(true)
-                .padding(.leading, 2)
+                .multilineTextAlignment(.leading)
+                .padding(.leading, 1)
 
             Text(value ?? "none")
                 .font(.appLargeFont)
                 .foregroundColor(Color(Asset.Colors.appGreen.color))
-                .minimumScaleFactor(0.6)
-                .lineLimit(1)
+                .minimumScaleFactor(0.3)
+                .lineLimit(2)
                 .allowsTightening(true)
-                .padding(.trailing, 2)
+                .multilineTextAlignment(.leading)
+                .padding(.leading, 1)
         }
-        .frame(height: UIValues.defaultMinorElementHeight, alignment: .leading)
+        .frame(
+            height: UIValues.defaultMediumElementHeight,
+            alignment: .leading)
         .frame(maxWidth: .infinity)
-
         .background(.regularMaterial)
         .cornerRadius(UIValues.defaultCornerRadius)
         .overlay(
             RoundedRectangle(
                 cornerRadius: UIValues.defaultCornerRadius)
                 .stroke(Color(Asset.Colors.appBlue.color),
-                        lineWidth: UIValues.minimalBorderWidth)
-        )
+                        lineWidth: UIValues.minimalBorderWidth))
     }
 }
 

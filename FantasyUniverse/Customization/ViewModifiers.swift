@@ -162,26 +162,11 @@ struct AppSystemButtonStyle: ButtonStyle {
             .font(.appMediumFont)
             .minimumScaleFactor(0.1)
             .padding(.horizontal, 2)
-            .frame(width: width ?? nil,
-                   height: height ?? nil)
+            .frame(width: width,
+                   height: height)
             .multilineTextAlignment(.center)
             .background(color)
             .foregroundColor(Color(Asset.Colors.appLint.color))
-            .cornerRadius(UIValues.defaultCornerRadius)
-            .scaleEffect(configuration.isPressed ? 1.2 : 1)
-            .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
-    }
-}
-
-struct AppNextButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .frame(width: 200, height: 50)
-            .background(Color(Asset.Colors.navyBlue.color))
-            .foregroundColor(Color(Asset.Colors.appLint.color))
-            .minimumScaleFactor(0.1)
-            .font(.appMediumFont)
             .cornerRadius(UIValues.defaultCornerRadius)
             .scaleEffect(configuration.isPressed ? 1.2 : 1)
             .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
@@ -192,11 +177,13 @@ struct QuestionLabelStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.appLargeFont)
-            .foregroundColor(.black)
+            .foregroundColor(Color(Asset.Colors.navyBlue.color))
             .minimumScaleFactor(0.6)
-            .lineLimit(nil)
+            .lineLimit(5)
+            .multilineTextAlignment(.center)
             .allowsTightening(true)
-            .padding([.top, .bottom], 25)
+            .fixedSize(horizontal: false, vertical: true)
+            .padding([.top, .bottom], 20)
     }
 }
 
@@ -213,7 +200,6 @@ struct AppNavigationViewModifier: ViewModifier {
         UINavigationBar.appearance().largeTitleTextAttributes = attributes
         UINavigationBar.appearance().tintColor = Asset.Colors.navyBlue.color
         UINavigationBar.appearance().barTintColor = Asset.Colors.appLint.color
-        
     }
     
     func body(content: Content) -> some View {
@@ -242,12 +228,8 @@ extension View {
         self.textFieldStyle(AppStandardTextFieldStyle(isHighlighted: isHighlighted))
     }
     
-    func appSystemButtonStyle(type: AppSystemButtonStyle.ButtonType, width: CGFloat? = nil, height: CGFloat? = nil) -> some View {
+    func appSystemButtonStyle(type: AppSystemButtonStyle.ButtonType, width: CGFloat? = UIValues.defaultButtonWidth, height: CGFloat? = UIValues.defaultMinorElementHeight) -> some View {
         self.buttonStyle(AppSystemButtonStyle(type: type, width: width, height: height))
-    }
-    
-    func appNextButtonStyle() -> some View {
-        self.buttonStyle(AppNextButton())
     }
     
     func questionLabelStyle() -> some View {

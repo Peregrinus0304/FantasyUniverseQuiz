@@ -26,16 +26,16 @@ class ManualSignInViewModel: ObservableObject {
         
         let emailFieldValid = validator.isEmailValid(loginFieldValue)
         let passwordFieldValid = validator.isPasswordValid(passwordFieldValue)
-            if !passwordFieldValid && !emailFieldValid {
-                validationErrorMessage = ValidationResult.wrongEmailAndPassword.message
-            } else if !passwordFieldValid {
-                validationErrorMessage = ValidationResult.wrongPassword.message
-            } else if !emailFieldValid {
-                validationErrorMessage = ValidationResult.wrongEmail.message
-            } else {
-                validationErrorMessage = ValidationResult.none.message
-                fieldsValid = true
-            }
+        if !passwordFieldValid && !emailFieldValid {
+            validationErrorMessage = ValidationResult.wrongEmailAndPassword.message
+        } else if !passwordFieldValid {
+            validationErrorMessage = ValidationResult.wrongPassword.message
+        } else if !emailFieldValid {
+            validationErrorMessage = ValidationResult.wrongEmail.message
+        } else {
+            validationErrorMessage = ValidationResult.none.message
+            fieldsValid = true
+        }
     }
     
     func signIn() {
@@ -44,11 +44,12 @@ class ManualSignInViewModel: ObservableObject {
             password: passwordFieldValue)
         firebaseAuthService
             .loginPublisher(with: credentials)
+            .receive(on: RunLoop.main)
             .sink { res in
                 switch res {
-                case .failure(let err):
-                    self.alert = .authError(message: err.localizedDescription)
-                default: break
+                    case .failure(let err):
+                        self.alert = .authError(message: err.localizedDescription)
+                    default: break
                 }
             } receiveValue: { [weak self] in
                 self?.isAuthenticated = true

@@ -21,7 +21,7 @@ struct LoadingView: View {
                 .frame(height: 200)
             Spacer()
         }
-        .background(Color(Asset.Colors.aquamarine.color))
+        .background(.thinMaterial)
     }
 }
 

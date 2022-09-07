@@ -18,3 +18,8 @@ struct SignUpCredentials: Codable {
     var firstname: String
     var lastname: String
 }
+
+struct UserInfo: Codable {
+    var firstname: String
+    var lastname: String
+}

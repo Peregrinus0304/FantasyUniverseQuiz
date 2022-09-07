@@ -40,7 +40,6 @@ struct ManualSignInView: View {
         .alert(item: $viewModel.alert) { value in
             return value.alert
         }
-        
     }
     
     private var loginField: some View {
@@ -66,9 +65,8 @@ struct ManualSignInView: View {
             if viewModel.fieldsValid {
                 viewModel.signIn()
             }
-            
         }
-        .buttonStyle(AppNextButton())
+        .appSystemButtonStyle(type: .normal)
     }
     
     private var errorMessage: some View {

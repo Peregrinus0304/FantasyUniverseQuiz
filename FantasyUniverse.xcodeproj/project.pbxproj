@@ -107,6 +107,8 @@
 		45A9434028983B6A005FBF2E /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A9433F28983B6A005FBF2E /* CircularProgressView.swift */; };
 		45A94342289866DB005FBF2E /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A94341289866DB005FBF2E /* Animations.swift */; };
 		45A94344289EFF4E005FBF2E /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A94343289EFF4E005FBF2E /* DashboardViewModel.swift */; };
+		45A9434628B2BF0D005FBF2E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A9434528B2BF0D005FBF2E /* ImagePicker.swift */; };
+		45A9434A28B42A45005FBF2E /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A9434928B42A45005FBF2E /* AuthError.swift */; };
 		45AD766D280EC60600CCBB39 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD766C280EC60600CCBB39 /* Cache.swift */; };
 		45AD766F280EC69700CCBB39 /* QuestionCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD766E280EC69700CCBB39 /* QuestionCollection.swift */; };
 		45AD7671280EC73200CCBB39 /* QuestionDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD7670280EC73200CCBB39 /* QuestionDataService.swift */; };
@@ -231,6 +233,8 @@
 		45A9433F28983B6A005FBF2E /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		45A94341289866DB005FBF2E /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		45A94343289EFF4E005FBF2E /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		45A9434528B2BF0D005FBF2E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		45A9434928B42A45005FBF2E /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		45AD766C280EC60600CCBB39 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		45AD766E280EC69700CCBB39 /* QuestionCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollection.swift; sourceTree = "<group>"; };
 		45AD7670280EC73200CCBB39 /* QuestionDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataService.swift; sourceTree = "<group>"; };
@@ -383,6 +387,7 @@
 		455A168628340D6B00543364 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				45A9434928B42A45005FBF2E /* AuthError.swift */,
 				455A167A281DCC6B00543364 /* AuthenticationValidator.swift */,
 				455A168728340D9B00543364 /* FirebaseAuthService.swift */,
 			);
@@ -602,6 +607,7 @@
 				45A943372896B2EA005FBF2E /* LoadingVIew.swift */,
 				45A9433D289721CE005FBF2E /* InfoCell.swift */,
 				45A9433F28983B6A005FBF2E /* CircularProgressView.swift */,
+				45A9434528B2BF0D005FBF2E /* ImagePicker.swift */,
 			);
 			path = "App views";
 			sourceTree = "<group>";
@@ -824,6 +830,7 @@
 				453505DA28947B5700BDBC40 /* Font+Extensions.swift in Sources */,
 				45A94344289EFF4E005FBF2E /* DashboardViewModel.swift in Sources */,
 				4584BCC528031623002C68C5 /* FirebaseRepository.swift in Sources */,
+				45A9434628B2BF0D005FBF2E /* ImagePicker.swift in Sources */,
 				45797EC6288DF2A2005100BD /* AuthFirebaseKeys.swift in Sources */,
 				45F9FEB727773A5500AFE9F9 /* QuizView.swift in Sources */,
 				45797EDF288F3278005100BD /* ResetPasswordView.swift in Sources */,
@@ -874,6 +881,7 @@
 				45797EBD288D8D77005100BD /* User.swift in Sources */,
 				45797ECA288E9F1B005100BD /* AppConfiguration.swift in Sources */,
 				45797EEC28909383005100BD /* AppTabView.swift in Sources */,
+				45A9434A28B42A45005FBF2E /* AuthError.swift in Sources */,
 				45AD76752818826F00CCBB39 /* ManualSignInView.swift in Sources */,
 				4540B502289466E20014C857 /* UIValues.swift in Sources */,
 				451776D927AFF01C005490A1 /* ScoreView.swift in Sources */,

@@ -10,7 +10,8 @@ import SwiftUI
 struct UserInfoView: View {
     
     var user: User
-    var userImageName: String?
+    @Binding var userImage: Image?
+    @State private var showingAvatar = false
     let logoutAction: () -> Void
     let editProfileAction: () -> Void
     let imageTappedAction: () -> Void
@@ -23,38 +24,45 @@ struct UserInfoView: View {
                     .frame(width: (reader.size.width / 2) - 6)
                 VStack {
                     userTappableImage
+                        .opacity(showingAvatar ? 1 : 0)
+                        .animation(Animation.easeOut(duration: 0.3).delay(0.3), value: showingAvatar)
                     HStack {
-                        logoutButton
-                        editProfileButton
+                        Button("Log out") {
+                            logoutAction()
+                        }
+                        .appSystemButtonStyle(type: .destructive, width: (reader.size.width / 4) - 6, height: 50)
+                        Button("Edit Profile") {
+                            editProfileAction()
+                        }
+                        .appSystemButtonStyle(type: .normal, width: (reader.size.width / 4) - 6, height: 50)
                     }
                 }
                 .padding([.vertical, .trailing], 3)
                 .frame(width: (reader.size.width / 2) - 6)
             }
-            .background(Color(Asset.Colors.appLint.color))
+            .background(Color(Asset.Colors.appLint.color))}
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
+                showingAvatar = true
+            })
         }
     }
     
     private var infoList: some View {
-
-            VStack {
-                InfoCell(name: "Display name:", value: user.displayName)
-                InfoCell(name: "Email:", value: user.email)
-                Spacer()
-            }
-            .padding(.top, 3)
+        VStack {
+            InfoCell(name: "firstname:", value: user.firstName)
+            InfoCell(name: "lastname:", value: user.lastName)
+            InfoCell(name: "email:", value: user.email)
+            Spacer()
+        }
+        .padding(.top, 3)
     }
     
     private var userTappableImage: some View {
         Button {
             imageTappedAction()
         } label: {
-            Image(systemName: "person")
-
-                .resizable()
-                .scaledToFit()
-                .frame(maxHeight: .infinity)
-                .padding(3)
+            profileImage
         }
         .cornerRadius(UIValues.defaultCornerRadius)
         .overlay(
@@ -65,31 +73,44 @@ struct UserInfoView: View {
         )
     }
     
-    private var editProfileButton: some View {
-        Button("Edit Profile") {
-            editProfileAction()
+    private var profileImage: some View {
+        Group {
+            if userImage != nil {
+                userImage!
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxHeight: .infinity)
+                    .padding(3)
+            } else {
+                Image(systemName: "person")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxHeight: .infinity)
+                    .padding(3)
+            }
         }
-        .appSystemButtonStyle(type: .normal, height: 50)
-    }
-    
-    private var logoutButton: some View {
-        Button("Log out") {
-            logoutAction()
-        }
-        .appSystemButtonStyle(type: .destructive, height: 50)
-
+       
     }
 }
 
 struct UserInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        UserInfoView(user: User(uid: "", displayName: "User", email: "Email", refreshToken: ""), userImageName: "") {
-            print("logoutAction")
-        } editProfileAction: {
-            print("editProfileAction")
-        } imageTappedAction: {
-            print("editProfileAction")
-        }
+        
+        UserInfoView(
+            user: User(
+                uid: "",
+                email: "",
+                displayName: "",
+                refreshToken: "",
+                profileImageURL: nil,
+                firstName: nil,
+                lastName: nil), userImage: .constant(Image(systemName: "Person"))) {
+                    print("logoutAction")
+                } editProfileAction: {
+                    print("editProfileAction")
+                } imageTappedAction: {
+                    print("editProfileAction")
+                }
         
     }
 }

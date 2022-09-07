@@ -24,14 +24,17 @@ struct OptionButton: View {
             action()
         } label: {
             Text(text)
-                .font(.body)
-                .fontWeight(.medium)
-                .foregroundColor(.white)
-                .padding(.vertical)
+                .font(.appMediumFont)
+                .foregroundColor(Color(Asset.Colors.appLint.color))
                 .frame(maxWidth: .infinity)
+                .padding(.vertical, 5)
                 .background(color)
+                .minimumScaleFactor(0.4)
+                .lineLimit(3)
+                .multilineTextAlignment(.center)
+                .allowsTightening(true)
                 .fixedSize(horizontal: false, vertical: true)
-                .cornerRadius(10)
+                .cornerRadius(UIValues.defaultCornerRadius)
         }
     }
     

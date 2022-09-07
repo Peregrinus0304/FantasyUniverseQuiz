@@ -10,12 +10,14 @@ import SwiftUI
 struct UserView: View {
     @EnvironmentObject var user: User
     @StateObject var viewModel = UserViewModel()
-    @State var progressPlaceholder: Float = 0.1   // TODO: To be delated.
-    @State var animating = false
+    @State private var progressPlaceholder: Float = 0.1   // TODO: To be delated.
+    @State private var animating = false
+    @State private var inputImage: UIImage?
+    
+    @State private var showingImagePicker = false
     
     var body: some View {
         GeometryReader { reader in
-            
             VStack {
                 profileInfoView
                     .frame(height: reader.size.height/2)
@@ -40,24 +42,43 @@ struct UserView: View {
                         CircularProgressView(progress: $progressPlaceholder, width: 150.0, height: 150.0)
                     }
                 }
-               
+                
             }
             .navigationBarTitle("Sign in")
+            .onAppear {
+                viewModel.loadProfileImage(for: user)
+            }
+            .onChange(of: inputImage) { _ in loadImage() }
+            .sheet(isPresented: $showingImagePicker) {
+                ImagePicker(image: $inputImage)
+            }
+            .alert(item: $viewModel.alert) { value in
+                return value.alert
+            }
         }
     }
     
     private var profileInfoView: some View {
         UserInfoView(
             user: user,
-            userImageName: "nil",
+            userImage: $viewModel.selectedImage,
             logoutAction: { viewModel.signOut() },
-            editProfileAction: { print("editProfileAction")},
-            imageTappedAction: {
+            editProfileAction: {
                 print("imageTappedAction")
                 let randomValue = Float([0.012, 0.022, 0.034, 0.016, 0.11].randomElement()!)
-                self.progressPlaceholder += randomValue
+                self.progressPlaceholder += randomValue },
+            imageTappedAction: {
+                showingImagePicker = true
             })
             .background(Color(Asset.Colors.appLint.color))
+    }
+    
+    private func loadImage() {
+        guard let inputImage = inputImage else {
+            return
+        }
+        viewModel.selectedImage = Image(uiImage: inputImage)
+        viewModel.updateProfileImage(image: inputImage)
     }
 }
 

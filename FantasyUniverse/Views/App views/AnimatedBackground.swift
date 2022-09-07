@@ -23,7 +23,6 @@ struct AnimatedBackground<Content: View>: View {
             animation
                 .ignoresSafeArea()
             content
-                
         }
     }
 }

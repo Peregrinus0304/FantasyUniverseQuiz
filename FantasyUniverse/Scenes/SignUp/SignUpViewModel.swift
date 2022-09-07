@@ -53,10 +53,11 @@ class SignUpViewModel: ObservableObject {
         
         firebaseAuthService
             .registrationPublisher(with: credentials)
+            .receive(on: RunLoop.main)
             .sink { res in
                 switch res {
                 case .failure(let err):
-                        self.alert = .authError(message: err.localizedDescription)
+                    self.alert = .authError(message: err.localizedDescription)
                 default: break
                 }
             } receiveValue: { [weak self] in
