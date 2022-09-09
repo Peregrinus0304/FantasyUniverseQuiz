@@ -37,9 +37,9 @@ class UserViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .sink { res in
                 switch res {
-                    case .failure(let err):
+                case .failure(let err):
                         self.alert = .authError(message: err.localizedDescription)
-                    default: break
+                default: break
                 }
             } receiveValue: { _ in }
             .store(in: &subscriptions)
