@@ -59,26 +59,19 @@
 		45797EB9288D7B58005100BD /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EB8288D7B58005100BD /* AppState.swift */; };
 		45797EBA288D7B58005100BD /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EB8288D7B58005100BD /* AppState.swift */; };
 		45797EBD288D8D77005100BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EBC288D8D77005100BD /* User.swift */; };
-		45797EBE288D8D77005100BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EBC288D8D77005100BD /* User.swift */; };
 		45797EC6288DF2A2005100BD /* AuthFirebaseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EC5288DF2A2005100BD /* AuthFirebaseKeys.swift */; };
 		45797EC7288DF2A2005100BD /* AuthFirebaseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EC5288DF2A2005100BD /* AuthFirebaseKeys.swift */; };
 		45797ECA288E9F1B005100BD /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EC9288E9F1B005100BD /* AppConfiguration.swift */; };
 		45797ECB288E9F1B005100BD /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EC9288E9F1B005100BD /* AppConfiguration.swift */; };
 		45797ECF288ED946005100BD /* AppAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797ECE288ED946005100BD /* AppAlert.swift */; };
 		45797ED3288F2266005100BD /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797ED2288F2266005100BD /* InitialView.swift */; };
-		45797ED4288F2266005100BD /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797ED2288F2266005100BD /* InitialView.swift */; };
 		45797EDB288F3155005100BD /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EDA288F3155005100BD /* ResetPasswordViewModel.swift */; };
-		45797EDC288F3155005100BD /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EDA288F3155005100BD /* ResetPasswordViewModel.swift */; };
 		45797EDF288F3278005100BD /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EDE288F3278005100BD /* ResetPasswordView.swift */; };
-		45797EE0288F3278005100BD /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EDE288F3278005100BD /* ResetPasswordView.swift */; };
 		45797EE3288F33DC005100BD /* ok.json in Resources */ = {isa = PBXBuildFile; fileRef = 45797EE2288F33DC005100BD /* ok.json */; };
 		45797EE4288F33DC005100BD /* ok.json in Resources */ = {isa = PBXBuildFile; fileRef = 45797EE2288F33DC005100BD /* ok.json */; };
 		45797EE7289069B3005100BD /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EE6289069B3005100BD /* AccountView.swift */; };
-		45797EE8289069B3005100BD /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EE6289069B3005100BD /* AccountView.swift */; };
 		45797EEC28909383005100BD /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EEB28909383005100BD /* AppTabView.swift */; };
-		45797EED28909383005100BD /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EEB28909383005100BD /* AppTabView.swift */; };
 		45797EEF289122CA005100BD /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EEE289122CA005100BD /* AccountViewModel.swift */; };
-		45797EF0289122CA005100BD /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45797EEE289122CA005100BD /* AccountViewModel.swift */; };
 		4584BCC528031623002C68C5 /* FirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584BCC428031623002C68C5 /* FirebaseRepository.swift */; };
 		4594E9DC276A7D510054E6BE /* FantasyUniverseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9DB276A7D510054E6BE /* FantasyUniverseApp.swift */; };
 		4594E9DE276A7D510054E6BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4594E9DD276A7D510054E6BE /* ContentView.swift */; };
@@ -758,17 +751,10 @@
 				45B75659285643C300AA8BFB /* TestQuestion.swift in Sources */,
 				45B6CBC5283AB8E800B3EADB /* CachedQuestionsTests.swift in Sources */,
 				45D2284B27F09330008506F8 /* QuestionDataConverterTests.swift in Sources */,
-				45797EE8289069B3005100BD /* AccountView.swift in Sources */,
 				45797EC7288DF2A2005100BD /* AuthFirebaseKeys.swift in Sources */,
-				45797EF0289122CA005100BD /* AccountViewModel.swift in Sources */,
 				45797ECB288E9F1B005100BD /* AppConfiguration.swift in Sources */,
 				45797EBA288D7B58005100BD /* AppState.swift in Sources */,
-				45797EBE288D8D77005100BD /* User.swift in Sources */,
-				45797EED28909383005100BD /* AppTabView.swift in Sources */,
-				45797EDC288F3155005100BD /* ResetPasswordViewModel.swift in Sources */,
 				454C262828847D5100DC80F6 /* AuthenticationValidatorTests.swift in Sources */,
-				45797EE0288F3278005100BD /* ResetPasswordView.swift in Sources */,
-				45797ED4288F2266005100BD /* InitialView.swift in Sources */,
 				45D2284B27F09330008506F8 /* QuestionDataConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
