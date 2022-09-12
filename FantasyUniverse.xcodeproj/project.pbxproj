@@ -10,9 +10,10 @@
 		4511C29C284D3ED600629516 /* FirebaseRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511C29B284D3ED600629516 /* FirebaseRepositoryMock.swift */; };
 		451776D927AFF01C005490A1 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451776D827AFF01C005490A1 /* ScoreView.swift */; };
 		451776DB27AFF468005490A1 /* ProgressHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451776DA27AFF468005490A1 /* ProgressHeaderView.swift */; };
+		452B13AA28CFA77200861E44 /* Localisation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 452B13A828CFA77200861E44 /* Localisation.strings */; };
+		452B13AC28CFA88F00861E44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 452B13AB28CFA88F00861E44 /* GoogleService-Info.plist */; };
 		452C54D027DD162F00A7FBEF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452C54C227DD162F00A7FBEF /* Colors.xcassets */; };
 		452C54D127DD162F00A7FBEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452C54C327DD162F00A7FBEF /* Assets.xcassets */; };
-		452C54D227DD162F00A7FBEF /* Localisation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 452C54C427DD162F00A7FBEF /* Localisation.strings */; };
 		452C54D327DD162F00A7FBEF /* stephen-king-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54C727DD162F00A7FBEF /* stephen-king-logo.json */; };
 		452C54D427DD162F00A7FBEF /* lotr-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54C827DD162F00A7FBEF /* lotr-logo.json */; };
 		452C54D627DD162F00A7FBEF /* harry-potter-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 452C54CA27DD162F00A7FBEF /* harry-potter-logo.json */; };
@@ -121,7 +122,6 @@
 		45D2284D27F4793B008506F8 /* GlobalMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2284C27F4793B008506F8 /* GlobalMethods.swift */; };
 		45F0880327A4100D00503343 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F0880227A4100D00503343 /* Question.swift */; };
 		45F0880827A6F54E00503343 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F0880727A6F54E00503343 /* QuestionViewModel.swift */; };
-		45F0880C27A9322100503343 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45F0880B27A9322100503343 /* GoogleService-Info.plist */; };
 		45F0880E27A9BE8600503343 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F0880D27A9BE8600503343 /* QuestionView.swift */; };
 		45F0881027ADB5B200503343 /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F0880F27ADB5B200503343 /* OptionButton.swift */; };
 		45F0881327ADC05D00503343 /* QuestionLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F0881227ADC05D00503343 /* QuestionLabelView.swift */; };
@@ -144,9 +144,10 @@
 		4511C29B284D3ED600629516 /* FirebaseRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRepositoryMock.swift; sourceTree = "<group>"; };
 		451776D827AFF01C005490A1 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		451776DA27AFF468005490A1 /* ProgressHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHeaderView.swift; sourceTree = "<group>"; };
+		452B13A928CFA77200861E44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localisation.strings; sourceTree = "<group>"; };
+		452B13AB28CFA88F00861E44 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		452C54C227DD162F00A7FBEF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		452C54C327DD162F00A7FBEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		452C54C527DD162F00A7FBEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localisation.strings; sourceTree = "<group>"; };
 		452C54C727DD162F00A7FBEF /* stephen-king-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "stephen-king-logo.json"; sourceTree = "<group>"; };
 		452C54C827DD162F00A7FBEF /* lotr-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lotr-logo.json"; sourceTree = "<group>"; };
 		452C54CA27DD162F00A7FBEF /* harry-potter-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "harry-potter-logo.json"; sourceTree = "<group>"; };
@@ -206,7 +207,6 @@
 		45D2284C27F4793B008506F8 /* GlobalMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMethods.swift; sourceTree = "<group>"; };
 		45F0880227A4100D00503343 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		45F0880727A6F54E00503343 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
-		45F0880B27A9322100503343 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45F0880D27A9BE8600503343 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		45F0880F27ADB5B200503343 /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
 		45F0881227ADC05D00503343 /* QuestionLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLabelView.swift; sourceTree = "<group>"; };
@@ -303,8 +303,8 @@
 			children = (
 				452C54C227DD162F00A7FBEF /* Colors.xcassets */,
 				452C54C327DD162F00A7FBEF /* Assets.xcassets */,
-				452C54C427DD162F00A7FBEF /* Localisation.strings */,
 				452C54C627DD162F00A7FBEF /* Lottie Animations */,
+				452B13A828CFA77200861E44 /* Localisation.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -369,10 +369,10 @@
 		4594E9DA276A7D510054E6BE /* FantasyUniverse */ = {
 			isa = PBXGroup;
 			children = (
+				452B13AB28CFA88F00861E44 /* GoogleService-Info.plist */,
 				45AD766B280EC5DA00CCBB39 /* Networking */,
 				45D2284527EDEB49008506F8 /* Services */,
 				452C54C127DD162F00A7FBEF /* Resources */,
-				45F0880B27A9322100503343 /* GoogleService-Info.plist */,
 				45F0880927A6F55300503343 /* ViewModels */,
 				45F0880427A4101600503343 /* Models */,
 				45F9FEB3277665D100AFE9F9 /* Views */,
@@ -615,15 +615,15 @@
 				4540B4F32891E1C60014C857 /* sandclock.json in Resources */,
 				452C54D027DD162F00A7FBEF /* Colors.xcassets in Resources */,
 				452C54DA27DD162F00A7FBEF /* day-background.json in Resources */,
-				452C54D227DD162F00A7FBEF /* Localisation.strings in Resources */,
-				45F0880C27A9322100503343 /* GoogleService-Info.plist in Resources */,
 				452C54D927DD162F00A7FBEF /* smile-face.json in Resources */,
 				452C54D427DD162F00A7FBEF /* lotr-logo.json in Resources */,
 				4540B4F92891E4120014C857 /* intro-logo.json in Resources */,
 				45797EE3288F33DC005100BD /* ok.json in Resources */,
+				452B13AC28CFA88F00861E44 /* GoogleService-Info.plist in Resources */,
 				452C54D127DD162F00A7FBEF /* Assets.xcassets in Resources */,
 				452C54D627DD162F00A7FBEF /* harry-potter-logo.json in Resources */,
 				4594E9E3276A7D530054E6BE /* Preview Assets.xcassets in Resources */,
+				452B13AA28CFA77200861E44 /* Localisation.strings in Resources */,
 				452C54D327DD162F00A7FBEF /* stephen-king-logo.json in Resources */,
 				452C54D727DD162F00A7FBEF /* star-wars-logo.json in Resources */,
 			);
@@ -770,10 +770,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		452C54C427DD162F00A7FBEF /* Localisation.strings */ = {
+		452B13A828CFA77200861E44 /* Localisation.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				452C54C527DD162F00A7FBEF /* Base */,
+				452B13A928CFA77200861E44 /* Base */,
 			);
 			name = Localisation.strings;
 			sourceTree = "<group>";
