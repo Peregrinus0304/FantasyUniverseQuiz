@@ -24,7 +24,6 @@ final class FirebaseAuthService: ObservableObject {
     @Published var state: AuthState = .unauthenticated
     
     private var handle: AuthStateDidChangeListenerHandle?
-    private var currentUserUID: String?
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
@@ -40,8 +39,10 @@ final class FirebaseAuthService: ObservableObject {
                 guard let self = self else { return }
                 if let user = user {
                     
+                    // TODO: Do publisher chaining with flatMap.
+                    
                     self.fetchedUserInfoPublisher(uid: user.uid)
-                        .receive(on: RunLoop.main)
+                        .receive(on: DispatchQueue.main)
                         .sink { res in
                             switch res {
                             case .failure(let err):
@@ -60,12 +61,10 @@ final class FirebaseAuthService: ObservableObject {
                                 firstName: userInfo.firstname,
                                 lastName: userInfo.lastname)
                             self.state = .success(with: user)
-                            self.currentUserUID = user.uid
                         }
                         .store(in: &self.subscriptions)
                 } else {
                     self.state = .unauthenticated
-                    self.currentUserUID = nil
                 }
             }
     }
@@ -96,20 +95,20 @@ final class FirebaseAuthService: ObservableObject {
         Deferred {
             Future<String, AuthError> { promise in
                 Auth
-                  .auth()
-                  .createUser(
-                     withEmail: credentials.email,
-                     password: credentials.password) { res, err in
-                        if let error = err {
-                            promise(.failure(.otherError(error)))
-                        } else {
-                            if let uid = res?.user.uid {
-                                promise(.success(uid))
+                    .auth()
+                    .createUser(
+                        withEmail: credentials.email,
+                        password: credentials.password) { res, err in
+                            if let error = err {
+                                promise(.failure(.otherError(error)))
                             } else {
-                                promise(.failure(.noUser))
+                                if let uid = res?.user.uid {
+                                    promise(.success(uid))
+                                } else {
+                                    promise(.failure(.noUser))
+                                }
                             }
                         }
-                    }
             }
         }
         .flatMap { [weak self] uid in
@@ -117,7 +116,8 @@ final class FirebaseAuthService: ObservableObject {
                 uid: uid,
                 firstname: credentials.firstname,
                 lastname: credentials.lastname) ??
-            Fail<Void, AuthError>(error: AuthError.noUser) .eraseToAnyPublisher()
+            Fail<Void, AuthError>(error: AuthError.noUser)
+                .eraseToAnyPublisher()
         }
         .eraseToAnyPublisher()
     }
@@ -126,66 +126,69 @@ final class FirebaseAuthService: ObservableObject {
         Deferred {
             Future { promise in
                 Auth
-                  .auth()
-                  .sendPasswordReset(
-                    withEmail: email,
-                    completion: { err in
-                        if err != nil {
-                            promise(.failure(.cantResetPassword))
-                        } else {
-                            promise(.success(()))
-                        }
-                    })
+                    .auth()
+                    .sendPasswordReset(
+                        withEmail: email,
+                        completion: { err in
+                            if err != nil {
+                                promise(.failure(.cantResetPassword))
+                            } else {
+                                promise(.success(()))
+                            }
+                        })
             }
         }
         .eraseToAnyPublisher()
     }
-      
+    
     func uploadProfileImagePublisher(_ image: UIImage) -> AnyPublisher<Void, AuthError> {
+        
+        // TODO: Break it up into separate publisher methods, like putData, downloadURL and commitChanges and chain them with .flatMap.
+
         Deferred {
             Future { promise in
-                if let uid = self.currentUserUID {
-                    guard let imageData = image.jpegData(compressionQuality: 0.5) else {
-                        promise(.failure(.cantCompressImage))
-                        return
-                    }
-                    let storageRef = Storage.storage().reference()
-                    let imagesStorageRef = storageRef.child(AuthFirebaseKeys.images.rawValue).child(uid)
-                    imagesStorageRef.putData(imageData, metadata: nil) { (metadata, error) in
-                        guard metadata != nil else {
-                            promise(.failure(.cantUploadImage))
+                switch self.state {
+                case let .success(with: currentUser):
+                        guard let imageData = image.jpegData(compressionQuality: 0.5) else {
+                            promise(.failure(.cantCompressImage))
                             return
                         }
-                        
-                        guard error == nil else {
-                            promise(.failure(.otherError(error!)))
-                            return
-                        }
-                        
-                        imagesStorageRef.downloadURL { (url, error) in
+                        let storageRef = Storage.storage().reference()
+                        let imagesStorageRef = storageRef.child(AuthFirebaseKeys.images.rawValue).child(currentUser.uid)
+                        imagesStorageRef.putData(imageData, metadata: nil) { (metadata, error) in
+                            guard metadata != nil else {
+                                promise(.failure(.cantUploadImage))
+                                return
+                            }
+                            
                             guard error == nil else {
                                 promise(.failure(.otherError(error!)))
                                 return
                             }
                             
-                            guard let downloadURL = url else {
-                                promise(.failure(.imageURLNotFound))
-                                return
-                            }
-                            
-                            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-                            changeRequest?.photoURL = downloadURL
-                            changeRequest?.commitChanges { error in
-                                if let error = error {
-                                    promise(.failure(.otherError(error)))
-                                } else {
-                                    promise(.success(()))
+                            imagesStorageRef.downloadURL { (url, error) in
+                                guard error == nil else {
+                                    promise(.failure(.otherError(error!)))
+                                    return
+                                }
+                                
+                                guard let downloadURL = url else {
+                                    promise(.failure(.imageURLNotFound))
+                                    return
+                                }
+                                
+                                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                                changeRequest?.photoURL = downloadURL
+                                changeRequest?.commitChanges { error in
+                                    if let error = error {
+                                        promise(.failure(.otherError(error)))
+                                    } else {
+                                        promise(.success(()))
+                                    }
                                 }
                             }
                         }
-                    }
-                } else {
-                    promise(.failure(.noUser))
+                default: promise(.failure(.noUser))
                 }
             }
         }

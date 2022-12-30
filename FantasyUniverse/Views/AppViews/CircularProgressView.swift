@@ -36,7 +36,7 @@ struct CircularProgressView: View {
         .frame(width: width + 30, height: height + 30)
         .cornerRadius(UIValues.defaultCornerRadius)
         .scaleEffect(scale)
-        .animateWithSpring { scale = 1 }
+        .animateWithSpringOnAppear { scale = 1 }
         .onDisappear { scale = .zero }
     }
 }

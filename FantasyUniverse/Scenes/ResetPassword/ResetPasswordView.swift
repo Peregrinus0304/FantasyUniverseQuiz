@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ResetPasswordView: View {
-    @StateObject var viewModel = ResetPasswordViewModel()
+    
+    @StateObject private var viewModel = ResetPasswordViewModel()
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -24,7 +25,6 @@ struct ResetPasswordView: View {
                                    alignment: .center)
                         infoLabel
                             .frame(width: animationSideSize,
-                                   height: UIValues.defaultInfoLabelHeight,
                                    alignment: .center)
                         emailField
                         submitButton
@@ -42,7 +42,10 @@ struct ResetPasswordView: View {
         .onTapGesture {
             self.endTextEditing()
         }
-        .alert(item: $viewModel.alert) { value in
+        
+        // TODO: Make alert work directly with associated value.
+
+        .alert(item: $viewModel.state.alert) { value in
             return value.alert
         }
     }
@@ -58,40 +61,40 @@ struct ResetPasswordView: View {
     
     private var successAnimation: some View {
         Group {
-            if viewModel.isResetSuccessfull {
-                LottieView(animationName: "ok",
-                           loopMode: .playOnce,
-                           contentMode: .scaleToFill)
-            } else {
-                EmptyView()
+            switch viewModel.state {
+            case .success:
+                    LottieView(animationName: "ok",
+                               loopMode: .playOnce,
+                               contentMode: .scaleToFill)
+            default: EmptyView()
             }
         }
     }
     
     private var infoLabel: some View {
         Group {
-            if viewModel.isResetSuccessfull {
-                Text("The link was sent to your email")
-                    .fontWeight(.bold)
-                    .foregroundColor(.green)
-            } else {
-                EmptyView()
+            switch viewModel.state {
+            case .success:
+                    Text("The link was sent to your email")
+                        .fontWeight(.bold)
+                        .foregroundColor(.green)
+            default:
+                    EmptyView()
             }
         }
     }
     
     private var submitButton: some View {
-        Button(viewModel.isResetSuccessfull ? "Go back" : "Reset password") {
-            
-            if viewModel.isResetSuccessfull {
-                self.presentationMode.wrappedValue.dismiss()
-            } else {
-                if viewModel.fieldsValid {
+        Button(viewModel.state == .success ? "Go back" : "Reset password") {
+            switch viewModel.state {
+            case .success:
+                    self.presentationMode.wrappedValue.dismiss()
+            case .validated:
                     viewModel.resetPassword()
-                }
+            default: return
             }
         }
-        .defaultLightLabelStyle(width: 200, height: UIValues.defaultMinorElementHeight)
+        .appLabelStyle(style: .light, width: 200, height: UIValues.defaultMinorElementHeight)
     }
     
     private var errorMessage: some View {

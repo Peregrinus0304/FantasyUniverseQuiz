@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ManualSignInView: View {
     
-    @StateObject var viewModel = ManualSignInViewModel()
+    @StateObject private var viewModel = ManualSignInViewModel()
     
     var body: some View {
         

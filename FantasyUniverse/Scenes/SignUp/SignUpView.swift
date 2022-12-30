@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignUpView: View {
     
-    @StateObject var viewModel = SignUpViewModel()
+    @StateObject private var viewModel = SignUpViewModel()
     
     var body: some View {
         AnimatedBackground(animationName: "day-background") {

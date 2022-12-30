@@ -40,7 +40,7 @@ struct UserInfoView: View {
                 .padding([.vertical, .trailing], 3)
                 .frame(width: (reader.size.width / 2) - 6)
             }
-            .background(Color(Asset.Colors.appLint.color))}
+            .backdrop(Asset.Colors.appLint.color)}
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                 showingAvatar = true

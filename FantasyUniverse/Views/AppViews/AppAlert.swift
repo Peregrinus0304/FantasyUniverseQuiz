@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-enum AppAlert: Identifiable {
+enum AppAlert: Identifiable, Equatable {
+    static func == (lhs: AppAlert, rhs: AppAlert) -> Bool {
+        lhs.id == rhs.id
+    }
     
     case authError(message: String? = nil)
     

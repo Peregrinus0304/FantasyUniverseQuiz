@@ -37,7 +37,7 @@ struct InitialView: View {
             ManualSignInView()
         } label: {
             Text("Sign in")
-                .defaultLabelStyle(width: 300, height: 50)
+                .appLabelStyle(style: .normal, width: 300, height: 50)
         }
     }
    
@@ -46,7 +46,7 @@ struct InitialView: View {
             SignUpView()
         } label: {
             Text("Sign up")
-                .defaultLightLabelStyle(width: 300, height: 50)
+                .appLabelStyle(style: .light, width: 300, height: 50)
         }
     }
     
@@ -55,7 +55,7 @@ struct InitialView: View {
             ResetPasswordView()
         } label: {
             Text("Restore my password")
-                .defaultDarkLabelStyle(width: 300, height: 50)
+                .appLabelStyle(style: .dark, width: 300, height: 50)
         }
     }
     

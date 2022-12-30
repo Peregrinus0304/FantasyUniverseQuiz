@@ -5,6 +5,7 @@
 
 import SwiftUI
 import Lottie
+import UIKit
 
 struct LottieView: UIViewRepresentable {
     let animationName: String
@@ -18,7 +19,7 @@ struct LottieView: UIViewRepresentable {
     
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) {
         uiView.subviews.forEach({ $0.removeFromSuperview() })
-        let animationView = AnimationView()
+        let animationView = LottieAnimationView()
         animationView.translatesAutoresizingMaskIntoConstraints = false
         uiView.addSubview(animationView)
         
@@ -29,7 +30,7 @@ struct LottieView: UIViewRepresentable {
             animationView.leadingAnchor.constraint(equalTo: uiView.leadingAnchor)
         ])
         
-        animationView.animation = Animation.named(animationName)
+        animationView.animation = LottieAnimation.named(animationName)
         animationView.contentMode = contentMode
         animationView.loopMode = loopMode
         animationView.backgroundBehavior = .pauseAndRestore

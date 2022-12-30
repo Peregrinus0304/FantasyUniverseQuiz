@@ -44,12 +44,12 @@ class ManualSignInViewModel: ObservableObject {
             password: passwordFieldValue)
         firebaseAuthService
             .loginPublisher(with: credentials)
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .sink { res in
                 switch res {
-                    case .failure(let err):
+                case .failure(let err):
                         self.alert = .authError(message: err.localizedDescription)
-                    default: break
+                default: break
                 }
             } receiveValue: { [weak self] in
                 self?.isAuthenticated = true

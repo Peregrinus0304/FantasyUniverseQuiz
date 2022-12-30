@@ -9,11 +9,12 @@ import SwiftUI
 
 struct QuizView: View {
     
-    @Binding var set: QuestionSet
-    @StateObject var viewModel = QuizViewModel()
+    @StateObject private var viewModel = QuizViewModel()
     @Environment(\.presentationMode) var present
-    
+
     var body: some View {
+        
+        // TODO: Change to enum with states like loading, empty, presenting(QuestionSet).
         
         AnimatedBackground(animationName: "day-background") {
             if viewModel.questionsData.isEmpty {
@@ -31,15 +32,8 @@ struct QuizView: View {
                     .padding(.horizontal, 5)
                 }
             }
-            
         }
         .navigationBarHidden(true)
-        .onAppear {
-            viewModel.getQuestions(set: set)
-        }
-        .onDisappear {
-            cleanUp()
-        }
     }
     
     var animatedBackground: some View {
@@ -76,9 +70,9 @@ struct QuizView: View {
         return fraction * width
     }
     
-    private func cleanUp() {
-        viewModel.correct = 0
-        viewModel.wrong = 0
-        viewModel.answered = 0
-    }
+//    private func cleanUp() {
+//        viewModel.correct = 0
+//        viewModel.wrong = 0
+//        viewModel.answered = 0
+//    }
 }

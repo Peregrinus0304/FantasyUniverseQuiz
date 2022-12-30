@@ -53,7 +53,7 @@ class SignUpViewModel: ObservableObject {
         
         firebaseAuthService
             .registrationPublisher(with: credentials)
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .sink { res in
                 switch res {
                 case .failure(let err):

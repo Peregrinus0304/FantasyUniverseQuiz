@@ -8,4 +8,5 @@
 import Foundation
 import SwiftUI
 
-class DashboardViewModel: ObservableObject {}
+class DashboardViewModel: ObservableObject {
+}

@@ -9,10 +9,49 @@ import SwiftUI
 import Combine
 import UIKit
 
-struct DefaultLabelStyle: ViewModifier {
+struct CustomBackground: ViewModifier {
     
+    let color: UIColor
+    
+    func body(content: Content) -> some View {
+        content
+            .background(Color(color))
+    }
+}
+
+struct AppLabelStyle: ViewModifier {
+    
+    enum Style {
+        case normal, light, dark
+    }
+
+    let style: Style
     let width: CGFloat
     let height: CGFloat
+    
+    private var backgroundColor: Color {
+        switch style {
+        case .normal: return Color(Asset.Colors.aquamarine.color)
+        case .light: return Color(Asset.Colors.appLint.color)
+        case .dark: return Color(Asset.Colors.appGreen.color)
+        }
+    }
+    
+    private var foregroundColor: Color {
+        switch style {
+        case .normal: return Color(Asset.Colors.navyBlue.color)
+        case .light: return Color(Asset.Colors.appGreen.color)
+        case .dark: return Color(Asset.Colors.appLint.color)
+        }
+    }
+    
+    private var strokeColor: Color {
+        switch style {
+        case .normal: return Color(Asset.Colors.navyBlue.color)
+        case .light: return Color(Asset.Colors.appGreen.color)
+        case .dark: return Color(Asset.Colors.aquamarine.color)
+        }
+    }
     
     func body(content: Content) -> some View {
         content
@@ -22,67 +61,19 @@ struct DefaultLabelStyle: ViewModifier {
             .frame(width: width,
                    height: height,
                    alignment: .center)
-            .background(Color(Asset.Colors.aquamarine.color))
-            .foregroundColor(Color(Asset.Colors.navyBlue.color))
+            .background(backgroundColor)
+            .foregroundColor(foregroundColor)
             .cornerRadius(UIValues.defaultCornerRadius)
             .overlay(
                 RoundedRectangle(
                     cornerRadius: UIValues.defaultCornerRadius)
-                    .stroke(Color(Asset.Colors.navyBlue.color),
-                            lineWidth: UIValues.defaultBorderWidth)
+                .stroke(strokeColor,
+                        lineWidth: UIValues.defaultBorderWidth)
             )
     }
 }
 
-struct DefaultLightLabelStyle: ViewModifier {
-    
-    let width: CGFloat
-    let height: CGFloat
-    
-    func body(content: Content) -> some View {
-        content
-            .font(.appLargeFont)
-            .minimumScaleFactor(0.1)
-            .padding(.horizontal, 2)
-            .frame(width: width,
-                   height: height,
-                   alignment: .center)
-            .background(Color(Asset.Colors.appLint.color))
-            .foregroundColor(Color(Asset.Colors.appGreen.color))
-            .cornerRadius(UIValues.defaultCornerRadius)
-            .overlay(
-                RoundedRectangle(
-                    cornerRadius: UIValues.defaultCornerRadius)
-                    .stroke(Color(Asset.Colors.appGreen.color),
-                            lineWidth: UIValues.defaultBorderWidth)
-            )
-    }
-}
-
-struct DefaultDarkLabelStyle: ViewModifier {
-    
-    var width: CGFloat?
-    var height: CGFloat?
-    
-    func body(content: Content) -> some View {
-        content
-            .font(.appLargeFont)
-            .minimumScaleFactor(0.1)
-            .padding(.horizontal, 2)
-            .frame(width: width ?? nil,
-                   height: height ?? nil,
-                   alignment: .center)
-            .background(Color(Asset.Colors.appGreen.color))
-            .foregroundColor(Color(Asset.Colors.appLint.color))
-            .cornerRadius(UIValues.defaultCornerRadius)
-            .overlay(
-                RoundedRectangle(
-                    cornerRadius: UIValues.defaultCornerRadius)
-                    .stroke(Color(Asset.Colors.aquamarine.color),
-                            lineWidth: UIValues.defaultBorderWidth)
-            )
-    }
-}
+/// KeyboardAwareModifier taken from: https://gist.github.com/perlguy99/4f74c3ee7073921123c0df151ae7fe51
 
 struct KeyboardAwareModifier: ViewModifier {
     @State private var keyboardHeight: CGFloat = 0
@@ -125,18 +116,18 @@ struct AppStandardTextFieldStyle: TextFieldStyle {
             .background(
                 LinearGradient(gradient:
                                 Gradient(colors:
-                                    [Color(Asset.Colors.aquamarine.color),
-                                     Color(Asset.Colors.appLint.color)]),
+                                            [Color(Asset.Colors.aquamarine.color),
+                                             Color(Asset.Colors.appLint.color)]),
                                startPoint: .top,
-                               endPoint: .bottom)
-                    .edgesIgnoringSafeArea(.all))
+                               endPoint: .bottom))
             .cornerRadius(UIValues.defaultCornerRadius)
             .overlay(
                 RoundedRectangle(
                     cornerRadius: UIValues.defaultCornerRadius)
-                    .stroke(Color(isHighlighted ? Asset.Colors.navyBlue.color : Asset.Colors.appBlue.color),
-                            lineWidth: UIValues.defaultBorderWidth)
+                .stroke(Color(isHighlighted ? Asset.Colors.navyBlue.color : Asset.Colors.appBlue.color),
+                        lineWidth: UIValues.defaultBorderWidth)
             )
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -208,16 +199,13 @@ struct AppNavigationViewModifier: ViewModifier {
 }
 
 extension View {
-    func defaultLabelStyle(width: CGFloat, height: CGFloat) -> some View {
-        modifier(DefaultLabelStyle(width: width, height: height))
+    
+    func backdrop(_ color: UIColor) -> some View {
+        modifier(CustomBackground(color: color))
     }
     
-    func defaultDarkLabelStyle(width: CGFloat? = nil, height: CGFloat? = nil) -> some View {
-        modifier(DefaultDarkLabelStyle(width: width, height: height))
-    }
-    
-    func defaultLightLabelStyle(width: CGFloat, height: CGFloat) -> some View {
-        modifier(DefaultLightLabelStyle(width: width, height: height))
+    func appLabelStyle(style: AppLabelStyle.Style, width: CGFloat, height: CGFloat) -> some View {
+        modifier(AppLabelStyle(style: style, width: width, height: height))
     }
     
     func keyboardAwarePadding() -> some View {

@@ -19,9 +19,7 @@ struct CredentialsInputField: View {
         VStack {
             titleHeader
                 .frame(height: UIValues.defaultInfoLabelHeight)
-           
                 textField
-            
         }
     }
     

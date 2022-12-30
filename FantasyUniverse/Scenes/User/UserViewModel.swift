@@ -34,7 +34,7 @@ class UserViewModel: ObservableObject {
     func updateProfileImage(image: UIImage) {
         firebaseAuthService
             .uploadProfileImagePublisher(image)
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .sink { res in
                 switch res {
                 case .failure(let err):

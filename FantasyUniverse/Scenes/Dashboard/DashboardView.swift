@@ -9,11 +9,13 @@ import SwiftUI
 
 struct DashboardView: View {
     
+    // TODO: Move to the viewModel.
+    
     let sets = QuestionSet.allSets
     @State var showSelectedQuiz = false
     @State var showListItems = false
-    @State var animationDelay = 0.2
-    @State var selectedSet: QuestionSet = .none
+    @State var animationDelay = 0.1
+    
     var body: some View {
         NavigationView {
             AnimatedBackground(animationName: "dashboard-background") {
@@ -26,7 +28,7 @@ struct DashboardView: View {
             }
             .navigationBarHidden(true)
             .fullScreenCover(isPresented: $showSelectedQuiz) {
-                QuizView(set: $selectedSet)
+                QuizView()
             }
         }
     }
@@ -61,7 +63,8 @@ struct DashboardView: View {
                             .delay(animationDelay * Double(index)),
                         value: showListItems)
                     .onTapGesture(perform: {
-                        selectedSet = sets[index]
+                        let selectedSet = sets[index]
+                        UserDefaults.standard.lastOpenedQuizID = selectedSet.collectionIdentifier
                         showSelectedQuiz.toggle()
                     })
                 }
@@ -70,7 +73,7 @@ struct DashboardView: View {
                 .padding()
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + animationDelay, execute: {
                 showListItems = true
             })
         }
@@ -81,4 +84,5 @@ struct DashboardView: View {
             .font(.appLargeFont)
             .foregroundColor(Color(Asset.Colors.navyBlue.color))
     }
+    
 }

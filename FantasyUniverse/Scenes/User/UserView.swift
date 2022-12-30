@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct UserView: View {
+    
     @EnvironmentObject var user: User
-    @StateObject var viewModel = UserViewModel()
+    @StateObject private var viewModel = UserViewModel()
     @State private var progressPlaceholder: Float = 0.1   // TODO: To be delated.
     @State private var animating = false
     @State private var inputImage: UIImage?
@@ -29,7 +30,7 @@ struct UserView: View {
                                    alignment: .bottom)
                             .foregroundColor(Color(Asset.Colors.navyBlue.color)),
                         alignment: .bottom)
-                    .animateWithSpring { animating.toggle() }
+                    .animateWithSpringOnAppear { animating.toggle() }
                     .onDisappear { animating.toggle() }
                 VStack {
                     HStack {
@@ -70,7 +71,7 @@ struct UserView: View {
             imageTappedAction: {
                 showingImagePicker = true
             })
-            .background(Color(Asset.Colors.appLint.color))
+            .backdrop(Asset.Colors.appLint.color)
     }
     
     private func loadImage() {

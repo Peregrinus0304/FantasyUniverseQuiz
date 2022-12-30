@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+// MARK: - Animations
+
 extension View {
-    func animateWithSpring(
+    func animateWithSpringOnAppear(
         using animation: Animation = .spring(
             response: 0.4,
             dampingFraction: 0.6,
@@ -16,4 +18,12 @@ extension View {
         _ action: @escaping () -> Void) -> some View {
             onAppear { withAnimation(animation) { action() } }
         }
+}
+
+// MARK: - Other
+
+extension View {
+    func endTextEditing() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
 }

@@ -11,7 +11,7 @@ enum QuestionSet {
     case none, test, harryPotter, lotr, starWars, stephenKing
     
     static let allSets: [QuestionSet] = [test, harryPotter, lotr, starWars, stephenKing]
-    
+
     var collectionIdentifier: String {
         switch self {
         case .test: return "Set_1"
@@ -31,5 +31,9 @@ enum QuestionSet {
         case .stephenKing: return "stephen-king-logo"
         case .none: return ""
         }
+    }
+    
+    static func makeSet(from id: String?) -> Self? {
+        allSets.first { $0.collectionIdentifier == id }
     }
 }
