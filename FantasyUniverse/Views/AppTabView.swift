@@ -18,19 +18,26 @@ struct AppTabView: View {
                     Image(systemName: "line.3.horizontal.circle")
                     Text("Quiz")
                 }
-            AccountView()
+            UserView()
                 .tabItem {
                     Image(systemName: "person")
-                    Text("Account")
+                    Text("User")
                 }
         }
-        .accentColor(.blue)
+        .accentColor(Color(Asset.Colors.aquamarine.color))
         .environmentObject(user)
     }
 }
 
 struct AppTabView_Previews: PreviewProvider {
     static var previews: some View {
-        AppTabView(user: User(uid: "", displayName: "", email: "", refreshToken: ""))
+        AppTabView(user: User(
+            uid: "",
+            email: "",
+            displayName: "",
+            refreshToken: "",
+            profileImageURL: nil,
+            firstName: nil,
+            lastName: nil))
     }
 }

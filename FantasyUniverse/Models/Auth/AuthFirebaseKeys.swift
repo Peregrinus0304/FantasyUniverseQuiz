@@ -10,5 +10,8 @@ import Foundation
 enum AuthFirebaseKeys: String {
     case firstname
     case lastname
-    case users   
+    case users
+    case uid
+    case profileImageURL
+    case images
 }

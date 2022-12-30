@@ -45,3 +45,23 @@ public class AuthenticationValidator {
         return namePred.evaluate(with: name)
     }
 }
+
+enum ValidationResult: String {
+    case wrongEmailAndPassword
+    case wrongPassword
+    case wrongEmail
+    case wrongNames
+    case allValid
+    case none
+    
+    var message: String {
+        switch self {
+        case .wrongEmailAndPassword: return "Email and password do not fulfil requirements"
+        case .wrongPassword: return "Password does not fulfil requirements"
+        case .wrongEmail: return "Email does not fulfil requirements"
+        case .wrongNames: return "Either your firstname or lastname do not fulfil requirements"
+        case .allValid: return ""
+        case .none: return ""
+        }
+    }
+}

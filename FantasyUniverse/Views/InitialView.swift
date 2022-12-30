@@ -11,8 +11,7 @@ struct InitialView: View {
     var body: some View {
         NavigationView {
 
-        ZStack {
-            Color.gray
+            AnimatedBackground(animationName: "day-background") {
             VStack {
                 logoAnimation
                 signInButton
@@ -23,6 +22,7 @@ struct InitialView: View {
         }
         .ignoresSafeArea()
         }
+        .appNavigationViewStyle()
     }
     
     var logoAnimation: some View {
@@ -32,15 +32,12 @@ struct InitialView: View {
     }
     
     var signInButton: some View {
+        
         NavigationLink {
             ManualSignInView()
         } label: {
             Text("Sign in")
-                .bold()
-                .frame(width: 200, height: 50)
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
+                .appLabelStyle(style: .normal, width: 300, height: 50)
         }
     }
    
@@ -49,11 +46,7 @@ struct InitialView: View {
             SignUpView()
         } label: {
             Text("Sign up")
-                .bold()
-                .frame(width: 200, height: 50)
-                .background(Color.red)
-                .foregroundColor(.white)
-                .cornerRadius(10)
+                .appLabelStyle(style: .light, width: 300, height: 50)
         }
     }
     
@@ -62,11 +55,7 @@ struct InitialView: View {
             ResetPasswordView()
         } label: {
             Text("Restore my password")
-                .bold()
-                .frame(width: 200, height: 50)
-                .background(Color.purple)
-                .foregroundColor(.white)
-                .cornerRadius(10)
+                .appLabelStyle(style: .dark, width: 300, height: 50)
         }
     }
     
