@@ -73,15 +73,18 @@ final class FirebaseAuthService: ObservableObject {
     
     func loginPublisher(with credentials: ManualSignInCredentials) -> AnyPublisher<Void, AuthError> {
         Deferred {
-            Future { promise in
+            Future { [weak self] promise in
                 Auth
                     .auth()
                     .signIn(withEmail: credentials.email,
                             password: credentials.password) { _, err in
                         if let error = err {
-                            self.state = .failed(with: .otherError(error))
+                            self?.state = .failed(with: .otherError(error))
                             promise(.failure(.otherError(error)))
                         } else {
+                            self?.storePasswordInKeychain(
+                                account: credentials.email,
+                                password: credentials.password)
                             promise(.success(()))
                         }
                     }
@@ -93,7 +96,7 @@ final class FirebaseAuthService: ObservableObject {
     func registrationPublisher(with credentials: SignUpCredentials) -> AnyPublisher<Void, AuthError> {
         
         Deferred {
-            Future<String, AuthError> { promise in
+            Future<String, AuthError> { [weak self] promise in
                 Auth
                     .auth()
                     .createUser(
@@ -103,6 +106,9 @@ final class FirebaseAuthService: ObservableObject {
                                 promise(.failure(.otherError(error)))
                             } else {
                                 if let uid = res?.user.uid {
+                                    self?.storePasswordInKeychain(
+                                        account: credentials.email,
+                                        password: credentials.password)
                                     promise(.success(uid))
                                 } else {
                                     promise(.failure(.noUser))
@@ -229,11 +235,11 @@ final class FirebaseAuthService: ObservableObject {
                             promise(.failure(.noDataReceived))
                             return
                         }
-                        guard let decodedBook = try? data.data(as: UserInfo.self) else {
+                        guard let decodedInfo = try? data.data(as: UserInfo.self) else {
                             promise(.failure(.noDataReceived))
                             return
                         }
-                        promise(.success(decodedBook))
+                        promise(.success(decodedInfo))
                     }
             }
         }
@@ -260,5 +266,22 @@ final class FirebaseAuthService: ObservableObject {
             }
         }
         .eraseToAnyPublisher()
+    }
+    
+    func storePasswordInKeychain(account: String, password: String) {
+        guard let passwordData = password.data(using: .utf8) else {
+            debugPrint("Unable to encode user`s password into data for storing in keychain.")
+            return
+        }
+        
+        do {
+            try KeychainService.shared.savePassword(
+                for: "firebase.google.com",
+                user: account,
+                passwordData: passwordData)
+        } catch {
+            debugPrint("Got an error while trying to save password in keychain: \(error).")
+        }
+       
     }
 }
