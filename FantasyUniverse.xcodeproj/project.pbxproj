@@ -123,6 +123,7 @@
 		45E65A09295CD6920060E72C /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 45E65A08295CD6920060E72C /* FirebaseStorageCombine-Community */; };
 		45E65A0C295CD7070060E72C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 45E65A0B295CD7070060E72C /* Lottie */; };
 		45E65A0E295E154B0060E72C /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E65A0D295E154B0060E72C /* UserDefaults+Extensions.swift */; };
+		45E65A10295F716F0060E72C /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E65A0F295F716F0060E72C /* KeychainService.swift */; };
 		45F0880327A4100D00503343 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F0880227A4100D00503343 /* Question.swift */; };
 		45F0880827A6F54E00503343 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F0880727A6F54E00503343 /* QuizViewModel.swift */; };
 		45F0880C27A9322100503343 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45F0880B27A9322100503343 /* GoogleService-Info.plist */; };
@@ -224,6 +225,7 @@
 		45D2284A27F09330008506F8 /* QuestionDataConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataConverterTests.swift; sourceTree = "<group>"; };
 		45D2284C27F4793B008506F8 /* GlobalMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMethods.swift; sourceTree = "<group>"; };
 		45E65A0D295E154B0060E72C /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserDefaults+Extensions.swift"; path = "../../Wordy/Targets/WordyUI/Sources/BrowseTabView/UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		45E65A0F295F716F0060E72C /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		45F0880227A4100D00503343 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		45F0880727A6F54E00503343 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		45F0880B27A9322100503343 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				45A9434928B42A45005FBF2E /* AuthError.swift */,
 				455A167A281DCC6B00543364 /* AuthenticationValidator.swift */,
 				455A168728340D9B00543364 /* FirebaseAuthService.swift */,
+				45E65A0F295F716F0060E72C /* KeychainService.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				455A1681283022F500543364 /* SignUpViewModel.swift in Sources */,
 				453CAEEC27B32090002649AF /* QuestionSets.swift in Sources */,
 				45F0880327A4100D00503343 /* Question.swift in Sources */,
+				45E65A10295F716F0060E72C /* KeychainService.swift in Sources */,
 				45D2284727EDEB63008506F8 /* QuestionViewData.swift in Sources */,
 				45AD766F280EC69700CCBB39 /* QuestionCollection.swift in Sources */,
 				45D2284927EDEB71008506F8 /* Answer.swift in Sources */,
